@@ -1,0 +1,11 @@
+name: predict-crime
+dependencies:
+  - python=3.7
+  - anaconda
+  - seaborn
+  - pip
+  - numpy
+  - pandas=0.24.1
+  - matplotlib
+  - pip:
+    - requests==2.21.0
