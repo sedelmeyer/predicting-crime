@@ -1,6 +1,7 @@
 data/**
 !data/**/
 !data/**/.gitkeep
+!data/**/data-inventory.csv
 
 references/**
 !references/**/
