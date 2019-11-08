@@ -1,7 +1,11 @@
+# Ignore datafiles to prevent extremely large
+# git history
 data/**
 !data/**/
 !data/**/.gitkeep
 !data/**/data-inventory.csv
+
+.DS_store
 
 references/**
 !references/**/
