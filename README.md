@@ -12,20 +12,28 @@ An accompanying website presenting this analysis and associated findings can be 
 - [Fabio Pruneri](https://github.com/FabioPru)
 - [Mike Sedelmeyer](https://github.com/sedelmeyer)
 
-### Data Sources:
+### Step 1: Install and start the required conda virtual environment
 
-An inventory of **raw data sources** used for this analysis can be found in this project's **"data-inventory"** file at [./data-inventory.csv](data-inventory.csv).
+- The `predict-crime.yml` file contains specifications for building your virtual environment and related dependencies using the `conda` package manager
+- To install your virtual environment, first clone this repository.
+- Navigate to your newly cloned repository via your terminal and run the following command:
+    - `conda env update --prefix ./env --file predict-crime.yml`
+- Once your dependencies are installed, if you are in a linux terminal, you can activate the resulting conda environment by running the following command:
+    - `conda activate ./env`
+- Once your environment is up and running, you can fire up your local Jupyter server by using the command:
+    - `jupyter notebook`
+- For additional information on creating, managing, and running `conda` environments, please see the official Anaconda documentation:
+    - https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
-Raw data sources required for this analysis can be downloaded by running the notebook found at [./notebooks/000_download_datasources.ipynb](notebooks/000_download_datasources.ipynb).
+### Step 2: Download the required data sources:
 
-if you would like to simply download a copy of the fully populated **raw data directory** from which this analysis is built, you can do so by:
-
-1. Downloading and extracting the `./raw/` data directory found at this link:
-    - https://drive.google.com/file/d/1Pv5M-GmUY2Cvq92GDH3d_h7MvXFjgzID/view?usp=sharing
-
-
-2. Replacing your local "raw" data sub-directory found at [./data/raw/](data/raw) in this project repository.
-3. Please DO NOT commit any data files to your git history. 
+- An inventory of **raw data sources** used for this analysis can be found in this project's **"data-inventory"** file at [./data-inventory.csv](data-inventory.csv).
+- Raw data sources required for this analysis can be downloaded by running the notebook found at [./notebooks/000_download_datasources.ipynb](notebooks/000_download_datasources.ipynb).
+- if you would like to simply download a copy of the fully populated **raw data directory** from which this analysis is built, you can do so by:
+    1. Downloading and extracting the `./raw/` data directory found at this link:
+        - https://drive.google.com/file/d/1Pv5M-GmUY2Cvq92GDH3d_h7MvXFjgzID/view?usp=sharing
+    2. Replacing your local "raw" data sub-directory found at [./data/raw/](data/raw) in this project repository.
+    3. Please DO NOT commit any data files to your git history. 
 
 <br>
 
