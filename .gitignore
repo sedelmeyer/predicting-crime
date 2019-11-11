@@ -10,6 +10,7 @@ data/**
 references/**
 !references/**/
 !references/**/.gitkeep
+!references/analysis-notes/**
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
