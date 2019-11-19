@@ -1,0 +1,67 @@
+OFFENSE_CODE_GROUP,INCIDENT_RECORDS,RECORDS_WITH_COORDS,PROPORTION_COORDS,CATEGORY
+aggravated assault,9044,8382,0.926802299867315,violence-aggression
+aircraft,54,43,0.796296296296296,other
+arson,97,93,0.958762886597938,other
+assembly or gathering violations,890,832,0.934831460674157,other
+auto theft,5102,4745,0.930027440219522,theft
+auto theft recovery,1228,1136,0.925081433224756,
+ballistics,1133,1081,0.954104148278906,violence-aggression
+biological threat,2,2,1,
+bomb hoax,92,87,0.945652173913044,other
+burglary - no property taken,3,3,1,burglary
+commercial burglary,1394,1376,0.987087517934003,burglary
+confidence games,3313,3235,0.976456383942046,fraud
+counterfeiting,1620,1591,0.982098765432099,fraud
+criminal harassment,113,113,1,harassment-disturbance
+disorderly conduct,2776,2501,0.900936599423631,harassment-disturbance
+drug violation,18340,16044,0.874809160305344,drugs-substances
+embezzlement,341,339,0.994134897360704,fraud
+evading fare,436,414,0.94954128440367,other
+explosives,27,23,0.851851851851852,other
+fire related reports,2129,2062,0.968529826209488,
+firearm discovery,699,673,0.962804005722461,other
+firearm violations,2046,1826,0.89247311827957,other
+fraud,7149,6965,0.974262134564275,fraud
+gambling,6,6,1,other
+harassment,5083,5003,0.984261263033642,harassment-disturbance
+harbor related incidents,290,123,0.424137931034483,other
+home invasion,92,92,1,violence-aggression
+homicide,231,219,0.948051948051948,violence-aggression
+human trafficking,8,7,0.875,other
+human trafficking - involuntary servitude,3,3,1,other
+investigate person,21770,20854,0.957923748277446,
+investigate property,13563,12911,0.95192803951928,
+landlord/tenant disputes,1141,1135,0.994741454864154,harassment-disturbance
+larceny,29047,28086,0.966915688367129,theft
+larceny from motor vehicle,11559,10939,0.946362142053811,theft
+license plate related incidents,653,626,0.95865237366003,
+license violation,2029,1983,0.97732873336619,other
+liquor violation,1365,1241,0.909157509157509,other
+manslaughter,10,9,0.9,violence-aggression
+medical assistance,28881,27492,0.951906097434299,
+missing person located,6300,6184,0.981587301587302,
+missing person reported,4093,4024,0.983141949670168,
+motor vehicle accident response,42798,35185,0.822117855974578,
+offenses against child / family,550,527,0.958181818181818,other
+operating under the influence,606,484,0.798679867986799,drugs-substances
+other,20197,18979,0.93969401396247,
+other burglary,467,454,0.972162740899358,burglary
+phone call complaints,40,40,1,harassment-disturbance
+police service incidents,3246,2934,0.903881700554529,
+prisoner related incidents,304,277,0.911184210526316,
+property found,4520,4179,0.924557522123894,
+property lost,11669,11137,0.954409118176365,
+property related damage,1023,967,0.945259042033236,vandalism-property
+prostitution,220,203,0.922727272727273,other
+recovered stolen property,1605,1450,0.903426791277258,
+residential burglary,5352,5324,0.994768310911809,burglary
+restraining order violations,1812,1785,0.985099337748344,harassment-disturbance
+robbery,4752,4317,0.908459595959596,robbery
+search warrants,1131,1082,0.956675508399646,
+service,321,294,0.91588785046729,
+simple assault,18291,17162,0.938275654693565,violence-aggression
+towed,13061,12382,0.948013168976342,
+vandalism,17051,16393,0.961409887983109,vandalism-property
+verbal disputes,15892,15702,0.988044299018374,harassment-disturbance
+violations,6524,5305,0.813151440833844,
+warrant arrests,9604,8692,0.905039566847147,
