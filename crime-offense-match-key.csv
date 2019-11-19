@@ -1,0 +1,67 @@
+OFFENSE_CODE_GROUP,INCIDENT_RECORDS,RECORDS_WITH_COORDS,PROPORTION_COORDS,SUB-CATEGORY,CATEGORY
+aggravated assault,7336,6781,0.924345692475464,assault,violence-aggression
+aircraft,44,35,0.795454545454545,other,other
+arson,84,81,0.964285714285714,arson,other
+assembly or gathering violations,776,731,0.94201030927835,violations,violations
+auto theft,4281,3958,0.92455033870591,theft,larceny
+auto theft recovery,1032,951,0.921511627906977,theft,larceny
+ballistics,917,875,0.954198473282443,weapons,other
+biological threat,2,2,1,emergency-threat,emergency
+bomb hoax,83,78,0.939759036144578,emergency-threat,emergency
+burglary - no property taken,3,3,1,burglary,larceny
+commercial burglary,1183,1167,0.98647506339814,burglary,larceny
+confidence games,2831,2767,0.977393147297775,fraud,larceny
+counterfeiting,1361,1337,0.982365907421014,fraud,larceny
+criminal harassment,104,104,1,harassment,disturbance-harassment
+disorderly conduct,2324,2092,0.900172117039587,disturbance,disturbance-harassment
+drug violation,14826,12939,0.872723593686766,drugs,drugs
+embezzlement,288,287,0.996527777777778,fraud,larceny
+evading fare,359,342,0.952646239554318,violations,violations
+explosives,21,18,0.857142857142857,weapons,other
+fire related reports,1779,1717,0.965148960089938,emergency-fire,emergency
+firearm discovery,585,563,0.962393162393162,weapons,other
+firearm violations,1591,1411,0.88686360779384,weapons,other
+fraud,5714,5555,0.972173608680434,fraud,larceny
+gambling,6,6,1,gambling,other
+harassment,4173,4106,0.983944404505152,harassment,violence-aggression
+harbor related incidents,231,99,0.428571428571429,other,other
+home invasion,82,82,1,home invasion,violence-aggression
+homicide,193,182,0.94300518134715,homicide,violence-aggression
+human trafficking,8,7,0.875,other,other
+human trafficking - involuntary servitude,2,2,1,other,other
+investigate person,17911,17144,0.957177153704428,investigation,investigation
+investigate property,11102,10581,0.953071518645289,investigation,investigation
+landlord/tenant disputes,923,919,0.99566630552546,disturbance,disturbance-harassment
+larceny,23876,23061,0.965865304071034,theft,larceny
+larceny from motor vehicle,9775,9219,0.943120204603581,theft,larceny
+license plate related incidents,535,509,0.951401869158878,motor-vehicle,motor-vehicle
+license violation,1612,1575,0.977047146401985,violations,violations
+liquor violation,994,906,0.911468812877263,violations,violations
+manslaughter,9,8,0.888888888888889,manslaughter,violence-aggression
+medical assistance,23065,21922,0.950444396271407,emergency-medical,emergency
+missing person located,4997,4905,0.981588953372023,missing-person,other
+missing person reported,3310,3256,0.98368580060423,missing-person,other
+motor vehicle accident response,35237,28856,0.818911939154865,motor-vehicle,motor-vehicle
+offenses against child / family,457,437,0.956236323851204,nonviolent-domestic,other
+operating under the influence,504,401,0.795634920634921,motor-vehicle,motor-vehicle
+other,16477,15475,0.939187958973114,other,other
+other burglary,396,386,0.974747474747475,burglary,larceny
+phone call complaints,32,32,1,harassment,disturbance-harassment
+police service incidents,2459,2230,0.90687271248475,police-service,other
+prisoner related incidents,239,219,0.916317991631799,prison,other
+property found,3698,3428,0.926987560843699,property,property-vandalism
+property lost,9517,9090,0.955132920037827,property,property-vandalism
+property related damage,865,816,0.943352601156069,property,property-vandalism
+prostitution,190,179,0.942105263157895,prostitution,other
+recovered stolen property,1331,1201,0.902329075882795,theft,larceny
+residential burglary,4618,4591,0.994153313122564,burglary,larceny
+restraining order violations,1530,1507,0.984967320261438,violations,violations
+robbery,4071,3707,0.910587079341685,robbery,larceny
+search warrants,903,873,0.966777408637874,warrant-search,other
+service,247,225,0.910931174089069,other,other
+simple assault,14911,13979,0.93749580846355,assault,violence-aggression
+towed,10893,10316,0.947030202882585,motor-vehicle,motor-vehicle
+vandalism,14160,13612,0.961299435028248,vandalism,property-vandalism
+verbal disputes,12961,12796,0.987269500810123,disturbance,disturbance-harassment
+violations,5245,4248,0.809914204003813,violations,violations
+warrant arrests,8387,7572,0.902825801836175,warrant-arrest,other
