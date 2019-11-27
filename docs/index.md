@@ -6,4 +6,6 @@ Additional content will be added soon.
 
 All website-related content and associated files must be stored in the repository's `./docs/` sub-directory.
 
+<img src="../figures/property/match-FINAL.png" alt="drawing" width="800"/>
+
 ![boston-property-match](../figures/property/match-FINAL.png)
