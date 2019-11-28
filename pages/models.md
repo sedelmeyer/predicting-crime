@@ -8,7 +8,7 @@ For a summary of our final results, achieved with the best of our tested models,
 
 For a look into the types of models we developed prior to reaching those results, please see the following model pages:
 
-1. [Baseline Logistic Regression Model](pages/model-baseline)
+1. [Baseline Logistic Regression Model](model-baseline.md)
 2. Cross-validated Logistic Regression Models (with added features) **(TBD)**
 3. k-Nearest Neighbors (kNN) Classifier Models **(TBD)**
 4. Decision Tree Classifiers and Ensemble Methods **(TBD)**
@@ -16,7 +16,7 @@ For a look into the types of models we developed prior to reaching those results
 
 ## About the response variable we are predicting
 
-The response variable for our model is ​**“type of crime,​"** defined as a set of 9 crime-type categories consolidated from a subset of the 66 available `OFFENSE_CODE_GROUP` categories in the [raw crime incidents dataset](pages/data-crime) over the years 2016-2019. The 9 crime-type categories are:
+The response variable for our model is ​**“type of crime,​"** defined as a set of 9 crime-type categories consolidated from a subset of the 66 available `OFFENSE_CODE_GROUP` categories in the [raw crime incidents dataset](data-crime.md) over the years 2016-2019. The 9 crime-type categories are:
 
 1. Burglary
 2. Drugs-substances
