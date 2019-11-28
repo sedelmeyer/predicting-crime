@@ -2,26 +2,34 @@
 title: "Predicting crime types in the City of Boston"
 ---
 
-**This is an initial landing page for the project website.**
+**This is an initial landing page for the project website. We are actively devloping this analysis. Check back for updated content.**
 
-Additional content will be added soon.**NOTE: This analysis is currently under development and not yet complete, please check back later.**
+## Summary
 
-This repository contains the analysis and predictive results for a project exploring the prediction of crime types, based on a number of different features.
+This website contains the analysis and predictive results for a project exploring the prediction of crime types in the City of Boston, based on a number of different features.
 
 An accompanying repository containing the Python code used to perform this analysis and associated findings [can be found here](https://github.com/sedelmeyer/predicting-crime).
 
-### Contributors:
+## Research questions:
+
+Given the (1) variety preliminary datasets we were able to find, (2) the results of our initial EDA on a subset of those datasets, and (3) the number of additional predictors we currently have under development, we have decided to define our project questions in fairly broad terms similar to how they were proposed in
+the original project description:
+
+- Given environmental and demographic features of a specific location in the City of Boston, can we predict (from a
+defined subset of crime types), which type of crime is most likely to occur at that location?
+
+- What effects do specific location-based features have on the type of crime most likely to occur at that location?
+
+## Contributors:
 - [Christopher Campion](https://github.com/ccampion)
 - [Sheraz Choudhary](https://github.com/sherazch00)
 - [Fabio Pruneri](https://github.com/FabioPru)
 - [Mike Sedelmeyer](https://github.com/sedelmeyer)
 
-### Sample EDA performed on City of Boston Property Assessment data
+## Sample EDA performed on City of Boston Property Assessment data
 
-- [Property assessment EDA](property.md)
+- [Property assessment EDA](pages/property.md)
 
-# Sample embedded image
+## Sample embedded image
 
-All website-related content and associated files must be stored in the repository's `./docs/` sub-directory.
-
-<img src="https://raw.githubusercontent.com/sedelmeyer/predicting-crime/master/figures/crime/crime-missing-coords-offense-tstat-hist.png" alt="drawing" width="800"/>
+![sample-embedded-image]({{ site.url }}/figures/crime/crime-missing-coords-offense-tstat-hist.png)
