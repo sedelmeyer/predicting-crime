@@ -1,5 +1,9 @@
 theme: minima
+url: "https://sedelmeyer.github.io/predicting-crime/"
+repository: "https://github.com/sedelmeyer/predicting-crime"
 
 header_pages:
- - property.md
+ - pages/about.md
+ - pages/data.md
  - pages/models.md
+ - pages/results.md
