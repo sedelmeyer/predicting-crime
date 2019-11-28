@@ -2,4 +2,4 @@
 title: models
 ---
 
-![lasso-regularized-coefficients](figures/base-model-lasso-coefficient-estimates.png)
+![lasso-regularized-coefficients](/docs/figures/base-model-lasso-coefficient-estimates.png)
