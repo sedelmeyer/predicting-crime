@@ -2,4 +2,4 @@ theme: minima
 
 header_pages:
  - property.md
- - models.md
+ - ./pages/models.md
