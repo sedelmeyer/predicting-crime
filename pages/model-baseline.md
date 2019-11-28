@@ -9,7 +9,12 @@ The notebook used to develop this baseline model can be found at:
 As an initial baseline model, we ran several multi-class Logistic Regression models on a version of our predictors outlined below, in which all non-binary predictors were standardized to adjust for variability in scale among predictors. Variations attempted while building our baseline model included both one-vs-rest and multinomial versions of the model. In addition, we ran the versions of the models without regularization and then with L1 Lasso-like regularization (but without cross-validation) to ultimately examine coefficient shrinkage and to begin understanding relationships between our response classes and each individual predictor. For reference, the best baseline model reported here was specified with the following parameters::
 
 ```py
-LogisticRegression(C=1, class_weight=None, dual=False, fit_intercept=True, intercept_scaling=1, l1_ratio=None, max_iter=10000, multi_class='multinomial', n_jobs=None, penalty='l1',random_state=20, solver='saga', tol=0.0001, verbose=0, warm_start=False)
+LogisticRegression(C=1, class_weight=None, dual=False,    
+                   fit_intercept=True, intercept_scaling=1, 
+                   l1_ratio=None, max_iter=10000, 
+                   multi_class='multinomial', n_jobs=None, 
+                   penalty='l1',random_state=20, solver='saga', 
+                   tol=0.0001, verbose=0, warm_start=False)
 ```
 
 ## Predictors
