@@ -28,7 +28,7 @@ defined subset of crime types), which type of crime is most likely to occur at t
 
 ## Sample EDA performed on City of Boston Property Assessment data
 
-- [Property assessment EDA](pages/property.md)
+- [Property assessment EDA](pages/data-property.md)
 
 ## Sample embedded image
 
