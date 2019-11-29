@@ -8,7 +8,7 @@ title: "Predicting crime types in the City of Boston"
 
 This website contains the analysis and predictive results for a project exploring the prediction of crime types in the City of Boston, based on a number of different features.
 
-An accompanying repository containing the Python code used to perform this analysis and associated findings [can be found here](https://github.com/sedelmeyer/predicting-crime).
+An accompanying repository containing the Python code used to perform this analysis and associated findings can be found here: [{{ site.repository }}]({{ site.repository}})
 
 ## Research questions:
 
