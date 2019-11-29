@@ -3,8 +3,7 @@ url: "https://sedelmeyer.github.io/predicting-crime/"
 repository: "https://github.com/sedelmeyer/predicting-crime"
 
 header_pages:
- - [About](pages/about.md)
+ - pages/about.md
  - pages/data.md
  - pages/models.md
  - pages/results.md
- - [repository]({{ site.repository }})
