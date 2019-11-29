@@ -1,5 +1,5 @@
 ---
-title: "models"
+title: "Models"
 ---
 
 A number of different model types were tested during the development of this predictive analysis:

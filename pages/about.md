@@ -1,5 +1,5 @@
 ---
-title: "About this analysis"
+title: "About"
 ---
 
 **CONTENT TBD**

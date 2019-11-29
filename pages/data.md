@@ -1,5 +1,5 @@
 ---
-title: "data"
+title: "Data"
 ---
 
 **NOT YET COMPLETE, MUST ALSO ADD LINKS TO EDA WEB PAGES**
