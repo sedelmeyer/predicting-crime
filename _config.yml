@@ -1,7 +1,6 @@
 theme: minima
 url: "https://sedelmeyer.github.io/predicting-crime/"
 repository: "https://github.com/sedelmeyer/predicting-crime"
-title: "Predicting Crime In Boston"
 
 header_pages:
  - pages/about.md
