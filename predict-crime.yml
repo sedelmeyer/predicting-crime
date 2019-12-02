@@ -9,5 +9,6 @@ dependencies:
   - matplotlib
   - geopandas
   - tqdm
+  - descartes
   - pip:
     - requests==2.21.0
