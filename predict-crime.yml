@@ -8,5 +8,7 @@ dependencies:
   - pandas=0.24.1
   - matplotlib
   - geopandas
+  - tqdm
+  - descartes
   - pip:
     - requests==2.21.0
