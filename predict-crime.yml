@@ -1,4 +1,7 @@
 name: predict-crime
+channels:
+  - defaults
+  - conda-forge
 dependencies:
   - python=3.7
   - anaconda
@@ -10,5 +13,6 @@ dependencies:
   - geopandas
   - tqdm
   - descartes
+  - scikit-learn=0.22
   - pip:
     - requests==2.21.0
