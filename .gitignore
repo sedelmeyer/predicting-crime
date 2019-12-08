@@ -6,6 +6,7 @@ data/**
 !data/**/data-inventory.csv
 
 .DS_store
+.vscode
 
 references/**
 !references/**/

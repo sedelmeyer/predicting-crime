@@ -4,24 +4,28 @@
 
 # MULTI-CLASS AUC REQUIRES scikit-learn v0.22
 
+# required imports
 import numpy as np
 import geopandas as gpd
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc, roc_auc_score
+
 
 def generate_roc_auc(y_values_actual, predicted_probabilities, class_dict):
     """
     Creates a dictionary of ROC curve values generated using
     sklearn.metrics.roc_curve for every outcome class in a multi-class
     problem
+    
+    NOTE: multi-class AUC requires scikit-learn>=v0.22
 
-    y_values_actual: np.array, the 1-dimensional array containing the
+    y_values_actual: np.array, the 1-dimensional array containing the 
                      multi-classs true y values against which you are evaluating
                      the predicted probabilities (i.e. y_test)
     predicted_probabilities: np.array, the 2-dimensional array generated
                              using sklearn's "model.predict_proba()" method
                              (i.e. test set predicted probabilities)
-
+                     
     returns: tuple(float, float, dict), (1) a float representing the average macro AUC
              for all classes, (2) a float representing the average weighted AUC (weighted
              by the number of true samples for each class to account for class imbalance)
@@ -29,7 +33,7 @@ def generate_roc_auc(y_values_actual, predicted_probabilities, class_dict):
              different y class, and the value for each y class key is a dictionary
              containing the corresponding frp, tpr, threshold, and individual class AUC
              values for that particular y class outcome. Example output format shown below:
-
+             
              (
                  auc_average,
                  auc_weighted_average,
@@ -74,7 +78,7 @@ def generate_roc_auc(y_values_actual, predicted_probabilities, class_dict):
             y_class_array
         )
     }
-
+    
     # add individual class auc's and class names to dictionary
     for crime_class in class_labels:
         roc_curve_dict[crime_class]['auc'] = roc_auc_score(
@@ -82,15 +86,15 @@ def generate_roc_auc(y_values_actual, predicted_probabilities, class_dict):
             predicted_probabilities[:,crime_class]
         )
         roc_curve_dict[crime_class]['name'] = class_dict[crime_class]
-
+    
     # generate overall average auc's for all classes, weighted and unweighted
     auc_avg = roc_auc_score(
-        y_test, mnloglocsbal_predprob_test, multi_class='ovr', average='macro'
+        y_values_actual, predicted_probabilities, multi_class='ovr', average='macro'
     )
     auc_weighted_avg = roc_auc_score(
-        y_test, mnloglocsbal_predprob_test, multi_class='ovr', average='weighted'
+        y_values_actual, predicted_probabilities, multi_class='ovr', average='weighted'
     )
-
+    
     return auc_avg, auc_weighted_avg, roc_curve_dict
 
 
