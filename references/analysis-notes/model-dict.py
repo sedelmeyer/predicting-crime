@@ -4,6 +4,8 @@
 
 # imports required
 # requires sklearn>=v0.22 for multi-class auc
+import os
+import joblib
 import pandas as pd
 import numpy as np
 from sklearn.metrics import roc_curve, auc, roc_auc_score
@@ -365,4 +367,79 @@ def print_model_results(model_dict, accuracy='both', auc='both',
         if class_metrics in test_opt:
             print('TEST\n{}\n'.format(model_dict['class_metrics']['test'].iloc[:,:8]))
         print('\n')
+
+
+def generate_save_load_model_dict(model_dict_name, target_directory,
+                                  classifier, X_train, X_test, y_train, y_test,
+                                  class_dict, verbose=False, roc_auc=True, overwrite=False,
+                                  **kwargs):
+    """
+    Prior to running the generate_model_dict() function, this first
+    checks to determine whether a saved copy of the specified model has
+    already been saved to the specified path. 
+    
+    If no saved dict file is found the function calls generate_model_dict()
+    and saves the resulting dictionary to the specified filepath.
+    
+    If a saved dict file does exist, the function simply loads that file
+    instead of running the model again.
+    
+    NOTE: the resulting target filepath used for saving/checking for the resulting
+          model_dict is generated as:
+            
+            os.path.join(target_directory, ''.join([model_dict_name, '.joblib']))
+    
+    model_dict_name: str, specifies the desired name of the model dict object you wish
+                to generate
+    target_directory: str, the directory path in which you wish to save or check for
+                      the resulting model
+    classifier: the uninitiated sklearn classification model object you wish
+           to use (e.g. LogisticRegression, KNeighborsClassifier)
+    X_train, X_test, y_train, y_test: the datasets on which to fit and
+                                      evaluate the model
+    class_dict: dict, key values must be the class number (i.e 0, 1, 2, ...) and
+                the corresponding values must be the class name string (i.e. 'other',
+                'burlary', ...) for each respective class number
+    verbose: if True prints resulting fitted model object
+    roc_auc: if True calculates and stores roc and auc dictionaries for both train
+             and test
+    overwrite: bool, default=False, if True, generate_model_dict() will generate a new
+               dictionary regardless of whether or not the target filepath already
+               exists and overwrite any file that already exists at the specified
+               filepath
+    **kwargs: are optional classifier-specific arguments that pass directly to the model
+              while fitting
+
+    returns: dict, dictionary object containing the resulting fitted model object,
+             resulting predictions, predicted probabilities, prediction count summary tables,
+             confusion matrices, accuracy scores, and (if roc_auc=True) the AUC, weighted AUC,
+             and ROC AUC dictionary for both the training and test sets
+    """
+    filepath = os.path.join(target_directory, ''.join([model_dict_name, '.joblib']))
+    
+    if os.path.exists(filepath) and not overwrite:
+        locals()[model_dict_name] = joblib.load(filepath)
+        print(
+            '\nThe model dictionary already exists and has been LOADED from:'\
+            '\n\n\t{}\n'.format(filepath)
+        )
+    else:
+        locals()[model_dict_name] = generate_model_dict(
+            classifier,
+            X_train,
+            X_test,
+            y_train,
+            y_test,
+            class_dict,
+            verbose,
+            roc_auc,
+            **kwargs
+        )
+        dump_loc = joblib.dump(locals()[model_dict_name], filepath)
+        print(
+            '\nThe new model dictionary has been generated and SAVED to disk at:'\
+            '\n\n\t{}\n'.format(dump_loc[0])
+        )
+    
+    return locals()[model_dict_name]
 
