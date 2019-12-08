@@ -163,24 +163,46 @@ def plot_roc_all_classes(overall_auc, overall_auc_weighted, roc_curve_dict,
 
 def plot_roc_all_classes_individual(overall_auc, overall_auc_weighted, roc_curve_dict,
                                     title='ROC plotted by crime type TEST class',
-                                    savepath=None):
+                                    savepath=None, subplots=(5,2), fig_height=15,
+                                    suptitle_spacing=0.91):
     """
     Generates a set of subplot of ROC curves for all responses classes, each plotted
     individually
-
+    
     overall_auc: float, an overall average auc generated using the
                  'generate_roc_auc' function
     overall_auc_weighted: float, an overall weighted auc generated using the
                           'generate_roc_auc' function
-    roc_curve_dict: dict, an roc_curve dict generated using the 'generate_roc_auc'
+    roc_curve_dict: dict, an roc_curve dict generated using the 'generate_roc_auc' 
                     function
     title: str, specifies the title used for the plot
-    savepath: None or str, if none, .png file is NOT saved, otherwise, input the
+    savepath: None or str, if none, .png file is NOT saved, otherwise, input the 
               "filepath.png" string, indicating where you would like the image saved
-
+    subplots: tuple, default=(5,2) to plot each of the 9 crime classes,
+              provides the dimension of subplots for the figure (NOTE: currently this
+              function is only configured to plot 2 columns of subplots, therefore
+              no other value other than two is accepted for the subplots width dimension)
+    fig_height: int or float, default=15, this value is passed directly to the 'figsize'
+                parameter of plt.subplots() and determines the overall height of your plot
+    suptitle_spacing: float between 0 and 1, default=0.91,
+                      this value is passed to the 'rect' parameter for plt.tight_layout()
+                      to specify the proportion of the overall plot space to reserve for
+                      the plt.suptitle() text. If you change the fig_height parameter from
+                      the default, you may find that you need to adjust suptitle_spacing
+                      to adjust the position of your suptitle. The larger your fig_height
+                      value, the larger suptitle_spacing you will need and vice versa.
+    
     returns: A plotted image and saved .png file (if savepath is not None)
     """
-    fig, axes = plt.subplots(4, 2, figsize=(12, 14))
+    if type(subplots)!=tuple:
+        raise TypeError("'subplots' parameter must be entered as a tuple, e.g. subplots=(3,2)")
+    if subplots[1]!=2:
+        raise ValueError(
+            "'subplots' parameter columns dimension must be value=2, e.g. subplots=(5,2). "\
+            "This function is not configured to handle more or less than 2 subplots."
+        )
+    
+    fig, axes = plt.subplots(*subplots, figsize=(12, fig_height))
 
     plt.suptitle(
         ''.join(
@@ -194,8 +216,8 @@ def plot_roc_all_classes_individual(overall_auc, overall_auc_weighted, roc_curve
     )
 
     rate_values=np.arange(0,100)/100
-
-    for (i, ax), key in zip(enumerate(axes.flat), roc_curve_dict.keys()):
+    
+    for (i, ax), (j, key) in zip(enumerate(axes.flat), enumerate(roc_curve_dict.keys())):
         ax.set_title('class {}: {}'.format(key, roc_curve_dict[key]['name']), fontsize=16)
         ax.plot(rate_values, rate_values, ':', color='k', linewidth=2, alpha=.3)
 
@@ -213,8 +235,20 @@ def plot_roc_all_classes_individual(overall_auc, overall_auc_weighted, roc_curve
         ax.set_ylabel("TRUE positive rate", fontsize=14)
         ax.set_xlabel("FALSE positive rate", fontsize=14)
         ax.grid(':', alpha=0.4)
-
-    plt.tight_layout(rect=[0, 0.03, 1, 0.91])
+    
+    # hide all markings for axes if there is no corresponding subplot
+    if i < np.product(subplots)-1:
+        for pos in ['right','top','bottom','left']:
+            axes[subplots[0]-1, 1].spines[pos].set_visible(False)
+        axes[subplots[0]-1, 1].tick_params(
+            axis='x', which='both', bottom=False, top=False, labelbottom=False
+        )
+        axes[subplots[0]-1, 1].tick_params(
+            axis='y', which='both', right=False, left=False, labelleft=False
+        )
+    
+    plt.tight_layout(rect=[0, 0.03, 1, suptitle_spacing])
     if savepath:
         plt.savefig(savepath)
     plt.show();
+
