@@ -7,7 +7,9 @@ title: "Modeling using KNN Classifier"
 As an initial baseline model, we ran several multi-class Logistic Regression models on a version of our predictors outlined below, in which all non-binary predictors were standardized to adjust for variability in scale among predictors. Variations attempted while building our baseline model included both one-vs-rest and multinomial versions of the model. In addition, we ran the versions of the models without regularization and then with L1 Lasso-like regularization (but without cross-validation) to ultimately examine coefficient shrinkage and to begin understanding relationships between our response classes and each individual predictor. For reference, the best baseline model reported here was specified with the following parameters::
 
 ```py
-KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',metric_params=None, n_jobs=-1, n_neighbors=205, p=1, weights='distance'),
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', 
+                     metric_params=None, n_jobs=-1, n_neighbors=205, p=1, 
+                     weights='distance'),
 ```
 
 ## Predictors
@@ -96,6 +98,7 @@ The selected KNN model reaches an accuracy of **0.346** on the test dataset.  Be
 The predictions of the model in both train and test were distributed across the crimes which is a good sign *(an accuracy of 0.27 can simply be achieved by predicting everything is a class=6 (theft)).*
 
 ![knn_predictions_train]({{ site.url }}/figures/model-knn/knn_predictions_train.png)
+
 ![knn_predictions_test]({{ site.url }}/figures/model-knn/knn_predictions_test.png)
 
 The confusion matrix and metrics based on the confusion matrix show how the KNN model performed for each of the classes of crime.  The model appears to do especially well predicting **class=2 (drug_substances)** with a ``True Positive Rate (TPR)`` of **0.499**.
@@ -108,15 +111,20 @@ We had to make some modifications to allow AUC scores to be calculated for multi
 The AUC curves below confirm what we saw in the confusion matrix that the model is especially good at predicting **class=2 (drug_substances)**.  
 
 ![knn_auc-curves_combined]({{ site.url }}/figures/model-knn/knn_auc-curves_combined.png)
+
 ![knn_auc-curves_individual]({{ site.url }}/figures/model-knn/knn_auc-curves_individual.png)
 
 ## Different Subsets of the Data
-We are using the full crime dataset along with customized categories that we created.  How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve.  For example below are the results for a KNN model run on a subset of the data with three classes.
+We are using the full crime dataset along with customized categories that we created.  How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve.  Our framework is extensible enough to accommodate for different subsets and categories based on requirements.  For example below are the results for a KNN model run on a subset of the data with three classes.
 
 ``Testing Accuracy`` = **0.603**
+
 ``AUC Average`` = **0.756**
+
 ``Weighted AUC Average`` = **0.741**
 
 ![knn-subset_confusion-matix]({{ site.url }}/figures/model-knn/knn-subset_confusion-matix.png)
+
 ![knn-subset_confusion-matrix_calcs]({{ site.url }}/figures/model-knn/knn-subset_confusion-matrix_calcs.png)
+
 ![knn-subset_auc-curves_combined]({{ site.url }}/figures/model-knn/knn-subset_auc-curves_combined.png)
