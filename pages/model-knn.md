@@ -2,10 +2,15 @@
 title: "Modeling using KNN Classifier"
 ---
 
-[The notebook used to develop this baseline model can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/025_MODEL_knn.ipynb)
+[The KNN notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/025_MODEL_knn.ipynb)
 
-As an initial baseline model, we ran several multi-class Logistic Regression models on a version of our predictors outlined below, in which all non-binary predictors were standardized to adjust for variability in scale among predictors. :
+After exploring the baseline model we explored a KNN Classifier model.  KNN models can be quite processor-intensive so model tuning was performed on a 10% sample of the dataset.  The best KNN model was then fit to the full dataset and analyzed.  The KNN model with tuning does a decent job with the data and reaches a max accuracy of approximately 0.35 with nine classes of crime *(this is similar to our our models)*.
 
+KNN models are affected by the scale of the predictor so we used scaled data to train (``X_train_scaled`` and test (``X_test_scaled``).  A scaler (``X_scaler``) is included in our repo to convert the predictors to their original values.   
+
+> KNN is not the best for determining top predictors *(please refer to our Logistic Regression and Decision Tree models for information on top predictors)*.
+
+For reference, the best KNN model reported here was specified with the following parameters:
 ```py
 KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski', 
                      metric_params=None, n_jobs=-1, n_neighbors=205, p=1, 
@@ -57,6 +62,8 @@ The AUC curves below confirm what we saw in the confusion matrix that the model 
 ![knn_auc-curves_individual]({{ site.url }}/figures/model-knn/knn_auc-curves_individual.png)
 
 ## Different Subsets of the Data
+[The KNN subset data notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/025_MODEL_knn_subset.ipynb)
+
 We are using the full crime dataset along with customized categories that we created.  How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve.  Our framework is extensible enough to accommodate for different subsets and categories based on requirements.  
 
 For example below are the results for a KNN model run on a subset of the data with three classes:
@@ -132,4 +139,3 @@ property ownership.
 
 13. **Owner-occupied residential property ratio, 3-year CAGR**
 - Measures trend changes in local ownership for the census tract at the time of observation.
-
