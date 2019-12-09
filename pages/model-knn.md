@@ -100,7 +100,9 @@ The predictions of the model in both train and test were distributed across the 
 ![knn_predictions_train]({{ site.url }}/figures/model-knn/knn_predictions_train.png)
 ![knn_predictions_test]({{ site.url }}/figures/model-knn/knn_predictions_test.png)
 
-The confusion matrix and metrics based on the confusion matrix show how the KNN model performed for each of the classes of crime.  The model appears to do especially well predicting class=2 (drug_substances).
+The confusion matrix and metrics based on the confusion matrix show how the KNN model performed for each of the classes of crime.  The model appears to do especially well predicting class=2 (drug_substances) with a True Positive Rate (TPR) of **0.499**.
 
 ![knn_confusion-matix]({{ site.url }}/figures/model-knn/knn_confusion-matix.png)
-![knn_confusion-matix]({{ site.url }}/figures/model-knn/knn_confusion-matix.png)
+![knn_confusion-matrix_calcs]({{ site.url }}/figures/model-knn/knn_confusion-matrix_calcs.png)
+
+We had to make some modifications to allow AUC scores to be calculated for multi-class predictions *(requires 0.22 version of sklearn)*. 
