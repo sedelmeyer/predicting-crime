@@ -7,9 +7,7 @@ title: "Modeling using KNN Classifier"
 As an initial baseline model, we ran several multi-class Logistic Regression models on a version of our predictors outlined below, in which all non-binary predictors were standardized to adjust for variability in scale among predictors. Variations attempted while building our baseline model included both one-vs-rest and multinomial versions of the model. In addition, we ran the versions of the models without regularization and then with L1 Lasso-like regularization (but without cross-validation) to ultimately examine coefficient shrinkage and to begin understanding relationships between our response classes and each individual predictor. For reference, the best baseline model reported here was specified with the following parameters::
 
 ```py
-KNeighborsClassifier(algorithm='auto', leaf_size=30,
-					 metric='minkowski',metric_params=None, n_jobs=-1, 
-					 n_neighbors=205, p=1, weights='distance'),
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',metric_params=None, n_jobs=-1, n_neighbors=205, p=1, weights='distance'),
 ```
 
 ## Predictors
