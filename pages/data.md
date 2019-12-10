@@ -89,3 +89,43 @@ Just note that in this particular grouping of classes, `violence-aggression` has
 
 # Locational distributions of crime records
 
+The plot below illustrates the distribution of crime records by each record's associated geo-location coordinates in the City of Boston. By color-coding each plotted location point according to its associated `crime-type` class, we can see that crime types demostrate heavy spatial mixing, with each of the different `crime-type` classes having occured in close proximity or overlapping one another over time from the year 2016 through 2019.
+
+![crime-locs]({{ site.url }}/figures/features/crime-locs-all.png)
+
+![crime-locs-by-type]({{ site.url }}/figures/features/crime-locs-all-by-type.png)
+
+If we further subset our training records by Boston neighborhood, we can begin to examine bit more closely, whether this spatial mixing of classes might hold for all areas of the city, as well as how they might vary by particular neighborhood.
+
+First, we can see that the greatest proportion of all total records occured in the Dorchester neighborhood, followed next by Roxbury, and then others.
+
+![crime-by-hood]({{ site.url }}/figures/features/crime-by-neighborhood-barplot.png)
+
+Examining this neighborhood-by-neighborhood breakdown a little more closely, we can see which particular neighborhoods experienced larger proportions of one `crime-type` versus another `crime-type` proportional each individual neighborhood's own crime incidents.
+
+For example, in the plot below we can see that Back Bay experienced the highest proportion of `theft` among their own crime incidents when compared to other neighborhoods. The West End leads with the highest proportion of `violence-aggression` type crimes, whereas Beacon Hill has the lowest incidence of those crimes. And, Mattapan appears to lead with the highest in-neighborhood proportion of `harrassment-disturbance` incidents, while there are relatively very few in the Leather District.
+
+![crime-by-hood-type]({{ site.url }}/figures/features/crime-by-neighborhood-and-type-barplot.png)
+
+By looking at spatially mapped crime incidents in individual neighborhoods, we can also see a bit more clearly the overlapping nature of crime records by class. Starting with Dorchester, which we know to have the highest overall number of records, we can see just how densely mixed the crime incidents are.
+
+![crime-dorchester]({{ site.url }}/figures/features/crime-locs-all-by-type-Dorchester.png)
+
+And, looking at Jamaica Plain and East Boston, as they are plotted below, we can see visually how crimes are more heavily clustered in the more heavily populated areas of each neighborhood.
+
+![crime-jamaica-plain]({{ site.url }}/figures/features/crime-locs-all-by-type-JamaicaPlain.png)
+
+![crime-east-boston]({{ site.url }}/figures/features/crime-locs-all-by-type-EastBoston.png)
+
+Even in Neighborhoods with a more sparse spatial distribution of crime records, we can still see evidence of heavy spatial mixing among `crime-type` classes.
+
+![crime-north-end]({{ site.url }}/figures/features/crime-locs-all-by-type-NorthEnd.png)
+
+![crime-w-roxbury]({{ site.url }}/figures/features/crime-locs-all-by-type-WestRoxbury.png)
+
+**CONCLUSION:**
+
+These observations suggest to us that purely locational predictors such as Latitude and Longitude alone will be insufficient for generating accurate predictions for each `crime-type` class.
+
+# Geographic change in crime records over time
+
