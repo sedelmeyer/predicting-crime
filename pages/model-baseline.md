@@ -30,40 +30,36 @@ Listed below are the predictors used in our baseline model. Additional predictor
 - The next iteration of this model will use actual sunset/sunrise times (as recorded by local NOAA weather
 stations) for the date the incident occurred to specify this predictor.
 
-4. **Median residential property value**
-- This is measured by census tract area in which and year when the observation occurred.
+1. **Median residential property value**
+    - This provides the annual median property value for all residential properties in each census tract.
 
-5. **Median residential value, 3-year CAGR**
-- This provides a measure of gentrification/development trend activity in the observation’s census tract area
-and year of occurrence.
+2. **Median residential value, 3-year CAGR**
+    - This provides a measure of gentrification/development trend activity in the observation’s census tract area and year of occurrence.
 
-6. Disparity of residential property values (Gini coefficient)
-○ For this feature “disparity” is measured using the Gini coefficient as a measure of economic inequality in
-the observation’s census tract and year.
-7. Disparity change trend for residential property values (Gini 3-year CAGR)
-○ This provides a measure of growing or shrinking inequality in the observation’s census tract area and year
-of occurrence.
-8. Commercial properties mix ratio
-○ This provides a measure as to how “commercial” the corresponding census tract is, as measured by total
-assessed commercial property value in the tract divided by the total assessed value for all property in the
-tract during the given observation year.
-9. Commercial properties mix ratio, 3-year CAGR
-○ Provides a measure of how much more or less commercial the tract is becoming at the time of the
-observation.
-10. Industrial properties mix ratio
-○ This provides a measure as to how “industrial” the corresponding census tract is, as measured by total
-assessed industrial property value in the tract divided by the total assessed value for all property in the
-tract during the given observation year.
-11. Industrial properties mix ratio, 3-year CAGR
-○ Provides a measure of how much more or less industrial the tract is becoming at the time of the
-observation.
-12. Owner-occupied residential property ratio
-○ What proportion of the residential and mixed-use properties are owner-occupied in the corresponding
-census tract during the given observation year.
-○ To a degree this acts as a measure of local ownership as well as a potential indicator of absentee
-property ownership.
-13. Owner-occupied residential property ratio, 3-year CAGR
-○ Measures trend changes in local ownership for the census tract at the time of observation.
+3. **Median residential property value Gini coefficient**
+    - This feature is used to measure "disparity" or inequality of median residential property values within each census tract.
+
+4. **Median residential property value Gini coefficient, 3-year CAGE**
+    - This provides a measure of growing or shrinking inequality in the observation’s census tract area and year of occurrence.
+
+5. **Commercial properties mix ratio**
+    - This provides a measure as to how “commercial” the corresponding census tract is each year, as measured by total assessed commercial property value in the tract divided by the total assessed value for all property in the tract during the given observation year.
+
+6. **Commercial properties mix ratio, 3-year CAGR**
+    - This provides a measure of how much more or less commercial the tract is becoming at the time of the observation.
+
+7. **Industrial properties mix ratio**
+    - This provides a measure as to how “industrial” the corresponding census tract is, as measured by total assessed industrial property value in the tract divided by the total assessed value for all property in the tract during the given observation year.
+
+8. **Industrial properties mix ratio, 3-year CAGR**
+    - This provides a measure of how much more or less industrial the tract is becoming at the time of the observation.
+
+9. **Owner-occupied residential property ratio**
+    - This is the proportion of the residential and mixed-use properties that are owner-occupied in each census tract during each given observation year.
+    - To a degree this acts as a measure of local ownership as well as a potential indicator of absentee property ownership at the census tract-level.
+
+10. **Owner-occupied residential property ratio, 3-year CAGR**
+    - Measures trend changes in local ownership for the census tract at the time of observation.
 
 ## Model results
 
