@@ -166,4 +166,114 @@ To view similar plots for all `crime-type` classes, [please review the original 
 
 These locational change by `crime-type` findings would suggest to us that, by including time-based predictors in our models [such as year-based property-related metrics such as those described in detail on our property assessment data EDA page](data-property.md), should increase the overall predictive accuracy of our models.
 
+# Pair-wise relationship strength between predictors and `crime-type` classes
+
+Looking beyond just location based and time-based predictors related to location, we will now examine the pair-wise relationships between our individual predictors versus each of our `crime-type` classes. To accomplish this, we will measure the strength of these relationships by calculating t-statistics for each of these pairings. Effectively, this will look in isolation at each predictor and class combination to determine the strength of that particular predictor's strength in predicting the that class outcome in a "one-vs-rest" fashion.
+
+Outlined below are the top 6 predictors, as measured using t-statistic for each `crime-type` class:
+
+```
+The predictors with the largest t-statistics related to each crime-type class are:
+
+class 0: other
+
+owner-occupied-ratio     22.273876
+lat                      18.267198
+poverty-rate             17.126022
+median-age               17.011709
+enrolled-college-perc    16.391080
+streetlights-night        9.755394
+
+
+class 1: burglary
+
+commercial-mix-ratio            15.763925
+night                           14.720921
+lon                             13.690131
+less-than-high-school-perc      10.112486
+college-near                     9.622414
+streetlights-night               9.404400
+
+
+class 2: drugs-substances
+
+night                         34.348157
+streetlights-night            27.675943
+industrial-mix-ratio          26.967262
+Sunday                        25.628384
+less-than-high-school-perc    23.495035
+enrolled-college-perc         20.393787
+
+
+class 3: fraud
+
+less-than-high-school-perc           16.961052
+Sunday                               16.769208
+bachelor-degree-or-more-perc         14.736636
+residential-median-value-3yr-cagr    14.617063
+median-income                        11.651747
+enrolled-college-perc                11.110884
+
+
+class 4: harassment-disturbance
+
+residential-gini-coef           64.197763
+bachelor-degree-or-more-perc    64.109761
+enrolled-college-perc           63.756338
+commercial-mix-ratio            63.103933
+residential-median-value        57.114483
+college-near                    57.014002
+
+
+class 5: robbery
+
+less-than-high-school-perc           11.036563
+streetlights-night                   10.144345
+lon                                   8.767687
+night                                 8.125654
+bachelor-degree-or-more-perc          7.530712
+residential-median-value-3yr-cagr     7.502349
+
+
+class 6: theft
+
+bachelor-degree-or-more-perc    68.596304
+residential-gini-coef           61.648668
+enrolled-college-perc           60.336105
+residential-median-value        59.614084
+less-than-high-school-perc      54.186831
+college-near                    50.522663
+
+
+class 7: vandalism-property
+
+commercial-mix-ratio            26.472810
+college-near                    22.720740
+residential-median-value        21.418503
+residential-gini-coef           20.612366
+enrolled-college-perc           19.228918
+owner-occupied-ratio            12.646433
+
+
+class 8: violence-aggression
+
+less-than-high-school-perc      20.034071
+bachelor-degree-or-more-perc    17.884468
+median-income                   15.808026
+streetlights-night              15.316972
+residential-gini-coef           15.112320
+poverty-rate                    14.026041
+```
+
+Now, for the sake of consistency with the previous section of this EDA, we will use plots to examine these top 5 predictors for the sames subset of predictors `burglary`, `drugs-substances`, and `harassment-disturbance`.
+
+![tstat-burg]({{ site.url }}/figures/features/tstat-top-pred-burglary.png)
+
+![tstat-drug]({{ site.url }}/figures/features/tstat-top-pred-drugs-substances.png)
+
+![tstat-harass]({{ site.url }}/figures/features/tstat-top-pred-harassment-disturbance.png)
+
+**PRELIMINARY CONCLUSIONS:**
+
+In above summary tables and plots, we can see a fairly broad mixture of top 5 predictors across all of our `crime-type` classes. This leads us to believe that we may have a suitable variety of predictors for the classes we hope to predict. However, while some `crime-type` classes such as `theft` and `harassment-disturbance` have top predictors with t-statistics exceeding 60, some classes such as `violence-aggression`, `robbery`, and `burglary` have much smaller top t-statistic values less than 25. This suggests those classes may be prove to be harder to predict accurately using this set of predictors. However, what's not accounted for in these t-statistic measures is the potential interaction effect of trying to generate predictions for each specific `crime-type` class with multiple predictors at once.
 
