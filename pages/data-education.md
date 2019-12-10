@@ -23,6 +23,6 @@ We have examined public K-12 schools, non-public K-12 schools, as well as colleg
 
 **All Education Institutions:**
 
-The plot below illustrates the combined **270 education institutions** differentiated by color. All education institutions include geographical coordinates and are ready to be utilized within our models.
+> The plot below illustrates the combined **270 education institutions** differentiated by color. All education institutions include geographical coordinates and are ready to be utilized within our models.
 
 ![all-education-map]({{ site.url }}/figures/schools/allEducationInstitutions.png)
