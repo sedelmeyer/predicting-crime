@@ -2,7 +2,12 @@
 title: "City of Boston Streetlights Data EDA"
 ---
 
-[The streelights notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/017_EDA_street_lights.ipynb)
+## Source materials 
+
+Here is a list with links to the jupyter notebook and original dataset used to generate the findings on this page:
+
+- [The streelights notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/017_EDA_street_lights.ipynb)
+- [The original City of Boston street light data can be found online here.](https://data.boston.gov/dataset/streetlight-locations)
 
 There are **74,065** streetlights listed by their lat and long in this dataset. All records are of type LIGHT so the only useful information in this dataset is the location of the light.   Given this we first plotted out each of the lights on a map of the city of Boston. The map shows a sparse distribution of light locations in the lower-left corner of the map. 
 
