@@ -26,7 +26,7 @@ By matching Parcel IDs (PIDs) for the subset of years with already reported coor
 
 With these matched coordinates, we were able to explore the dataset for features of interest that we could aggregate within geospatial regions. From this, we engineered a set of 10 property-based predictors, each providing a census tract-level metric per-year to give (1) a point-in-time annual measure for that tract-level geographic area, as well as (2) a 3-year compound annual growth rate (CAGR) to measure shifting property demographics for the area.
 
-The full set of census tract-level engineered features derived from the property assessment dataset are:
+The full set of census tract-level engineered features derived from the property assessment dataset are listed below. A more in-depth examination of several of these specific features [can be found here as part of the EDA conducted on the final training set](eda.md).
 
 1. **Median residential property value**
     - This provides the annual median property value for all residential properties in each census tract.
@@ -59,6 +59,7 @@ The full set of census tract-level engineered features derived from the property
 10. **Owner-occupied residential property ratio, 3-year CAGR**
     - Measures trend changes in local ownership for the census tract at the time of observation.
 
+# Feature observations
 
 described below in the “Baseline Model” section of this report (listed as predictors 4 through 13). Here are two plots illustrating a sample of these engineered features:
 
