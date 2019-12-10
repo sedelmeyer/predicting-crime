@@ -6,9 +6,9 @@ title: "City of Boston Education Data EDA"
 
 We have examined public K-12 schools, non-public K-12 schools, as well as colleges and universities in the Boston area. We’ve cleaned and prepared 
 
-- 131 Public K-12 Boston area schools
-- 82 non-public schools
-- 57 colleges/universities. 
+- **131** Public K-12 Boston area schools
+- **82** non-public schools
+- **57** colleges/universities. 
 
 
 ## Distributions on Boston Map
@@ -22,6 +22,7 @@ We have examined public K-12 schools, non-public K-12 schools, as well as colleg
 ![college-university-map]({{ site.url }}/figures/schools/collegeUniversities.png)
 
 **All Education Institutions:**
+
 The plot below illustrates the combined **270 education institutions** differentiated by color. All education institutions include geographical coordinates and are ready to be utilized within our models.
 
 ![all-education-map]({{ site.url }}/figures/schools/allEducationInstitutions.png)
