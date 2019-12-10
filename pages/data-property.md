@@ -1,5 +1,5 @@
 ---
-title: "City of Boston Property Assessment Data EDA"
+title: "City of Boston Property Assessment Data"
 ---
 
 # Source materials
@@ -37,7 +37,7 @@ The full set of census tract-level engineered features derived from the property
 3. **Median residential property value Gini coefficient**
     - This feature is used to measure "disparity" or inequality of median residential property values within each census tract.
 
-4. **Median residential property value Gini coefficient, 3-year CAGE**
+4. **Median residential property value Gini coefficient, 3-year CAGR**
     - This provides a measure of growing or shrinking inequality in the observation’s census tract area and year of occurrence.
 
 5. **Commercial properties mix ratio**
@@ -59,10 +59,56 @@ The full set of census tract-level engineered features derived from the property
 10. **Owner-occupied residential property ratio, 3-year CAGR**
     - Measures trend changes in local ownership for the census tract at the time of observation.
 
-# Feature observations
+# Engineered feature observations
 
-described below in the “Baseline Model” section of this report (listed as predictors 4 through 13). Here are two plots illustrating a sample of these engineered features:
+Shown below are a set of initial observations of the resulting tract-level engineered features, separated out by each respective 2019 point-in-time metric along with its corresponding 3-year change measure.
+
+However, before drilling down to a feature by feature view of the data, it will be useful to first level-set the overall number of property assessment records as they are distributed among neighborhoods and census tracts. Note in the plots directly below, that similar to what we saw [in the crime data evaluation shown here](data-crime.md), we once again see the largest number of records distributed in Dorchester. Similarly, when we break down these distributions to the more granular census tract-level, we can see a change in overall distribution, with the expected high-density area located as a portion of the "Downtown" neighborhood, and surprisingly, another high density area in the western most tract of West Roxbury. 
+
+![property-by-hood]({{ site.url }}/figures/property/property-records-by-neighborhood.png)
+
+![property-by-tract]({{ site.url }}/figures/property/property-records-by-census%20tract.png)
+
+# Median residential property value and 3-year CAGR
+
+In the most recent year reported in the property assessment dataset (2019), the census tracts with the residential properties with the highest median assessed values appear to be heavily clustered in the Back Bay and Beacon Hill neighborhoods of the city, with a small additional pocket of high value residential properties located in one of the tracts corresponding with the location of the Longwood neighborhood.
+
+However, when we view the 3-year change in median assessed residential property values, we see a very different distribution (the second plot below). In that view of the data, we can see that the properties most rapidly growing in relative median value are located in the census tracts corresponding with the East Boston neighborhood, as well as few other areas of relatively high growth in Longwood, Mission Hill, as well as at the border of Roxbury and Dorchest. Interestingly, the high growth in some of these areas correspond with what we know to be high rates of gentrification and residential real estate development in some of these areas. 
+
+![property-median]({{ site.url }}/figures/property/property-residential-median-value-by-census%20tract.png)
+
+![property-median-3yr]({{ site.url }}/figures/property/property-residential-median-3yr-CAGR-by-census%20tract.png)
+
+# Median residential property value Gini coefficient and 3-year CAGR
+
+As for inequality or disparity in residential median assessed property values, Back Bay and Beacon Hill both appear to have a high concentration of high Gini coefficient census tracts. This high concentraion also appears to spill over into Downtown, the South End, and the North End. However, when we look at 3-year changing trends in median value disparity (the second plot below), we see very distinct concentrations of high Gini growth in East Boston, Hyde Park, South Boston, and Allston census tracts.
 
 ![property-median-gini]({{ site.url }}/figures/property/property-residential-median-gini-by-census%20tract.png)
 
 ![property-median-gini-3yr]({{ site.url }}/figures/property/property-residential-median-gini-CAGR-by-census%20tract.png)
+
+# Commercial properties mix ratio and 3-year CAGR
+
+For commercial properties density, measured as the ratio of assessed commercial properties versus all properties by census tract, we can see high concentrations of commercial density in Back Bay and the South End along the area comprising the Newbury Street shopping district, in Downtown, as well as in the far northern edge of East Boston.
+
+In terms of shifting trends in commercial density among census tracts in Boston (the second plot below), the Waterfront and South Boston area nearest to the Waterfront clearly stands out as the area of greatest commercial development.
+
+![property-commercial]({{ site.url }}/figures/property/property-commercial-mix-ratio-by-census%20tract.png)
+
+![property-commercial-3yr]({{ site.url }}/figures/property/property-commercial-mix-3yr-CAGR-by-census%20tract.png)
+
+# Industrial properties mix ratio and 3-year CAGR
+
+For industrial proprties density, measured similarly to the commercial density metric described in the section above, the western most boundary of South Boston clearly stands out as the area with the greatest relative density of industrial property. However, when it comes to recent changes in industrial density among all census tracts, the North End, Waterfront/South Boston border, and a single tract toward the southern border of West Roxbury stand out as the fastest growing. While pockets in Allston, Brighton, East Bston, the South End, and South Boston appear to be becoming less industrially concentrated.
+
+![property-industrial]({{ site.url }}/figures/property/property-industrial-mix-ratio-by-census%20tract.png)
+
+![property-industrial-3yr]({{ site.url }}/figures/property/property-industrial-mix-3yr-CAGR-by-census%20tract.png)
+
+# Owner-occupied residential property ratio and 3-year CAGR
+
+Lastly, in terms of owner-occupied residential and mixed-use properties throughout the City of Boston, the highest levels of density appear to occur largely along the southern most neighborhoods of the city (Mattapan, Hyde Park, West Roxbury, Roslindale), as well as in the north in Charlestown. Also noteable is the high concentration of owner-occupied properties in the easter area of Allston, and area where the proportion of owner-occupied properties has been rapidly growing over the prior three years (as is shown in the second plot below). Areas of Longwood and Fenway appear to be decreasing most rapidly in owner-occupied residential and mixed-use properties.
+
+![property-owner]({{ site.url }}/figures/property/property-owner-occupied-ratio-by-census%20tract.png)
+
+![property-owner-3yr]({{ site.url }}/figures/property/property-owner-occupied-ratio-3yr-CAGR-by-census%20tract.png)
