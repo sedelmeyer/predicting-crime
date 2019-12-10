@@ -1,5 +1,5 @@
 ---
-title: "City of Boston Liquor License Data EDA"
+title: "City of Boston Liquor License EDA"
 ---
 
 [The liquor data prep notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/012_liquor_data_prep.ipynb)
