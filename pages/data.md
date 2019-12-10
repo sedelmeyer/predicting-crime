@@ -6,7 +6,7 @@ title: "Data"
 
 Here is a list with links to the jupyter notebook and original datasets used to generate the findings on this page:
 
-- [The EDA notebook used to generate the below findings can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/023_EDA_training_data.ipynb) 
+- [The EDA notebook used to generate the below findings can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/023_EDA_model_data.ipynb) 
 
 - [The notebook used to merge the engineered features examined in this EDA notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/022_FEATURES_build_model_features.ipynb)
 
@@ -20,11 +20,10 @@ To view the preliminary EDA findings and summaries of the feature engineering ac
 1. [Property assessment data](data-property.md)
 1. [Streetlight location data](data-lights.md)
 1. NOAA weather data
-1. Neighborhood demographics data
-1. Liquor licensing data
-1. Public and non-public schools data
-1. Universities and colleges data
-1. Property violations
+1. [Neighborhood demographics data](data-demographics.md)
+1. [Liquor licensing data](data-liquor.md)
+1. [Educational institutions](data-education.md)
+1. [Property violations](data-violations.md)
 1. Various City of Boston shape files
     - These include Census tracts, Boston neighborhoods, Zip codes, Street segments, and Open spaces
 
@@ -53,15 +52,15 @@ This `crime-type` variable was derived from Crime Incident Records data maintain
 
 ```
 crime-type 	crime-type-name 	  crime-count
-0 	        other 	                    6,321
-1 	        burglary 	                5,664
-2 	        drugs-substances 	       13,082
-3 	        fraud 	                    9,587
-4 	        harassment-disturbance 	   20,767
-5 	        robbery 	                3,423
-6 	        theft 	                   34,555
-7 	        vandalism-property 	       13,710
-8 	        violence-aggression 	   21,243
+0 	        other                       6,321
+1 	        burglary                    5,664
+2 	        drugs-substances           13,082
+3 	        fraud                       9,587
+4 	        harassment-disturbance     20,767
+5 	        robbery                     3,423
+6 	        theft                      34,555
+7 	        vandalism-property         13,710
+8 	        violence-aggression        21,243
 ```
 
 Once our data was subsetted, classes were filtered and consolidated, our final engineered features were merged with the crime incident data, and any records with missing data for any engineered features were removed, we were left with a dataset containing **160,440 observed crime records.**
@@ -75,10 +74,10 @@ Please note that we have also performed a secondary subsetting of `crime-type` c
 We mention this secondary subsetting of classes here primarily becuase this additional subset is examined via PCA in a later section of this EDA. The seconday subsetting of classes can be summarized as such:
 
 ```
-crime-type 	crime-type-name 	  crime-count
-0 	        drugs-substances 	       13,082
-1 	        theft 	                   34,555
-2 	        violence-aggression 	   24,666
+crime-type 	crime-type-name 	   crime-count
+0 	        drugs-substances            13,082
+1 	        theft                       34,555
+2 	        violence-aggression         24,666
 ```
 
 Just note that in this particular grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
@@ -123,9 +122,48 @@ Even in Neighborhoods with a more sparse spatial distribution of crime records, 
 
 ![crime-w-roxbury]({{ site.url }}/figures/features/crime-locs-all-by-type-WestRoxbury.png)
 
-**CONCLUSION:**
+**PRELIMINARY CONCLUSION:**
 
 These observations suggest to us that purely locational predictors such as Latitude and Longitude alone will be insufficient for generating accurate predictions for each `crime-type` class.
 
-# Geographic change in crime records over time
+# Locational change in crime records over time
+
+As was discovered during [the initial EDA on the raw crime incidents records analysis](data-crime.md), to meaningfully plot choropleth distributions of crime records, we must do so with a sufficiently granular set of geographic areas. As is shown below, at the neighborhood level, the disproportionately high volume of crime records in Dorchester overwhelm the plotted distribution. However, this same level of aggregation presents a very different look when we consider the 4-year annual neighborhood-by-neighborhood change in proportion of crime records from 2016 to 2019 as is shown in the second plot below. There we can see that Dorchester is actually decreasing in overall proportion, while the South End, Roxbury, Downtown, South Boston, and Mattapan are all increasing.
+
+![crime-hood-choro]({{ site.url }}/figures/features/crime-records-by-neighborhood.png)
+
+![crime-hood-choro-4yr]({{ site.url }}/figures/features/crime-records-change-by-neighborhood.png)
+
+Then, by plotting with a more granular shape area such as census tract, we can see much more specifically, with a set of smaller sub-regions, where the highest concentration of crime incidents have occured, as well as very specifically, where they are increasing the most.
+
+![crime-tract-choro]({{ site.url }}/figures/features/crime-records-by-census%20tract.png)
+
+![crime-tract-choro-4yr]({{ site.url }}/figures/features/crime-records-change-by-census%20tract.png)
+
+Therefore, for the next set of plots we will use census tract areas for plotting aggregated summary statistics examining 4-year change in locational crime record proportions by `crime-type` class (for just a subset of our classes to preserve space), we will use census tracts as our level of aggregation.
+
+Our first example shown below are `burglary` crime records. Here we can see that, while there are particular "hotspots" for burglaries represented in our dataset Downtown and in Allston, when we view the same records in respect to their 4-year change in propoprtions, a different set of locational relationships emerge, with the same Allston tract proportion dropping relatively heavily over time.
+
+![crime-tract-burg]({{ site.url }}/figures/features/ccrime-records-by-census%20tract-burglary.png)
+
+![crime-tract-burg-4yr]({{ site.url }}/figures/features/crime-records-change-by-census%20tract-burglary.png)
+
+Next, looking at `drugs-substances` crime records, we can see a different distribution of hotspots overall, with particulaly high 4-year growth in the tract straddling the South Boston, South End, and Roxbury borders.
+
+![crime-tract-drug]({{ site.url }}/figures/features/ccrime-records-by-census%20tract-drugs-substances.png)
+
+![crime-tract-drug-4yr]({{ site.url }}/figures/features/crime-records-change-by-census%20tract-drugs-substances.png)
+
+Then, when we look at `harassment-disturbance` records, another distribution emerges, more heavily distributed in tracts corresponding to Dorchester, Roxbury, Mattapan, and Hyde Park. In this case, the 4-year growth is most heavily focused in the Hyde Park tract bordering Mattapan, with Dorchester dropping most rapidly. 
+
+![crime-tract-harass]({{ site.url }}/figures/features/ccrime-records-by-census%20tract-harassment-disturbance.png)
+
+![crime-tract-harass-4yr]({{ site.url }}/figures/features/crime-records-change-by-census%20tract-harassment-disturbance.png)
+
+To view similar plots for all `crime-type` classes, [please review the original notebook in which these plots were produced, which can be found online here](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/023_EDA_model_data.ipynb).
+
+**PRELIMINARY CONCLUSIONS:**
+
+These locational change by `crime-type` findings would suggest to us that, by including time-based predictors in our models [such as year-based property-related metrics such as those described in detail on our property assessment data EDA page](data-property.md), should increase the overall predictive accuracy of our models.
+
 
