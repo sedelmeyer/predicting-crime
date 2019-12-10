@@ -9,7 +9,7 @@ Below is a list of ​ Boston.gov​ data sources investigated as part of our in
 1. Crime incident data
 1. Property assessment data
     - See the accompanying EDA for this dataset [here](data-property.md).
-1. Streetlight location data
+1. [Streetlight location data](data-lights.md)
 1. Street Address Management (SAM) system data
 1. Neighborhood demographics data
 1. Liquor licensing data
