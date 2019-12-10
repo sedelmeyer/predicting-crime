@@ -144,19 +144,19 @@ Therefore, for the next set of plots we will use census tract areas for plotting
 
 Our first example shown below are `burglary` crime records. Here we can see that, while there are particular "hotspots" for burglaries represented in our dataset Downtown and in Allston, when we view the same records in respect to their 4-year change in propoprtions, a different set of locational relationships emerge, with the same Allston tract proportion dropping relatively heavily over time.
 
-![crime-tract-burg]({{ site.url }}/figures/features/ccrime-records-by-census%20tract-burglary.png)
+![crime-tract-burg]({{ site.url }}/figures/features/crime-records-by-census%20tract-burglary.png)
 
 ![crime-tract-burg-4yr]({{ site.url }}/figures/features/crime-records-change-by-census%20tract-burglary.png)
 
 Next, looking at `drugs-substances` crime records, we can see a different distribution of hotspots overall, with particulaly high 4-year growth in the tract straddling the South Boston, South End, and Roxbury borders.
 
-![crime-tract-drug]({{ site.url }}/figures/features/ccrime-records-by-census%20tract-drugs-substances.png)
+![crime-tract-drug]({{ site.url }}/figures/features/crime-records-by-census%20tract-drugs-substances.png)
 
 ![crime-tract-drug-4yr]({{ site.url }}/figures/features/crime-records-change-by-census%20tract-drugs-substances.png)
 
 Then, when we look at `harassment-disturbance` records, another distribution emerges, more heavily distributed in tracts corresponding to Dorchester, Roxbury, Mattapan, and Hyde Park. In this case, the 4-year growth is most heavily focused in the Hyde Park tract bordering Mattapan, with Dorchester dropping most rapidly. 
 
-![crime-tract-harass]({{ site.url }}/figures/features/ccrime-records-by-census%20tract-harassment-disturbance.png)
+![crime-tract-harass]({{ site.url }}/figures/features/crime-records-by-census%20tract-harassment-disturbance.png)
 
 ![crime-tract-harass-4yr]({{ site.url }}/figures/features/crime-records-change-by-census%20tract-harassment-disturbance.png)
 
