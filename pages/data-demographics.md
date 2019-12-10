@@ -9,7 +9,7 @@ By Boston neighborhood we have successfully pulled together demographic data in 
 - Housing Tenure
 - Household Income
 - Poverty Rate
-- Educational Attainment | School Enrollment
+- Educational Attainment/School Enrollment
 
 For our **17 identified neighborhoods** we have created one master data frame including over **70 features** granting us flexibility for model experimentation. 
 
