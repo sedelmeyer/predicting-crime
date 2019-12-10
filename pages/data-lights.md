@@ -7,6 +7,7 @@ title: "City of Boston Streetlights Data EDA"
 Here is a list with links to the jupyter notebook and original dataset used to generate the findings on this page:
 
 - [The streelights notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/017_EDA_street_lights.ipynb)
+
 - [The original City of Boston street light data can be found online here.](https://data.boston.gov/dataset/streetlight-locations)
 
 ## Summary and challenges
