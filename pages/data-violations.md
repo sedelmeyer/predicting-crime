@@ -1,5 +1,5 @@
 ---
-title: "City of Boston Property Violations Data EDA"
+title: "City of Boston Property Violations EDA"
 ---
 
 [The property violations notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/016_EDA_property_violations.ipynb)
