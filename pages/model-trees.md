@@ -8,22 +8,22 @@ title: "Modeling using Decision Trees"
 ## Model tuning
 
 
-**Model 1** 
+**Decision Tree Model** 
 
 ![trees_dif_depths]({{ site.url }}/figures/model-trees/trees_dif_depths.PNG)
 
 
-[Handlebars templates](http://handlebarsjs.com/)
 
-**Model 2** 
+**Top Predictors** 
 
+**Overfitting** 
 
-**Model 3** was run with 
+**Bagging**
+**Bootstraps Affects & Bagging Ensemble's Performance**
+**Random Forests**
+***Accuracy Comparison:***
+**Boosting**
+**Best Model Results**
 
-
-
-## Model results
-We then took our best 
-
-
-
+#### Confusion matrices
+### AUC
