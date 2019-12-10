@@ -10,7 +10,8 @@ title: "Modeling using Decision Trees"
 
 **Model 1** 
 
-![trees_dif_depths]({{ site.url }}/figures/model-trees/trees_dif_depths.png)
+![trees_dif_depths]({{ site.url }}/figures/model-trees/trees_dif_depths.PNG)
+
 
 [Handlebars templates](http://handlebarsjs.com/)
 
