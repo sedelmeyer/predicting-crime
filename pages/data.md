@@ -52,15 +52,15 @@ This `crime-type` variable was derived from Crime Incident Records data maintain
 
 ```
 crime-type 	crime-type-name 	  crime-count
-0 	        other 	                    6,321
-1 	        burglary 	                5,664
-2 	        drugs-substances 	       13,082
-3 	        fraud 	                    9,587
-4 	        harassment-disturbance 	   20,767
-5 	        robbery 	                3,423
-6 	        theft 	                   34,555
-7 	        vandalism-property 	       13,710
-8 	        violence-aggression 	   21,243
+0 	        other                       6,321
+1 	        burglary                    5,664
+2 	        drugs-substances           13,082
+3 	        fraud                       9,587
+4 	        harassment-disturbance     20,767
+5 	        robbery                     3,423
+6 	        theft                      34,555
+7 	        vandalism-property         13,710
+8 	        violence-aggression        21,243
 ```
 
 Once our data was subsetted, classes were filtered and consolidated, our final engineered features were merged with the crime incident data, and any records with missing data for any engineered features were removed, we were left with a dataset containing **160,440 observed crime records.**
@@ -74,10 +74,10 @@ Please note that we have also performed a secondary subsetting of `crime-type` c
 We mention this secondary subsetting of classes here primarily becuase this additional subset is examined via PCA in a later section of this EDA. The seconday subsetting of classes can be summarized as such:
 
 ```
-crime-type 	crime-type-name 	  crime-count
-0 	        drugs-substances 	       13,082
-1 	        theft 	                   34,555
-2 	        violence-aggression 	   24,666
+crime-type 	crime-type-name 	   crime-count
+0 	        drugs-substances            13,082
+1 	        theft                       34,555
+2 	        violence-aggression         24,666
 ```
 
 Just note that in this particular grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
