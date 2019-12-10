@@ -14,7 +14,7 @@ Examining liquor licenses in Boston took a fair amount of data cleansing efforts
 
 ## Liquor License Categories
 
-Digging a bit deeper we’ve found that over 85% of our liquor license categories belong to **"Common Victualler"** which represents "any establishment that has on its premises the ability to assemble, prepare, or cook food". 
+Digging a bit deeper we’ve found that **over 85%** of our liquor license categories belong to **"Common Victualler"** which represents "any establishment that has on its premises the ability to assemble, prepare, or cook food". 
 
 > We would not expect such an unequal distribution of liquor license types which raises concern towards the completeness of our dataset. Given these concerns we may decide to exclude the presence of liquor licenses in our final model.
 
