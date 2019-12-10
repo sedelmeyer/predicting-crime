@@ -7,6 +7,7 @@ title: "City of Boston Neighborhood Demographics EDA"
 Here is a list with links to the jupyter notebook and original dataset used to generate the findings on this page:
 
 - [The neighborhood demographics notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/015_EDA_neighborhood_demographics.ipynb)
+
 - [The original City of Boston demographics data can be found online here.](https://data.boston.gov/dataset/neighborhood-demographics)
 
 ## Summary and challenges
