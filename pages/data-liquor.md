@@ -2,9 +2,17 @@
 title: "City of Boston Liquor License EDA"
 ---
 
-[The liquor data prep notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/012_liquor_data_prep.ipynb)
+## Source materials 
 
-[The liquor data EDA notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/013_EDA_liquor_data.ipynb)
+Here is a list with links to the jupyter notebook and original dataset used to generate the findings on this page:
+
+- [The liquor data prep notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/012_liquor_data_prep.ipynb)
+
+- [The liquor data EDA notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/013_EDA_liquor_data.ipynb)
+
+- [The original City of Boston liquor license data can be found online here.](https://data.boston.gov/dataset/liquor-licenses)
+
+## Summary and challenges
 
 Examining liquor licenses in Boston took a fair amount of data cleansing efforts to transform incomplete addresses to latitude and longitude. We have successfully processed **over 1,100 liquor license records** and plotted them in the figure below:
 
