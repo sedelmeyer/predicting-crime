@@ -10,10 +10,9 @@ Below is a list of ​ Boston.gov​ data sources investigated as part of our in
 1. [Property assessment data](data-property.md)
 1. [Streetlight location data](data-lights.md)
 1. NOAA weather data
-1. Neighborhood demographics data
-1. Liquor licensing data
-1. Public and non-public schools data
-1. Universities and colleges data
-1. Property violations
+1. [Neighborhood demographics data](data-demographics.md)
+1. [Liquor licensing data](data-liquor.md)
+1. [Educational institutions](data-education.md)
+1. [Property violations](data-violations.md)
 1. Various City of Boston shape files
     - These include Census tracts, Boston neighborhoods, Zip codes, Street segments, and Open spaces
