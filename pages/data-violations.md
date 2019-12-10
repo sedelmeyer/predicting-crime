@@ -2,7 +2,15 @@
 title: "City of Boston Property Violations EDA"
 ---
 
-[The property violations notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/016_EDA_property_violations.ipynb)
+## Source materials 
+
+Here is a list with links to the jupyter notebook and original dataset used to generate the findings on this page:
+
+- [The property violations notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/016_EDA_property_violations.ipynb)
+
+- [The original City of Boston property violations data can be found online here.](https://data.boston.gov/dataset/building-and-property-violations1)
+
+## Summary and challenges
 
 Over **18,000 property violations** in the Boston area have been analyzed across **453 property violation types**. 
 
