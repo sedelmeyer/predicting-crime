@@ -4,6 +4,7 @@ title: "Modeling using Decision Trees"
 
 [The Decision Tree notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/031_MODEL_decision_trees.ipynb)
 
+After exploring the baseline model we explored a Decision Tree Classifier model. The Decision Tree model with tuning does a fair job with the data and reaches a max accuracy of approximately 0.35 with nine classes of crime (this is similar to our our models).
 
 
 # Decision Tree Model
