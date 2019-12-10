@@ -1,5 +1,5 @@
 ---
-title: "City of Boston Crime Indcidents EDA"
+title: "City of Boston Crime Incidents Data"
 ---
 
 # Source materials
