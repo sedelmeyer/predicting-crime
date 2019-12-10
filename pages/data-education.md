@@ -1,5 +1,5 @@
 ---
-title: "City of Boston Education Data EDA"
+title: "City of Boston Education Institutions EDA"
 ---
 
 [The education institutions notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/014_EDA_schools_and_universities.ipynb)
