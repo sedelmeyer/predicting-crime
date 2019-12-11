@@ -37,7 +37,7 @@ In an effort to better understand the point at which our model would overfit our
 ```py
 overfit_cv_tree = DecisionTreeClassifier(max_depth=30)
 ```
-**overfit_cv_tree** model produced a training accuracy of .8878 and a test accuracy of .29082. We've noticed that depths of 20 and greater are most likely overfitting given the large difference in train and test accuracy. We've utilized a depth of 30 to ensure overfitting
+**overfit_cv_tree** model produced a training accuracy of .8878 and a test accuracy of .29082. We've noticed that depths of 20 and greater are most likely overfitting given the large difference in train and test accuracy. We've utilized a depth of 30 to ensure overfitting.
 
 
 # Bagging
@@ -63,6 +63,7 @@ Random forest randomly selects a subset of predictors to split on. Therefore the
 Our **random_forest** model produced a training accuracy of .4243 and a test accuracy of  .3501
 
 ***Accuracy Comparison:***
+> The plot below shows the train and test accuracy across the decision tree models we've built. Worth noting that our random forest is our highest performing model.
 ![accuracy_comparison]({{ site.url }}/figures/model-trees/accuracy_comparison.PNG)
 
 # Boosting
