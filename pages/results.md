@@ -20,7 +20,7 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 
 &nbsp;
 
-We first ran a [**Baseline Logistic Classifier**](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data accuracy of **0.273** without balancing and **0.133** with balancing.  
+We first ran a [**Baseline Logistic Classifier**](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data ``accuracy score`` of **0.273** without balancing and **0.133** with balancing.  
 
 *The unbalanced model simply predicted every crime as either class 4 (harassment-disturbance) and class 6 (theft).*
 
@@ -32,7 +32,15 @@ Next we ran the [**Logistic Classifier**](model-logistic.md) on our full-set of 
 
 &nbsp;
 
-Our [**KNN Classifier**](model-knn.md) after tuning resulted in a test accuracy of **0.346**.  This model was especially good at predicting class 2 (drug_substances) with a ``True Positive Rate (TPR)`` of **0.499**.
+Our [**KNN Classifier**](model-knn.md) after tuning resulted in a test data ``accuracy score`` of **0.346** and a ``weighted AUC`` of **0.661**.  This model was especially good at predicting class 2 (drug_substances) with a ``True Positive Rate (TPR)`` of **0.499**.  *Please refer to the KNN model page for the full confusion matrix*.
+
+We also ran our KNN model on a subset of the data with three crime classes.  On this subset of data the model achieved an ``accuracy score`` of **0.603** and ``weighted AUC`` of **0.741**.  
+
+> How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve. Our framework is extensible enough to accommodate for different subsets and categories based on requirements.
+
+&nbsp;
+
+
 
 ## Project Trajectory, Results, and Interpretation
 
