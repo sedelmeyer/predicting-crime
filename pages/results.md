@@ -16,11 +16,16 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 
 ## Modeling Approach
 
-Please refer to our [**Models**](models.md) page for a deeper dive into our approach. 
+#### Please refer to our [**Models**](models.md) page for a deeper dive into our approach.
 
-We first ran a [Baseline Logistic Classifier](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data accuracy of **0.273** without balancing and **0.133** with balancing.  
+We first ran a [**Baseline Logistic Classifier**](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data accuracy of **0.273** without balancing and **0.133** with balancing.  
 
-> The unbalanced model simply predicted every crime as either classes 4 (harassment-disturbance) and 6 (theft).
+*The unbalanced model simply predicted every crime as either classes 4 (harassment-disturbance) and 6 (theft).*
+
+We next ran a [**Logistic Classifier**](model-logistic.md) on our full-set of predictors with and without regularization.  This model provides the benefit of interpretable results, from which we can begin to develop a better understanding of the relationships between specific predictors and response classes.
+
+*Given the geographical inter-mixing of our response classes and the high bias of these results, we suspect that the linear decision boundaries of a logistic function are not expressive enough for accurately defining ourfeature space and predicting results.*
+
 
 ## Project Trajectory, Results, and Interpretation
 
