@@ -12,7 +12,7 @@ For a look into the types of models we developed prior to reaching those results
 2. [Logistic Regression Classification Models](model-logistic.md)
 3. [k-Nearest Neighbors (kNN) Classifier Models](model-knn.md)
 4. [Decision Tree Classifiers and Ensemble Methods](model-trees.md)
-5. Feed Forward Artificial Neural Network (i.e. multi-level perceptron) **(TBD)**
+5. [Feed Forward Artificial Neural Network (i.e. multi-level perceptron)](model-nn.md)
 
 # About the response variable we are predicting
 
