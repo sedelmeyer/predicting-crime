@@ -95,5 +95,9 @@ Random Forest appears to have outperformed all other models and warrants further
 
 ![confusion_matrix_rf]({{ site.url }}/figures/model-trees/confusion_matrix_rf.PNG)
 ![confusion_matrix_rf_2]({{ site.url }}/figures/model-trees/confusion_matrix_rf_2.PNG)
+
+
 ***AUC***
+Finally, to see how well our best model performs we examine the area under the curve. Our Random Forest AUC Average came to 0.5406 and our Random Forest Weighted AUC Average came to 0.5569. The plot below illustrates our random forest model performance across crime class:
+
 ![roc_auc]({{ site.url }}/figures/model-trees/roc_auc.PNG)
