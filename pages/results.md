@@ -44,7 +44,7 @@ We also ran our KNN model on a subset of the data with three crime classes.  On 
 
 Our tree models included a single decision tree, bagging an overfit tree, boosting an underfit tree and random forest.  Random forest gave us the best scores on the test data with an ``accuracy score`` of **0.350** and ``weighted AUC`` of **0.561**.
 
-The single decision tree provided allowed us to determine feature importance of our predictors which were extremely insightful.  The most important features in order of importance were: ``lon``, ``lat``, ``bachelor-degree-or-more-perc``, ``commercial-mix-ratio``, ``industrial-mix-ratio``, and ``tempavg``. In addition, our random forest model illustrated similar top predictors especially with our location and education predictors .
+The single decision tree allowed us to determine feature importance of our predictors which were extremely insightful.  The most important features in order of importance were: ``lon``, ``lat``, ``bachelor-degree-or-more-perc``, ``commercial-mix-ratio``, ``industrial-mix-ratio``, and ``tempavg``. In addition, our random forest model illustrated similar top predictors especially with our location and education predictors .
 
 We also ran our random forest on a subset of the data with three crime classes. On this subset of data the model achieved an ``accuracy score`` of *0.586* and ``weighted AUC`` of *0.738*
 
