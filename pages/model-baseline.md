@@ -2,9 +2,11 @@
 title: "Baseline model using logistic regression"
 ---
 
-[The notebook used to develop this baseline model can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/021_MODEL_baseline_logistic_classifier.ipynb)
+[The notebook used to develop this baseline model can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/024_MODEL_logistic_classifiers.ipynb)
 
-As an initial baseline model, we ran several multi-class Logistic Regression models on a version of our predictors outlined below, in which all non-binary predictors were standardized to adjust for variability in scale among predictors. Variations attempted while building our baseline model included both one-vs-rest and multinomial versions of the model. In addition, we ran the versions of the models without regularization and then with L1 Lasso-like regularization (but without cross-validation) to ultimately examine coefficient shrinkage and to begin understanding relationships between our response classes and each individual predictor. For reference, the best baseline model reported here was specified with the following parameters::
+As an initial baseline model, against which we could compare the results of our subsequent model, we attempted to predict crime types 
+
+we ran several multi-class Logistic Regression models on a version of our predictors outlined below, in which all non-binary predictors were standardized to adjust for variability in scale among predictors. Variations attempted while building our baseline model included both one-vs-rest and multinomial versions of the model. In addition, we ran the versions of the models without regularization and then with L1 Lasso-like regularization (but without cross-validation) to ultimately examine coefficient shrinkage and to begin understanding relationships between our response classes and each individual predictor. For reference, the best baseline model reported here was specified with the following parameters:
 
 ```py
 LogisticRegression(C=1, class_weight=None, dual=False,    
@@ -19,47 +21,11 @@ LogisticRegression(C=1, class_weight=None, dual=False,
 
 Listed below are the predictors used in our baseline model. Additional predictors still under development for future iterations of our model are listed separately in Appendix 1 of this document.
 
-1. **Day of week**
+1. `lat`
 - This is a one-hot-encoded categorical variable for Tue, Wed, Thu, Fri, Sat, and Sun, indicating the day of the week during which the incident occurred.
 
-2. **Month of year**
-- This is a one-hot-encoded categorical variable for Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, and Dec indicating the month of the incident.
+1. `lon`
 
-3. **Night**
-- This is a binary variable indicating whether the crime occurred between the hours of 8pm and 4am.
-- The next iteration of this model will use actual sunset/sunrise times (as recorded by local NOAA weather
-stations) for the date the incident occurred to specify this predictor.
-
-1. **Median residential property value**
-    - This provides the annual median property value for all residential properties in each census tract.
-
-2. **Median residential value, 3-year CAGR**
-    - This provides a measure of gentrification/development trend activity in the observation’s census tract area and year of occurrence.
-
-3. **Median residential property value Gini coefficient**
-    - This feature is used to measure "disparity" or inequality of median residential property values within each census tract.
-
-4. **Median residential property value Gini coefficient, 3-year CAGE**
-    - This provides a measure of growing or shrinking inequality in the observation’s census tract area and year of occurrence.
-
-5. **Commercial properties mix ratio**
-    - This provides a measure as to how “commercial” the corresponding census tract is each year, as measured by total assessed commercial property value in the tract divided by the total assessed value for all property in the tract during the given observation year.
-
-6. **Commercial properties mix ratio, 3-year CAGR**
-    - This provides a measure of how much more or less commercial the tract is becoming at the time of the observation.
-
-7. **Industrial properties mix ratio**
-    - This provides a measure as to how “industrial” the corresponding census tract is, as measured by total assessed industrial property value in the tract divided by the total assessed value for all property in the tract during the given observation year.
-
-8. **Industrial properties mix ratio, 3-year CAGR**
-    - This provides a measure of how much more or less industrial the tract is becoming at the time of the observation.
-
-9. **Owner-occupied residential property ratio**
-    - This is the proportion of the residential and mixed-use properties that are owner-occupied in each census tract during each given observation year.
-    - To a degree this acts as a measure of local ownership as well as a potential indicator of absentee property ownership at the census tract-level.
-
-10. **Owner-occupied residential property ratio, 3-year CAGR**
-    - Measures trend changes in local ownership for the census tract at the time of observation.
 
 ## Model results
 
