@@ -13,7 +13,7 @@ In an effort to create the most efficient decision tree model we first explored 
 > The plot below shows that at a depth of 11 we have the highest mean CV score. The standard deviation at depth=11 is also not too wide. Depths 11-13 are very similar so any of those could potentially work and have been tested.
 ![trees_dif_depths]({{ site.url }}/figures/model-trees/trees_dif_depths.PNG)
 
-Given our optimal mean CV score we built our first model called "best_cv_tree" model with the following parameters:
+Given our optimal mean CV score we built our first model called "best_cv_tree" model with the max_depth parameter set to 11:
 ```py
 best_cv_tree = DecisionTreeClassifier(max_depth=11) 
 ```
@@ -21,7 +21,7 @@ best_cv_tree = DecisionTreeClassifier(max_depth=11)
 **best_cv_tree** produced a training accuracy of 0.3622 and a test accuracy of 0.3358.
 
 
-**Top Predictors** 
+# Top Predictors
 Digging deeper into our initial tree model we sought to better understand our top predictors. The following image creates a tree diagram to visually illustrate the ranked importance of our top predictors.
 
 ![tree_plot]({{ site.url }}/figures/model-trees/tree_plot.PNG)
@@ -29,6 +29,7 @@ Digging deeper into our initial tree model we sought to better understand our to
 The table below takes those same top predictors and produces a more user-friendly table with column names:
 
 ![tree_top_predictors]({{ site.url }}/figures/model-trees/tree_top_predictors.PNG)
+
 Very interesting to see that our "bachelor-degree-or-more-percentage" and "commercial/industrial-mix-ratio" features to be among the top predictors of crime for this model. 
 
 # Overfitting
@@ -36,24 +37,30 @@ In an effort to better understand the point at which our model would overfit our
 ```py
 overfit_cv_tree = DecisionTreeClassifier(max_depth=30)
 ```
-**overfit_cv_tree** produced a training accuracy of .8878 and a test accuracy of .29082. We've noticed that depths of 20 and greater are most likely overfitting given the large difference in train and test accuracy. We've utilized a depth of 30 to ensure overfitting
+**overfit_cv_tree** model produced a training accuracy of .8878 and a test accuracy of .29082. We've noticed that depths of 20 and greater are most likely overfitting given the large difference in train and test accuracy. We've utilized a depth of 30 to ensure overfitting
 
 
 # Bagging
-Using 55 trees:
-Accuracy of bagging model (Train):  0.0487175891298928
-Accuracy of bagging Model (Test):  0.04724507604088756
+In an effort to further reduce the variance of our decision tree we created a bagging model using 55 trees. We then fit our new bagging model, titled "bagging_model" to 5,000 random samples. Each tree produced a training accuracy of .0487 and a test accuracy of .0472.
+
 
 # Bootstraps Affects & Bagging Ensemble's Performance
+To better understand how the number of bootstraps affects our bagging ensemble's performance we've plotted model accuracy scores across several bootstrapepd models below: 
+
 ![bootstrap_accuracy]({{ site.url }}/figures/model-trees/bootstrap_accuracy.PNG)
 
+The baselines of course are flat because they are only run once. The bagging model for the first couple runs starts off at a higher accuracy only to decrease and level off. This illustrates the need to aggregate all of our bootstrapped models for a combined prediction.
 
 
 # Random Forest
-Accuracy of random forest model (Train):  0.4243954126153079
-Accuracy of random forest model (Test):  0.350068561455996
+Continuing with our goal to reduce model variance and average multiple deep decision trees we want to pass similar parameters to a random forest model. After thorough testing of model accuracy our final random forest model titled "random_forest" was created with the following parameters:
 
-Random forest randomly selects a subset of predictors to split on. Therefore the first split can vary based on what subset of predictors is being used. Bagging does not subset the predictors so is always using the same best predictor. Random forest can possibly capture more variance in the data because it is aggregating trees that are more varied. Theoretically random forest should therefore be able to get higher accuracies than bagging
+```py
+random_forest = RandomForestClassifier(n_estimators=55, max_depth=13, max_features='sqrt')
+```
+Random forest randomly selects a subset of predictors to split on. Therefore the first split can vary based on what subset of predictors is being used. Bagging does not subset the predictors so is always using the same best predictor. Random forest can possibly capture more variance in the data because it is aggregating trees that are more varied. Theoretically random forest should therefore be able to get higher accuracies than bagging.
+
+Our **random_forest** model produced a training accuracy of .4243 and a test accuracy of  .3501
 
 ***Accuracy Comparison:***
 ![accuracy_comparison]({{ site.url }}/figures/model-trees/accuracy_comparison.PNG)
