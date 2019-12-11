@@ -63,12 +63,22 @@ Random forest randomly selects a subset of predictors to split on. Therefore the
 Our **random_forest** model produced a training accuracy of .4243 and a test accuracy of  .3501
 
 ***Accuracy Comparison:***
-> The plot below shows the train and test accuracy across the decision tree models we've built. Worth noting that our random forest is our highest performing model.
+> The table below shows the train and test accuracy across the decision tree models we've built. Worth noting that our random forest is our highest performing model at this time.
 ![accuracy_comparison]({{ site.url }}/figures/model-trees/accuracy_comparison.PNG)
 
 # Boosting
-ADA Boost Classifier
+
+We'll now utilize boosting, another type of ensemble method, where each new model is trained on a dataset weighted towards observations that the current set of models predicts incorrectly. We'll use AdaBoost (ada), or Adaptive Boosting, to transform our weaker classifiers into stronger ones.
+
+After initial testing, our best performing ada model is defined with the following parameters:
+```py
+ada = AdaBoostClassifier(DecisionTreeClassifier(max_depth=6), n_estimators=200, learning_rate=0.05)
+```
+> The plot below illustrates the accuracy scores by iteration number of our best performing ada model.
 ![ada_boost_3]({{ site.url }}/figures/model-trees/ada_boost_3.PNG)
+
+In an effort to demonstrate that we've chosen the optimal ada model we've also plotted the results of model depths of 5-8 for comparison purposes:
+
 ![ada_boost_5]({{ site.url }}/figures/model-trees/ada_boost_5.PNG)
 ![ada_boost_6]({{ site.url }}/figures/model-trees/ada_boost_6.PNG)
 ![ada_boost_7]({{ site.url }}/figures/model-trees/ada_boost_7.PNG)
