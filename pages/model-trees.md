@@ -126,6 +126,6 @@ Weighted AUC 0.5569 --> 0.7367
 
 ![confusion_matrix_rf_subset]({{ site.url }}/figures/model-trees/confusion_matrix_rf_subset.PNG)
 
-![confusion_matrix_rf_subset_2]({{ site.url }}/figures/model-trees/confusion_matrix_rf_subset_2.PNG)
+![confusion_matrix_rf_2_subset]({{ site.url }}/figures/model-trees/confusion_matrix_rf_2_subset.PNG)
 
 ![roc_auc_subset]({{ site.url }}/figures/model-trees/roc_auc_subset.PNG)
