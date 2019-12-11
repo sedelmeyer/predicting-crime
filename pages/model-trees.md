@@ -89,11 +89,13 @@ The lower tree depths require more boosting iterations to reach the best accurac
 The training accuracy mostly remains between 0.30-0.46 (test accuracy ranges between 0.31-0.34) but as the depth increases the max training accuracy gets closer and closer to 1.0. At higher depths, boosting is greatly overfitting the training data. 
 
 # Best Model: Random Forest Results
-Random Forest appears to have outperformed all other models and warrants further discovery. Below we've added confusion matrices to illustrate our predictions vs. actual values by crime class.
-
+Random Forest appears to have outperformed all other models and warrants further discovery. Below we've added confusion matrices to illustrate our predictions vs. actual values by crime class. We've also added true positive, false positive, false negative, true negatives, their rates and predictive values by class.
 ***Confusion matrices***
 
 ![confusion_matrix_rf]({{ site.url }}/figures/model-trees/confusion_matrix_rf.PNG)
+
+> Key for matrix below: {[TP = True Positive], [FP = False Positive], [FN = False Negative], [TN = True Negative], [TPR = True Positive Rate], [FNR = False Negative Rate], [FPR = False Positive Rate], [TNR = True Negative Rate], [PPV = Positive Predictive Value], [NPV = Negative Predictive Value]}
+
 ![confusion_matrix_rf_2]({{ site.url }}/figures/model-trees/confusion_matrix_rf_2.PNG)
 
 
