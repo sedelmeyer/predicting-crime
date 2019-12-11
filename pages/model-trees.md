@@ -32,11 +32,12 @@ The table below takes those same top predictors and produces a more user-friendl
 Very interesting to see that our "bachelor-degree-or-more-percentage" and "commercial/industrial-mix-ratio" features to be among the top predictors of crime for this model. 
 
 # Overfitting
+In an effort to better understand the point at which our model would overfit our data, we've created an overfit tree model called "overfit_cv_tree" with the following parameters: 
+```py
+overfit_cv_tree = DecisionTreeClassifier(max_depth=30)
+```
+**overfit_cv_tree** produced a training accuracy of .8878 and a test accuracy of .29082. We've noticed that depths of 20 and greater are most likely overfitting given the large difference in train and test accuracy. We've utilized a depth of 30 to ensure overfitting
 
-Accuracy of overfit tree model (Train): 0.887855272999252
-Accuracy of overfit tree model (Test):  0.29216529543754677
-
-Depths of 20 and greater are most likely overfitting given the large difference in train and test accuracy. Picking a depth of 30 to ensure overfitting.
 
 # Bagging
 Using 55 trees:
