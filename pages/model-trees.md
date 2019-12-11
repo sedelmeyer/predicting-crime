@@ -8,7 +8,7 @@ After exploring the baseline model we explored a Decision Tree Classifier model.
 
 
 # Decision Tree Model
-In an effort to create the most efficient decision tree model we first explored tree scores at various max tree depths.
+In an effort to create the most efficient decision tree model we first explored tree scores at various tree depths utilizing 5-fold cross validation.
 
 > The plot below shows that at a depth of 11 we have the highest mean CV score. The standard deviation at depth=11 is also not too wide. Depths 11-13 are very similar so any of those could potentially work and have been tested.
 ![trees_dif_depths]({{ site.url }}/figures/model-trees/trees_dif_depths.PNG)
@@ -22,9 +22,14 @@ best_cv_tree = DecisionTreeClassifier(max_depth=11)
 
 
 **Top Predictors** 
-![tree_plot]({{ site.url }}/figures/model-trees/tree_plot.PNG)
-![tree_top_predictors]({{ site.url }}/figures/model-trees/tree_top_predictors.PNG)
+Digging deeper into our initial tree model we sought to better understand our top predictors. The following image creates a tree diagram to visually illustrate the ranked importance of our top predictors.
 
+![tree_plot]({{ site.url }}/figures/model-trees/tree_plot.PNG)
+
+The table below takes those same top predictors and produces a more user-friendly table with column names:
+
+![tree_top_predictors]({{ site.url }}/figures/model-trees/tree_top_predictors.PNG)
+Very interesting to see that our "bachelor-degree-or-more-percentage" and "commercial/industrial-mix-ratio" features to be among the top predictors of crime for this model. 
 
 # Overfitting
 
