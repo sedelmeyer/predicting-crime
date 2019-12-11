@@ -294,3 +294,15 @@ For each of the below predictors, we do see some variations in distributions amo
 
 # Dimensionality reduction with principal component analysis (PCA)
 
+To gain a better sense for how well we might be able to separate classes given the predictors we currently have on hand, we now use the unsupervised learning method PCA to reduce the number of dimensions in our predictor set. Doing so will help us to understand explained variance in our predictors regardless of our target response classes, and will help us to visualize our `crime-type` classes along the two PCA reduced dimensions with the greatest levels of explained variance. Thus, giving us a sense for how easily separable our `crime-type` classes might be given these predictors.
+
+First we can examine the growth curve in cumulative explained variance plotted against the number of principal components derived from our standardized predictor data. Here we can see a distinct elbow in explained cumulative explained variance growth when we reach 14 components and approximately 85% explained variance, indicating diminishing returns for all components beyond that point.
+
+![pca]({{ site.url }}/figures/features/pca-cum-variance-explained.png)
+
+Next, we isolate our top 2 principal components and plot them against one another. In this plot we have labeled the `crime-type` class of each observation. Immediately we can see that PCA does very little to separate our response classes using these top 2 components. The observations do however appear to have achieved some sort of separation across some other dimension not measured here. Regardless, this indicates to us that our prediction models will also likely have difficulty separating out the `crime-type` classes we have outlined here given our predictor variables.
+
+![pca-top-2]({{ site.url }}/figures/features/pca-top-2-components-by-class.png)
+
+
+# Correlation of predictors and multi-collinearity
