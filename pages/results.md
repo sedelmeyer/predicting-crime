@@ -50,7 +50,9 @@ We also ran our random forest on a subset of the data with three crime classes. 
 
 [**Feed Forward Artificial Neural Network**](model-nn.md)
 
-Fabio's findings
+For Neural Networks we started with a simple fast-training 3-layer fully connected network with 64 nodes which provided a ``weighted AUC`` of **0.498**.  Given that our simple model was overfitting we added dropout layers to our next model.  This model had similar performance in train and test and had an ``accuracy score`` of **0.307** and ``weighted AUC`` of **0.638** on test data.  We also ran a complex overnight model but the accuracy did not improve.
+
+To derive insights into how each of the crime types are effected by the predictors we changed one predictor at a time while holding all the other predictors constant.  The output graphs in the Neural Network notebook provide an excellent visual tool to interpret how a predictor affects the crime type.
 
 &nbsp;
 
@@ -70,7 +72,7 @@ Our models show that it is possible to predict the probability of different crim
 
 ## Conclusions and Future Work 
 
-Our results show a lot of promise and a subset of our predictors are significant for predicting the type of crime.  In the future, we will explore further datasets and generate more features using the existing data to further explore the type of predictors that are significant for predicting crime.  We also still have some issues with missing data and collinearity in several of our features (collinearity information is included in Appendix 2) which we will resolve in future iterations.
+Our results show a lot of promise and a subset of our predictors are significant for predicting the type of crime.  In the future, we will explore further datasets and generate more features using the existing data to further explore the type of predictors that are significant for predicting crime.  We also still have some issues with missing data and collinearity in several of our features *(collinearity information is included in Appendix 2)* which we will resolve in future iterations.
 
 We plan on further exploring each of the raw ``OFFENSE_CODE_GROUP`` values and how they are distributed across each of our predictors.  This will help us understand which ``OFFENSE_CODE_GROUP`` values can be differentiated by out predictors.  The present grouping of these code groups into crime categories might be masking the influence of the individual crime codes.  Our subset data was the beginning of our exploration of how the crime categories affect our models.
 
