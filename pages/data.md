@@ -173,7 +173,8 @@ Looking beyond just location based and time-based predictors related to location
 Outlined below are the top 6 predictors, as measured using t-statistic for each `crime-type` class:
 
 ```
-The predictors with the largest t-statistics related to each crime-type class are:
+The predictors with the largest t-statistics related
+to each crime-type class are:
 
 class 0: other
 
@@ -277,3 +278,10 @@ Now, for the sake of consistency with the previous section of this EDA, we will 
 
 In above summary tables and plots, we can see a fairly broad mixture of top 5 predictors across all of our `crime-type` classes. This leads us to believe that we may have a suitable variety of predictors for the classes we hope to predict. However, while some `crime-type` classes such as `theft` and `harassment-disturbance` have top predictors with t-statistics exceeding 60, some classes such as `violence-aggression`, `robbery`, and `burglary` have much smaller top t-statistic values less than 25. This suggests those classes may be prove to be harder to predict accurately using this set of predictors. However, what's not accounted for in these t-statistic measures is the potential interaction effect of trying to generate predictions for each specific `crime-type` class with multiple predictors at once.
 
+# Evaluating distance-based geographical predictors by class
+
+In the previous section of this EDA, we saw a couple of our distance-based predictors in the top 5 predictors for several of the `crime-type` classes. This leads us to wonder how these predictors might vary overall among all of our class types. The specific predictors we would consider distance-based are `streetlights-night`, which measures the number of streetlights within 100 meters of each crime record for crimes occuring at night, `college-near`, which indicates whether or not a crime incident occured wihtin 500 meters of a college or university, and `highschool-near`, which indicates whether a crime incident occured within 500 meters of a public or non-public highschool.
+
+All measurements used in these predictors were calculated using the Haversine formula to measure the distance between sets of latitude and longitude coordinates. [A detailed description of the Haversine implementation built for our analysis can be found on this site page](haversine.md).
+
+Below we can 
