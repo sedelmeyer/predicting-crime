@@ -177,93 +177,93 @@ The predictors with the largest t-statistics related
 to each crime-type class are:
 
 class 0: other
-
-owner-occupied-ratio     22.273876
-lat                      18.267198
-poverty-rate             17.126022
-median-age               17.011709
-enrolled-college-perc    16.391080
-streetlights-night        9.755394
+                         tstat
+owner-occupied-ratio     22.27
+lat                      18.27
+poverty-rate             17.13
+median-age               17.01
+enrolled-college-perc    16.39
+streetlights-night        9.76
 
 
 class 1: burglary
-
-commercial-mix-ratio            15.763925
-night                           14.720921
-lon                             13.690131
-less-than-high-school-perc      10.112486
-college-near                     9.622414
-streetlights-night               9.404400
+                                tstat
+commercial-mix-ratio            15.76
+night                           14.72
+lon                             13.69
+less-than-high-school-perc      10.11
+college-near                     9.62
+streetlights-night               9.40
 
 
 class 2: drugs-substances
-
-night                         34.348157
-streetlights-night            27.675943
-industrial-mix-ratio          26.967262
-Sunday                        25.628384
-less-than-high-school-perc    23.495035
-enrolled-college-perc         20.393787
+                              tstat
+night                         34.35
+streetlights-night            27.68
+industrial-mix-ratio          26.97
+Sunday                        25.63
+less-than-high-school-perc    23.50
+enrolled-college-perc         20.39
 
 
 class 3: fraud
-
-less-than-high-school-perc           16.961052
-Sunday                               16.769208
-bachelor-degree-or-more-perc         14.736636
-residential-median-value-3yr-cagr    14.617063
-median-income                        11.651747
-enrolled-college-perc                11.110884
+                                     tstat
+less-than-high-school-perc           16.96
+Sunday                               16.77
+bachelor-degree-or-more-perc         14.74
+residential-median-value-3yr-cagr    14.62
+median-income                        11.65
+enrolled-college-perc                11.11
 
 
 class 4: harassment-disturbance
-
-residential-gini-coef           64.197763
-bachelor-degree-or-more-perc    64.109761
-enrolled-college-perc           63.756338
-commercial-mix-ratio            63.103933
-residential-median-value        57.114483
-college-near                    57.014002
+                                tstat
+residential-gini-coef           64.20
+bachelor-degree-or-more-perc    64.11
+enrolled-college-perc           63.76
+commercial-mix-ratio            63.10
+residential-median-value        57.11
+college-near                    57.01
 
 
 class 5: robbery
-
-less-than-high-school-perc           11.036563
-streetlights-night                   10.144345
-lon                                   8.767687
-night                                 8.125654
-bachelor-degree-or-more-perc          7.530712
-residential-median-value-3yr-cagr     7.502349
+                                     tstat
+less-than-high-school-perc           11.04
+streetlights-night                   10.14
+lon                                   8.77
+night                                 8.13
+bachelor-degree-or-more-perc          7.53
+residential-median-value-3yr-cagr     7.50
 
 
 class 6: theft
-
-bachelor-degree-or-more-perc    68.596304
-residential-gini-coef           61.648668
-enrolled-college-perc           60.336105
-residential-median-value        59.614084
-less-than-high-school-perc      54.186831
-college-near                    50.522663
+                                tstat
+bachelor-degree-or-more-perc    68.57
+residential-gini-coef           61.65
+enrolled-college-perc           60.34
+residential-median-value        59.61
+less-than-high-school-perc      54.19
+college-near                    50.52
 
 
 class 7: vandalism-property
-
-commercial-mix-ratio            26.472810
-college-near                    22.720740
-residential-median-value        21.418503
-residential-gini-coef           20.612366
-enrolled-college-perc           19.228918
-owner-occupied-ratio            12.646433
+                                tstat
+commercial-mix-ratio            26.47
+college-near                    22.72
+residential-median-value        21.42
+residential-gini-coef           20.61
+enrolled-college-perc           19.23
+owner-occupied-ratio            12.65
 
 
 class 8: violence-aggression
-
-less-than-high-school-perc      20.034071
-bachelor-degree-or-more-perc    17.884468
-median-income                   15.808026
-streetlights-night              15.316972
-residential-gini-coef           15.112320
-poverty-rate                    14.026041
+                                tstat
+less-than-high-school-perc      20.03
+bachelor-degree-or-more-perc    17.88
+median-income                   15.81
+streetlights-night              15.32
+residential-gini-coef           15.11
+poverty-rate                    14.03
 ```
 
 Now, for the sake of consistency with the previous section of this EDA, we will use plots to examine these top 5 predictors for the sames subset of predictors `burglary`, `drugs-substances`, and `harassment-disturbance`.
