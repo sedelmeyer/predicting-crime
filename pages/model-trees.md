@@ -4,7 +4,7 @@ title: "Modeling using Decision Trees"
 
 [The Decision Tree notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/031_MODEL_decision_trees.ipynb)
 
-After exploring the baseline model we explored a Decision Tree Classifier model. The Decision Tree model with tuning does a fair job with the data and reaches a max accuracy of approximately 0.35 with nine classes of crime.
+After exploring the baseline model we examined several Decision Tree Classifier models. The Decision Tree model with tuning does a fair job with the data and reaches a max accuracy of approximately 0.35 with nine classes of crime.
 
 
 # Decision Tree Model
@@ -104,3 +104,28 @@ Random Forest appears to have outperformed all other models and warrants further
 Finally, to see how well our best model performs we examine the area under the curve. Our Random Forest AUC Average came to 0.5406 and our Random Forest Weighted AUC Average came to 0.5569. The plot below illustrates our random forest model performance across crime class:
 
 ![roc_auc]({{ site.url }}/figures/model-trees/roc_auc.PNG)
+
+## Different Subsets of the Data
+[The Decision Tree subset data notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/031_MODEL_decision_trees_subset.ipynb)
+
+We are using the full crime dataset along with customized categories that we created.  How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve.  Our framework is extensible enough to accommodate for different subsets and categories based on requirements.  
+
+For example below are the results for a random forest run on a subset of the data with three classes:
+**(drugs-substances, theft, violence-aggression)**
+
+> **Much better model scores:**  
+Accuracy 0.3503 --> 0.5856, 
+AUC 0.5406 --> 0.7495, 
+Weighted AUC 0.5569 --> 0.7367
+
+``Testing Accuracy`` = **0.5856**
+
+``AUC Average`` = **0.7495**
+
+``Weighted AUC Average`` = **0.7367**
+
+![confusion_matrix_rf_subset]({{ site.url }}/figures/model-trees/confusion_matrix_rf_subset.PNG)
+
+![confusion_matrix_rf_2_subset]({{ site.url }}/figures/model-trees/confusion_matrix_rf_2_subset.PNG)
+
+![roc_auc_subset]({{ site.url }}/figures/model-trees/roc_auc_subset.PNG)
