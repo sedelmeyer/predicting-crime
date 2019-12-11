@@ -64,7 +64,7 @@ The full analysis of the output of each model is discussed in detail in each ind
 
 Especially interesting are the relationships of crime type to ``bachelor-degree-or-more-perc``, ``commercial-mix-ratio``, ``industrial-mix-ratio`` and ``tempavg``.  We did not predict that bachelor degree percentage would have such a high importance.  The interpretability graphs at the end of the [Neural Network](model-nn.md) page also show very interesting relationships between our predictors and different crime types.
 
-Our models show that it is possible to predict the probability of different crime types.  The accuracy is currently not as high as we desire but by adding additional features and making the problem more specific we believe sufficient accuracies can be achieved for the model to be useful.  Police departments and other city departments could potentially use a further enhanced version of this model to appropriately distribute staff across Boston.  
+Our models show that it is possible to predict the probability of different crime types.  The accuracy is currently not as high as we desire but by adding additional features and making the problem more specific we believe sufficient accuracies can be achieved for the model to be useful.  Police departments and other city departments could potentially use a further enhanced version of this model to appropriately distribute resources across the city of Boston.  
 
 &nbsp;
 
