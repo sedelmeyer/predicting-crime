@@ -33,6 +33,27 @@ class       class-name
 8           violence-aggression
 ```
 
+As for the breakdown of each `crime-type` class in our training set, below is a summary by count and proportion for the 128,352 total training observations. As we can see from this table, our `crime-type` classes are heavily imbalanced, and overcoming this will be a challenge seen throughout our various models.
+
+```
+The number of observed crime type classes in the training set are:
+
+TRAINING
+                                count  proportion
+class   class-name                           
+0       other                    6321    0.0492
+1       burglary                 5664    0.0441
+2       drugs-substances        13082    0.1019
+3       fraud                    9587    0.0747
+4       harassment-disturbance  20767    0.1618
+5       robbery                  3423    0.0267
+6       theft                   34555    0.2692
+7       vandalism-property      13710    0.1068
+8       violence-aggression     21243    0.1655
+
+        TOTAL                  128352    1.0000
+```
+
 # Secondary comparative reduced number of response classes
 
 Please note that we have also performed a secondary subsetting of `crime-type` classes in several of our prediction models. This was done as a comparative analysis to attempt to overcome the imbalanced classes existing in our primary set of `crime-type` classes and to examine potential changes in predictive accuracy when we subset for a smaller grouping of particularly meaningful classes.
