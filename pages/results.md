@@ -14,6 +14,8 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 -	[https://stats.stackexchange.com/](https://stats.stackexchange.com/)
 -	[https://medium.com/](https://medium.com/)
 
+&nbsp;
+
 ## Modeling Approach
 
 #### Please refer to our [**Models**](models.md) page for a deeper dive into our approach.
@@ -40,11 +42,17 @@ We also ran our KNN model on a subset of the data with three crime classes.  On 
 
 &nbsp;
 
+Decision Trees
 
+&nbsp;
 
 ## Project Trajectory, Results, and Interpretation
 
-Briefly summarize any changes in your project goals or implementation plans you have made along the way. These changes are a natural part of any project, even those that seem the most straightforward at the beginning. The story you tell about how you arrived at your results can powerfully illustrate your process. Next, show your results. How well does your model and/or implementation perform? Did you meet your goals? Finally, give some interpretation. What do your results mean? What impact will your work have?
+During the course of this project we had to shift our implementation multiple times given our EDA of the datasets.  Some datasets ended up being abandoned because they either had missing data or not enough data for our analysis *(for example liquor license data)*.  We also decided that ``lat`` and ``lon`` be part of any data we used to associate it with the ``lat`` and ``lon`` in the crime dataset.
+
+We also shifted what our output of this project would be given time constraints.  We initially planned on having the user input a ``lat``, ``lon`` and other predictors into the model to calculate probabilities of each type of crime.  For this iteration our model spilts the crime dataset into train and test data and then predicts the type of crime in the test data. 
+
+&nbsp;
 
 ## Conclusions and Future Work 
 
