@@ -68,4 +68,9 @@ Our models show that it is possible to predict the probability of different crim
 
 ## Conclusions and Future Work 
 
-Summarize your results, the strengths and short-comings of your results, and speculate on how you might address these short-comings if given more time.
+Our results show a lot of promise and a subset of our predictors are significant for predicting the type of crime.  In the future, we will explore further datasets and generate more features using the existing data to further explore the type of predictors that are significant for predicting crime.  We also still have some issues with missingness and collinearity in several of our features (collinearity information is included in Appendix 2) which we will resolve in future iterations.
+
+We plan on further exploring each of the raw ``OFFENSE_CODE_GROUP`` values and how they are distributed across each of our predictors.  This will help us understand which ``OFFENSE_CODE_GROUP`` values can be differentiated by out predictors.  The present grouping of these code groups into crime categories might be masking the influence of the individual crime codes.  Our subset data was the beginning of our exploration of how the crime categories affect our models.
+
+Finally, we will be adding a function to this project that when input ``lat``, ``lon``, ``night``, ``temp``, ect can predict the probability of each crime type.  
+
