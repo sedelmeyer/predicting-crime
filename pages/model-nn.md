@@ -18,7 +18,7 @@ We start with a simple 3-layer fully connected Neural Network with 64 nodes per 
 
 - Training for 10 epochs and a batch size of 32 is enough for close to optimal performance, for a super-fast training time of 3 mins.
 
-![model_1]({{ site.url }}/figures/model-nn/model1)
+![model_1]({{ site.url }}/figures/model-nn/model1.png)
 
 - **Performance**: excellent on the training set (0.6482 weighted AUC), poor on the test set (0.4981 wAUC, worse than chance).
 
@@ -30,7 +30,7 @@ Seeing as our first model dramatically overfitted to the training set, we decide
 
 - We also change the activation to the slightly better **LeakyRelu**, and the optimizer to **adam**.
 
-![model_2]({{ site.url }}/figures/model-nn/model2)
+![model_2]({{ site.url }}/figures/model-nn/model2.PNG)
 
 - **Performance**: again excellent on the training set (wAUC of 0.6459), this time exellent on the test set too, with minimal overfitting (wAUC of 0.6377). The respective accuracies are 0.3108 and 0.3070 for training, test.
 
