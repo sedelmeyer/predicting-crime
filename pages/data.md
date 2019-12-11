@@ -16,23 +16,23 @@ Here is a list with links to the jupyter notebook and original datasets used to 
 
 To view the preliminary EDA findings and summaries of the feature engineering activities that were performed on the component datasets eventually merged into the model data examined on this page, please follow the links listed below. On each of those linked pages, you will also find links to the original source datasets used for each raw data EDA:
 
-1. [Crime incident data](data-crime.md)
-1. [Property assessment data](data-property.md)
-1. [Streetlight location data](data-lights.md)
-1. NOAA weather data
-1. [Neighborhood demographics data](data-demographics.md)
-1. [Liquor licensing data](data-liquor.md)
-1. [Educational institutions](data-education.md)
-1. [Property violations](data-violations.md)
+1. [Crime incident raw data EDA](data-crime.md)
+1. [Property assessment raw data EDA](data-property.md)
+1. [Streetlight location raw data EDA](data-lights.md)
+1. NOAA weather raw data EDA
+1. [Neighborhood demographics raw data EDA](data-demographics.md)
+1. [Liquor licensing raw data EDA](data-liquor.md)
+1. [Educational institutions raw data EDA](data-education.md)
+1. [Property violations raw data EDA](data-violations.md)
 
 # Introduction
 
-This page outlines the comprehensive exploratory data analysis (EDA) conducted on the feature set engineered for our analysis. As is outlined above, a number of different data sources were investigated, cleansed, and enhanced in order to achieve the eventual feature set investigated on this page.
+This page outlines the comprehensive exploratory data analysis (EDA) conducted on our training feature set engineered for our predictive model. As is outlined above, a number of different data sources were investigated, cleansed, and enhanced in order to achieve the finished feature set investigated on this page.
 
 <a id='top'></a>
-# Contents
+# EDA Contents
 
-The EDA outlined on this page is divided into the following sections:
+The EDA outlined below on this page is divided into the following sections:
 
 1. [Variable of interest and number of overall records examined](#response)
 1. [Predictors used in this analysis](#predictors)
@@ -74,7 +74,7 @@ Then, after performing our train set split with an 80/20 split, stratified by `c
 
 Please note that we have also performed a secondary subsetting of `crime-type` classes in our subsequent [prediction models](models.md). This was done as a comparative analysis to attempt to overcome the imbalanced classes existing in our primary set of `crime-type` classes and to examine potential changes in predictive accuracy when we subset for a smaller grouping of particularly meaningful classes.
 
-We mention this secondary subsetting of classes here primarily becuase this additional subset is examined via PCA in a later section of this EDA. The seconday subsetting of classes can be summarized as such:
+The seconday subsetting of classes can be summarized as such:
 
 ```
 crime-type 	crime-type-name 	   crime-count
@@ -83,7 +83,7 @@ crime-type 	crime-type-name 	   crime-count
 2 	        violence-aggression         24,666
 ```
 
-Just note that in this particular grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
+Just note that in this particular secondary grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
 
 <a id='predictors'></a>
 
@@ -383,6 +383,6 @@ To further examine these relationships we can begin by plotting scatter-matrices
 
 **PRELIMINARY FINDINGS:**
 
-Given the strength of correlationsh among a handful of our predictors, with additional time and future iterations of our analysis, this is high on our priorities list to address. To address this, for the most strongly correlated predictor pairings we will consider methods such as centering to alleviate potential correlation issues and the removal of at least one of the predictors from the pairings to see what affect it has on our models and the interpretability of our results.
+Given the strength of correlations among a handful of our predictors, with additional time and future iterations of our analysis, this is high on our list of priorities to address. To address this, for the most strongly correlated predictor pairings we will consider methods such as centering to alleviate potential correlation issues and the removal of at least one of the predictors from the pairings to see what effect each change has on our models and the interpretability of our results.
 
 [Return to page contents](#top)
