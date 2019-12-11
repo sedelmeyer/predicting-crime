@@ -84,11 +84,15 @@ In an effort to demonstrate that we've chosen the optimal ada model we've also p
 ![ada_boost_7]({{ site.url }}/figures/model-trees/ada_boost_7.PNG)
 ![ada_boost_8]({{ site.url }}/figures/model-trees/ada_boost_8.PNG)
 
+The lower tree depths require more boosting iterations to reach the best accuracies that are not overfit. Though, in this case the max accuracies are similar at depth=5 does have a lower max accuracy even after 200 iterations (with data where the first predictor is only marginally better this will be more pronounced). The higher the tree depth the lower the number of iterations where boosting starts to overfit.
 
+The training accuracy mostly remains between 0.30-0.46 (test accuracy ranges between 0.31-0.34) but as the depth increases the max training accuracy gets closer and closer to 1.0. At higher depths, boosting is greatly overfitting the training data. 
 
 # Best Model: Random Forest Results
+Random Forest appears to have outperformed all other models and warrants further discovery. Below we've added confusion matrices to illustrate our predictions vs. actual values by crime class.
 
 ***Confusion matrices***
+
 ![confusion_matrix_rf]({{ site.url }}/figures/model-trees/confusion_matrix_rf.PNG)
 ![confusion_matrix_rf_2]({{ site.url }}/figures/model-trees/confusion_matrix_rf_2.PNG)
 ***AUC***
