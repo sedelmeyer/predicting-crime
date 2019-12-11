@@ -8,13 +8,17 @@ After exploring the baseline model we explored a Decision Tree Classifier model.
 
 
 # Decision Tree Model
-Accuracy of best CV tree model (Train): 0.3622
-Accuracy of best CV tree model (Test):  0.3358
+In an effort to create the most efficient decision tree model we first explored tree scores at various max tree depths.
+
+> The plot below shows that at a depth of 11 we have the highest mean CV score. The standard deviation at depth=11 is also not too wide. Depths 11-13 are very similar so any of those could potentially work and have been tested.
 ![trees_dif_depths]({{ site.url }}/figures/model-trees/trees_dif_depths.PNG)
 
-The plot above shows that at a depth of 11 we have the highest mean CV score. The standard deviation at depth=11 is also not too wide. Depths 11-13 are very similar so any of those could potentially work and have been tested.
+Given our optimal mean CV score we built our first model called "best_cv_tree" model with the following parameters:
+```py
+best_cv_tree = DecisionTreeClassifier(max_depth=11) 
+```
 
-Depth=11 gets an accuracy score of 0.3622 on the training data and an accuracy score of 0.3358 on the testing data.
+**best_cv_tree** produced a training accuracy of 0.3622 and a test accuracy of 0.3358.
 
 
 **Top Predictors** 
