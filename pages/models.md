@@ -41,9 +41,9 @@ The seconday subsetting of classes can be summarized as such:
 
 ```
 class       class-name
-0 	        drugs-substances
-1 	        theft
-2 	        violence-aggression
+0           drugs-substances
+1           theft
+2           violence-aggression
 ```
 
 Just note that in this particular secondary grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
@@ -105,38 +105,39 @@ Listed below are the full set of predictors used in our models. For an in-depth 
 1. `enrolled-college-perc`
     - This is the percentage of residents enrolled in college in the Boston neighborhood in which the crime record occured.
 
-'commercial-mix-ratio', 'industrial-mix-ratio', 'owner-occupied-ratio',
-   'residential-median-value', 'residential-gini-coef', 'commercial-mix-ratio-3yr-cagr',
-   'industrial-mix-ratio-3yr-cagr', 'owner-occupied-ratio-3yr-cagr',
-   'residential-gini-coef-3yr-cagr', 'residential-median-value-3yr-cagr'
+1. `residential-median-value`
+    - This is the annual median property value for all residential properties in the census tract and during the year in which the crime records occured.
 
-1. **Median residential property value**
-    - This provides the annual median property value for all residential properties in each census tract.
+1. `residential-median-value-3yr-cagr`
+    - This is the 3-year compound annual growth rate for the annual median property value for all residential properties in the census tract and during the year in which the crime records occured. 
+    - This provides a measure of gentrification/development trend activity for each observation’s census tract area and year of occurrence.
 
-2. **Median residential value, 3-year CAGR**
-    - This provides a measure of gentrification/development trend activity in the observation’s census tract area and year of occurrence.
+1. `residential-gini-coef`
+    - This is the Gini coefficient calculated using the assessed values of all annual residential properties in the census tract and during the year in which the crime record occurs.
+    - This feature is used to measure "disparity" or inequality of residential property values within each census tract.
 
-3. **Median residential property value Gini coefficient**
-    - This feature is used to measure "disparity" or inequality of median residential property values within each census tract.
+1. `residential-gini-coef-3yr-cagr`
+    - This the 3-year compound annual growth rate for the for the Gini coefficient calculated using the assessed values of all annual residential properties in the census tract and during the year in which the crime record occurs.
+    - This provides a measure of growing or shrinking inequality in each census tract area and year of occurrence.
 
-4. **Median residential property value Gini coefficient, 3-year CAGE**
-    - This provides a measure of growing or shrinking inequality in the observation’s census tract area and year of occurrence.
+1. `commercial-mix-ratio`
+    - This is the ratio of total assessed value of commercial properities divided by the total assessed value of all properties in the census tract and during the year in which the crime record occurs.
 
-5. **Commercial properties mix ratio**
-    - This provides a measure as to how “commercial” the corresponding census tract is each year, as measured by total assessed commercial property value in the tract divided by the total assessed value for all property in the tract during the given observation year.
+1. `commercial-mix-ratio-3yr-cagr`
+    - This is the 3-year compound annual growth rate for the commercial mix ratio in the census tract and during the year in which the crime record occurs.
+    - This provides a measure of how much more or less commercial the tract has been trending prior to the time of the observation.
 
-6. **Commercial properties mix ratio, 3-year CAGR**
-    - This provides a measure of how much more or less commercial the tract is becoming at the time of the observation.
+1. `industrial-mix-ratio`
+    - This is the ratio of total assessed value of industrial properities divided by the total assessed value of all properties in the census tract and during the year in which the crime record occurs.
 
-7. **Industrial properties mix ratio**
-    - This provides a measure as to how “industrial” the corresponding census tract is, as measured by total assessed industrial property value in the tract divided by the total assessed value for all property in the tract during the given observation year.
+1. `industrial-mix-ratio-3yr-cagr`
+    - This is the 3-year compound annual growth rate for the industrial mix ratio in the census tract and during the year in which the crime record occurs.
+    - This provides a measure of how much more or less industrial the tract trending prior to the time of the observation.
 
-8. **Industrial properties mix ratio, 3-year CAGR**
-    - This provides a measure of how much more or less industrial the tract is becoming at the time of the observation.
-
-9. **Owner-occupied residential property ratio**
-    - This is the proportion of the residential and mixed-use properties that are owner-occupied in each census tract during each given observation year.
+1. `owner-occupied-ratio`
+    - This is the ratio of total assessed value of owner-occupied residential and mixed-use properities divided by the total assessed value of all residential and mixed-use properties in the census tract and during the year in which the crime record occurs.
     - To a degree this acts as a measure of local ownership as well as a potential indicator of absentee property ownership at the census tract-level.
 
-10. **Owner-occupied residential property ratio, 3-year CAGR**
-    - Measures trend changes in local ownership for the census tract at the time of observation.
+1. `owner-occupied-ratio-3yr-cagr`
+    - This is the 3-year compound annual growth rate for the owner-occupied ratio in the census tract and during the year in which the crime record occurs.
+    - This measures recent trend changes in local ownership for the census tract at the time of observation.
