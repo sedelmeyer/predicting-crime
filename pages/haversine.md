@@ -1,5 +1,5 @@
 ---
-title: The Haversine implementation used for this analysis
+title: The haversine implementation used for this analysis
 ---
 
 Throughout this analysis, the **haversine formula**, which measures great-circle distance between two points on a sphere given their latitudes and longitudes, is used to convert the distances between coordinates.
@@ -10,7 +10,7 @@ The formula, as outlined on Wikipedia (see Source 1 below), can be represented a
 
 <br>
 
-![haversine formula]({{site.url}}/analysis-notes/images/haversine.png)
+![haversine formula]({{site.url}}/references/analysis-notes/images/haversine.png)
 
 <br>
 
@@ -20,7 +20,7 @@ Below is the specific python implementation used throughout this analysis.
 
 Please note that methods used in this function require the Numpy python library to be imported with `import numpy as np`. No other libraries are required.
 
-This implementation is adapted from a similar implementation found on Stack Overflow (see Source 2 below).
+This implementation is a modification of a similar implementation [found on Stack Overflow](https://stackoverflow.com/a/19414306).
 
 ```py
 def distance(locs1, locs2, r=6371, meters=True):
@@ -68,5 +68,5 @@ def distance(locs1, locs2, r=6371, meters=True):
 
 **Sources:**
 
-1. Wikipedia, Haversine formula, https://en.wikipedia.org/wiki/Haversine_formula
-2. Stack Overflow, Efficient way to calculate distance matrix given latitude and longitude data in Python, https://stackoverflow.com/a/19414306
+1. Wikipedia, Haversine formula, [https://en.wikipedia.org/wiki/Haversine_formula](https://en.wikipedia.org/wiki/Haversine_formula)
+2. Stack Overflow, Efficient way to calculate distance matrix given latitude and longitude data in Python, [https://stackoverflow.com/a/19414306](https://stackoverflow.com/a/19414306)
