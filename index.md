@@ -10,7 +10,7 @@ An accompanying repository containing the Python code used to perform this analy
 
 This website was built as a part of the requirements for the CS109a class at Harvard "Introduction to Data Science".
 
-## Research questions:
+## Research questions
 
 Given the (1) variety preliminary datasets we were able to find, (2) the results of our initial EDA on a subset of those datasets, and (3) the number of additional predictors we currently have under development, we have decided to define our project questions in fairly broad terms similar to how they were proposed in
 the original project description:
