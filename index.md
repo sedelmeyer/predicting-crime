@@ -6,7 +6,7 @@ title: "Predicting crime types in the City of Boston"
 
 This website contains the analysis and predictive results for a project exploring the prediction of crime types in the City of Boston, based on a number of different features.
 
-An accompanying repository containing the Python code used to perform this analysis and associated findings can be found here: [{{ site.repository }}]({{ site.repository}})
+An accompanying repository containing the Python code used to perform this analysis and associated findings can be found here: **[{{ site.repository }}]({{ site.repository}})**. Please look at it extensively as it contains all of our work.
 
 This website was built as a part of the requirements for the CS109a class at Harvard "Introduction to Data Science".
 
