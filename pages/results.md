@@ -20,33 +20,35 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 
 *Please refer to our [**Models**](models.md) page for a deeper dive into our approach.*
 
-We first ran a [**Baseline Logistic Classifier**](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data ``accuracy score`` of **0.273** without balancing and **0.133** with balancing.  
+[**Baseline Logistic Classifier**](model-baseline.md)
+
+We first ran a the logistic classifier with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data ``accuracy score`` of **0.273** without balancing and **0.133** with balancing.  
 
 *The unbalanced model simply predicted every crime as either class 4 (harassment-disturbance) and class 6 (theft).*
 
-&nbsp;
+[**Logistic Classifier**](model-logistic.md)
 
-Next we ran the [**Logistic Classifier**](model-logistic.md) on our full-set of predictors with and without regularization.  This model provides the benefit of interpretable results, from which we can begin to develop a better understanding of the relationships between specific predictors and response classes.
+Next we ran the logistic classifier on our full-set of predictors with and without regularization.  This model provides the benefit of interpretable results, from which we can begin to develop a better understanding of the relationships between specific predictors and response classes.
 
 *Given the geographical inter-mixing of our response classes and the high bias of these results, we suspect that the linear decision boundaries of a logistic function are not expressive enough for accurately defining our feature space and predicting results.*
 
-&nbsp;
+[**KNN Classifier**](model-knn.md) 
 
-Our [**KNN Classifier**](model-knn.md) after tuning resulted in a test data ``accuracy score`` of **0.346** and a ``weighted AUC`` of **0.661**.  This model was especially good at predicting class 2 (drug_substances) with a ``True Positive Rate (TPR)`` of **0.499**.  *Please refer to the KNN model page for the full confusion matrix*.
+Our after tuning KNN classifier resulted in a test data ``accuracy score`` of **0.346** and a ``weighted AUC`` of **0.661**.  This model was especially good at predicting class 2 (drug_substances) with a ``True Positive Rate (TPR)`` of **0.499**.  *Please refer to the KNN model page for the full confusion matrix*.
 
 We also ran our KNN model on a subset of the data with three crime classes.  On this subset of data the model achieved an ``accuracy score`` of **0.603** and ``weighted AUC`` of **0.741**.  
 
 > How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve. Our framework is extensible enough to accommodate for different subsets and categories based on requirements.
 
-&nbsp;
+[**Decision Trees**](model-trees.md)
 
-Our [**Decision Trees**](model-trees.md) models included a single decision tree, bagging an overfit tree, boosting an underfit tree and random forest.  Random forest gave us the best scores on the test data with an ``accuracy score`` of **0.350** and ``weighted AUC`` of **0.561**.
+Our tree models included a single decision tree, bagging an overfit tree, boosting an underfit tree and random forest.  Random forest gave us the best scores on the test data with an ``accuracy score`` of **0.350** and ``weighted AUC`` of **0.561**.
 
 The single decision tree provided allowed us to determine feature importances of our predictors which were extremely insightful.  The most important features in order of importance were: ``lon``, ``lat``, ``bachelor-degree-or-more-perc``, ``commercial-mix-ratio``, ``industrial-mix-ratio``, ``tempavg``, ... 
 
-&nbsp;
-
 [**Feed Forward Artificial Neural Network**](model-nn.md)
+
+Fabio's findings
 
 &nbsp;
 
