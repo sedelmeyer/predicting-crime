@@ -35,7 +35,7 @@ The full set of census tract-level engineered features derived from the property
     - This provides a measure of gentrification/development trend activity in the observation’s census tract area and year of occurrence.
 
 3. **Median residential property value Gini coefficient**
-    - This feature is used to measure "disparity" or inequality of median residential property values within each census tract.
+    - This feature is used to measure "disparity" or inequality of residential property values within each census tract.
 
 4. **Median residential property value Gini coefficient, 3-year CAGR**
     - This provides a measure of growing or shrinking inequality in the observation’s census tract area and year of occurrence.
