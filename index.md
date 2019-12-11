@@ -2,13 +2,13 @@
 title: "Predicting crime types in the City of Boston"
 ---
 
-**This is an initial landing page for the project website. We are actively devloping this analysis. Check back for updated content.**
-
 ## Summary
 
 This website contains the analysis and predictive results for a project exploring the prediction of crime types in the City of Boston, based on a number of different features.
 
 An accompanying repository containing the Python code used to perform this analysis and associated findings can be found here: [{{ site.repository }}]({{ site.repository}})
+
+This website was built as a part of the requirements for the CS109a class at Harvard "Introduction to Data Science".
 
 ## Research questions:
 
@@ -25,11 +25,3 @@ defined subset of crime types), which type of crime is most likely to occur at t
 - [Sheraz Choudhary](https://github.com/sherazch00)
 - [Fabio Pruneri](https://github.com/FabioPru)
 - [Mike Sedelmeyer](https://github.com/sedelmeyer)
-
-## Sample EDA performed on City of Boston Property Assessment data
-
-- [Property assessment EDA](pages/data-property.md)
-
-## Sample embedded image
-
-![sample-embedded-image]({{ site.url }}/figures/crime/crime-missing-coords-offense-tstat-hist.png)
