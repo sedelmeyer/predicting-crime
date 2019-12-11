@@ -75,7 +75,7 @@ After initial testing, our best performing ada model is defined with the followi
 ada = AdaBoostClassifier(DecisionTreeClassifier(max_depth=6), n_estimators=200, learning_rate=0.05)
 ```
 > The plot below illustrates the accuracy scores by iteration number of our best performing ada model.
-![ada_boost_3]({{ site.url }}/figures/model-trees/ada_boost_3.PNG)
+![ada_boost_3]({{ site.url }}/figures/model-trees/ada_boost_6.PNG)
 
 In an effort to demonstrate that we've chosen the optimal ada model we've also plotted the results of model depths of 5-8 for comparison purposes:
 
