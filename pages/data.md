@@ -304,5 +304,47 @@ Next, we isolate our top 2 principal components and plot them against one anothe
 
 ![pca-top-2]({{ site.url }}/figures/features/pca-top-2-components-by-class.png)
 
+# Correlation of predictors and multi-collinearity risk
 
-# Correlation of predictors and multi-collinearity
+As a final step in our model data EDA, we will investigate correlation and multi-collinearity of the predictors we have engineered for our model.
+
+To acheive this, we first generate a pair-wise correlation matrix for each unique pair of predictors, sorted in descending order as is shown below for all resulting correlation values greater than 0.50. Here we can see 27 paired predictors with moderate to high correlation (with 14 unique predictors contained in the list). Of these, would expect `night` and `streetlights-night` to be strongly correlation becuase `streetlights-night` is an interaction term partly derived from the values in `night`. 
+in fact, `streetlights-night` will only contain non-zero values for crime records that occured at night. Additionally, the other several top correlated pairings also make sense. We should expect both `poverty-rate` and `median-income` measured at the neighborhood level to have a strong negative relationship. Likewise, we should expect the same negative relationship between `bachelor-degree-or-more-perc` and `less-than-high-school-perc`.
+
+```
+The most strongly correlated predictors (corr > 0.50) in our predictor
+set and their corresponding correlation values are:
+
+poverty-rate                       median-income                    0.832
+bachelor-degree-or-more-perc       less-than-high-school-perc       0.830
+night                              streetlights-night               0.814
+enrolled-college-perc              bachelor-degree-or-more-perc     0.776
+owner-occupied-ratio               enrolled-college-perc            0.736
+median-age                         owner-occupied-ratio             0.727
+residential-gini-coef              residential-median-value         0.719
+median-income                      less-than-high-school-perc       0.718
+bachelor-degree-or-more-perc       median-income                    0.714
+bachelor-degree-or-more-perc       residential-gini-coef            0.672
+college-near                       enrolled-college-perc            0.670
+poverty-rate                       median-age                       0.669
+enrolled-college-perc              residential-gini-coef            0.663
+bachelor-degree-or-more-perc       residential-median-value         0.629
+median-age                         enrolled-college-perc            0.624
+lat                                enrolled-college-perc            0.621
+college-near                       residential-gini-coef            0.612
+owner-occupied-ratio               lat                              0.610
+residential-median-value           commercial-mix-ratio             0.610
+residential-gini-coef              commercial-mix-ratio             0.605
+college-near                       bachelor-degree-or-more-perc     0.583
+lat                                bachelor-degree-or-more-perc     0.562
+residential-median-value           college-near                     0.556
+lat                                residential-gini-coef            0.555
+residential-median-value           enrolled-college-perc            0.554
+enrolled-college-perc              commercial-mix-ratio             0.550
+median-income                      residential-median-value         0.523
+```
+
+To further examine these relationships we can begin by plotting scatter-matrices of the 14 unique predictors contained in the correlation table above.
+
+![scatter]({{ site.url }}/figures/features/correlation-scatter-matrix-most-correlated-predictors.png)
+
