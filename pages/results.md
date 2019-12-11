@@ -22,7 +22,7 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 
 [**Baseline Logistic Classifier**](model-baseline.md)
 
-We first ran a the logistic classifier with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data ``accuracy score`` of **0.273** without balancing and **0.133** with balancing.  
+We first ran a logistic classifier with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data ``accuracy score`` of **0.273** without balancing and **0.133** with balancing.  
 
 *The unbalanced model simply predicted every crime as either class 4 (harassment-disturbance) and class 6 (theft).*
 
@@ -44,7 +44,9 @@ We also ran our KNN model on a subset of the data with three crime classes.  On 
 
 Our tree models included a single decision tree, bagging an overfit tree, boosting an underfit tree and random forest.  Random forest gave us the best scores on the test data with an ``accuracy score`` of **0.350** and ``weighted AUC`` of **0.561**.
 
-The single decision tree provided allowed us to determine feature importances of our predictors which were extremely insightful.  The most important features in order of importance were: ``lon``, ``lat``, ``bachelor-degree-or-more-perc``, ``commercial-mix-ratio``, ``industrial-mix-ratio``, ``tempavg``, ... 
+The single decision tree provided allowed us to determine feature importance of our predictors which were extremely insightful.  The most important features in order of importance were: ``lon``, ``lat``, ``bachelor-degree-or-more-perc``, ``commercial-mix-ratio``, ``industrial-mix-ratio``, and ``tempavg``. In addition, our random forest model illustrated similar top predictors especially with our location and education predictors .
+
+We also ran our random forest on a subset of the data with three crime classes. On this subset of data the model achieved an ``accuracy score`` of *0.586* and ``weighted AUC`` of *0.738*
 
 [**Feed Forward Artificial Neural Network**](model-nn.md)
 
@@ -56,7 +58,7 @@ Fabio's findings
 
 During the course of this project we had to shift our implementation multiple times given our EDA of the datasets.  Some datasets ended up being abandoned because they either had missing data or not enough data for our analysis *(for example liquor license data)*.  We also decided that ``lat`` and ``lon`` be part of any data we used to associate it with the ``lat`` and ``lon`` in the crime dataset.
 
-We also shifted what our output of this project would be given time constraints.  We initially planned on having the user input a ``lat``, ``lon`` and other predictors into the model to calculate probabilities of each type of crime.  For this iteration our model spilts the crime dataset into train and test data and then predicts the type of crime in the test data. 
+We also shifted what our output of this project would be given time constraints.  We initially planned on having the user input a ``lat``, ``lon`` and other predictors into the model to calculate probabilities of each type of crime.  For this iteration our model splits the crime dataset into train and test data and then predicts the type of crime in the test data. 
 
 The full analysis of each models output is discussed in detail in each individual model page.  Our best models have an ``accuracy score`` of around **0.35** on a multi-class categorization problem with nine different crime types.  This is much better than chance so our predictor do have predictive power but not as high as our goals.  We believe that the way the crimes are categorized and subset has a huge impact on accuracy.  On subsets of our data with the categories defined differently, we can achieve much higher accuracy scores.  Therefore, our models will perform much more in line with our goals on specific tasks.  The task of predicting all crime types across all of Boston for the last few years is too broad to get high accuracies *(in a small city like Boston a large number of crimes results in a spatial distribution that is spread across the city)*.
 
@@ -68,9 +70,9 @@ Our models show that it is possible to predict the probability of different crim
 
 ## Conclusions and Future Work 
 
-Our results show a lot of promise and a subset of our predictors are significant for predicting the type of crime.  In the future, we will explore further datasets and generate more features using the existing data to further explore the type of predictors that are significant for predicting crime.  We also still have some issues with missingness and collinearity in several of our features (collinearity information is included in Appendix 2) which we will resolve in future iterations.
+Our results show a lot of promise and a subset of our predictors are significant for predicting the type of crime.  In the future, we will explore further datasets and generate more features using the existing data to further explore the type of predictors that are significant for predicting crime.  We also still have some issues with missing data and collinearity in several of our features (collinearity information is included in Appendix 2) which we will resolve in future iterations.
 
 We plan on further exploring each of the raw ``OFFENSE_CODE_GROUP`` values and how they are distributed across each of our predictors.  This will help us understand which ``OFFENSE_CODE_GROUP`` values can be differentiated by out predictors.  The present grouping of these code groups into crime categories might be masking the influence of the individual crime codes.  Our subset data was the beginning of our exploration of how the crime categories affect our models.
 
-Finally, we will be adding a function to this project that when input ``lat``, ``lon``, ``night``, ``temp``, ect can predict the probability of each crime type.  
+Finally, we will be adding a function to this project that when input ``lat``, ``lon``, ``night``, ``temp``, etc. can predict the probability of each crime type.  
 
