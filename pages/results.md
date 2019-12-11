@@ -18,9 +18,12 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 
 #### Please refer to our [**Models**](models.md) page for a deeper dive into our approach.
 
+&nbsp;
+
 We first ran a [**Baseline Logistic Classifier**](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data accuracy of **0.273** without balancing and **0.133** with balancing.  
 
 *The unbalanced model simply predicted every crime as either class 4 (harassment-disturbance) and class 6 (theft).*
+
 &nbsp;
 
 Next we ran the [**Logistic Classifier**](model-logistic.md) on our full-set of predictors with and without regularization.  This model provides the benefit of interpretable results, from which we can begin to develop a better understanding of the relationships between specific predictors and response classes.
