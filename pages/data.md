@@ -24,8 +24,6 @@ To view the preliminary EDA findings and summaries of the feature engineering ac
 1. [Liquor licensing data](data-liquor.md)
 1. [Educational institutions](data-education.md)
 1. [Property violations](data-violations.md)
-1. Various City of Boston shape files
-    - These include Census tracts, Boston neighborhoods, Zip codes, Street segments, and Open spaces
 
 # Introduction
 
@@ -284,4 +282,8 @@ In the previous section of this EDA, we saw a couple of our distance-based predi
 
 All measurements used in these predictors were calculated using the Haversine formula to measure the distance between sets of latitude and longitude coordinates. [A detailed description of the Haversine implementation built for our analysis can be found on this site page](haversine.md).
 
-Below we can 
+![dist-streetlight]({{ site.url }}/figures/features/distance-streetlights-night-by-class.png)
+
+![dist-college]({{ site.url }}/figures/features/distance-colleges-by-class.png)
+
+![dist-highschool]({{ site.url }}/figures/features/distance-highschools-by-class.png)
