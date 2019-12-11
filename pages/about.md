@@ -4,25 +4,25 @@ title: "About"
 
 ## Problem statement
 
-Crime tends to be ubiquitous in all areas of the United States, including Boston and Cambridge. Pinpointing the exact causes of crime is impossible, as it is a highly nuanced and complex issue. However, factors such as gross income, economic disparity, and government infrastructure/support are often strong indicators. We wish to inspect factors that may be correlated and/or contributing to occurrences of Boston crimes and the types thereof (e.g., robbery, vandalism, etc). 
+Crime tends to be ubiquitous in all areas of the United States, including Boston and Cambridge. Pinpointing the exact causes of crime is impossible, as it is a highly nuanced and complex issue. However, factors such as gross income, economic disparity, and government infrastructure/support are often strong indicators. We wish to inspect factors that may be correlated and/or contributing to occurrences of Boston crimes and the types thereof (e.g., robbery, vandalism, etc.). 
 
-We choose to explore datasets freely available from the City of Boston institutional website, starting (as reccommended) from the Street Lights and Property Values dataset, and incorporating a wide variety of other sources that can help explain variability in frequency and type of crimes committed.
+We choose to explore datasets freely available from the City of Boston institutional website, starting (as recommended) from the Street Lights and Property Values dataset, and incorporating a wide variety of other sources that can help explain variability in frequency and type of crimes committed.
 
-After collecting and unyfing the data, we plan to construct models that learn relationships between predictors and crime from a training set, assess their performance on unseen data, and extrapolate from their predictions to postulate possible causal factors linked to crime.
+After collecting and unifying the data, we plan to construct models that learn relationships between predictors and crime from a training set, assess their performance on unseen data, and extrapolate from their predictions to postulate possible causal factors linked to crime.
 
 ## High-level design choices
 
-Some design aspects of the projects were intentionally left to each group's taste and preference. We dicussed these extensively in group meetings, and these are some of the motivations behind our choices.
+Some design aspects of the projects were intentionally left to each group's taste and preference. We discussed these extensively in group meetings, and these are some of the motivations behind our choices.
 
 ### Grouping summary statistics by Census Tract
 
-- For many of our datasets statistics were only provided at the Census Tract level. As there are more than 100 of those in the City of Boston alone, we deemed this to be sensisitve enough without falling into the trap of overfitting. This principle is applied differently for each dataset, but as an example we prefer to aggreate property value statistics by Tract and feed that as an input into the model, rather than feeding for each instance of crime the value of the closest property to where the crime happened.
+- For many of our datasets statistics were only provided at the Census Tract level. As there are more than 100 of those in the City of Boston alone, we deemed this to be sensitive enough without falling into the trap of overfitting. This principle is applied differently for each dataset, but as an example we prefer to aggregate property value statistics by Tract and feed that as an input into the model, rather than feeding for each instance of crime the value of the closest property to where the crime happened.
 
 ### Focusing on type rather than frequency of crime
 
-- We saw two many ways we could box crime data into points to be predicted by a model. First, we could divide the city of Boston in small geographical region, and group all the crime instances happening in a region together, obtaining for each region one data point with crime measures associated to it. Or, we could treat each data point as an individual instance, and assign summary geographical statistics as a feature to it.
+- We saw too many ways we could box crime data into points to be predicted by a model. First, we could divide the city of Boston in small geographical region, and group all the crime instances happening in a region together, obtaining for each region one data point with crime measures associated to it. Or, we could treat each data point as an individual instance, and assign summary geographical statistics as a feature to it.
 
-- We went with the second approach, for several reasons. First, we were afraid that even grouping reduces noise and outliers, we would be left with too few observations for complex models to be built on top of them. This would work better, for instance, if comparing different regions of multiple cities. Second, by leaving each crime instance as a single datapoint, we can observe which factors influence crime happening within the very same region or even in the exact same spot. This can shed further light to why crime happens and how it can be predicted/prevented.
+- We went with the second approach, for several reasons. First, we were afraid that even grouping reduces noise and outliers, we would be left with too few observations for complex models to be built on top of them. This would work better, for instance, if comparing different regions of multiple cities. Second, by leaving each crime instance as a single data point, we can observe which factors influence crime happening within the very same region or even in the exact same spot. This can shed further light to why crime happens and how it can be predicted/prevented.
 
 Of course, many other design choices were made by individual members when analyzing, grouping, cleaning the data and when presenting the results of each model. These are fully explained in the relative pages.
 
@@ -32,7 +32,7 @@ We choose to analyze only datasets publicly available from the institutional Cit
 
 ### Bias in crime reporting
 
-- The crime dataset only reports incidents that were recorded by public officials, and does not report crimes that go untracked. A side effect of this is that areas with better law enforcement are likely to have a greater percentage of crimes tracked in the dataset and therefore show higher incidence of crimes. This makes it difficult, for example, to measure the effect of law enforcement on the relative frequency of crimes, as more police might mean less crimes happening but a higher percentage of those being reported. Some ways to address these concerns might employ the use of different crime-related sources, such as surveys of victimisation, analysis of CCTV camera footage, etc.
+- The crime dataset only reports incidents that were recorded by public officials, and does not report crimes that go untracked. A side effect of this is that areas with better law enforcement are likely to have a greater percentage of crimes tracked in the dataset and therefore show higher incidence of crimes. This makes it difficult, for example, to measure the effect of law enforcement on the relative frequency of crimes, as more police might mean less crimes happening but a higher percentage of those being reported. Some ways to address these concerns might employ the use of different crime-related sources, such as surveys of victimization, analysis of CCTV camera footage, etc.
 
 ### Normalizing crime numbers
 
@@ -44,9 +44,9 @@ We choose to analyze only datasets publicly available from the institutional Cit
 
 ### Interpretability of our models
 
-- Our aim of the project is to investigate the relationship of different types of crime and underlying features. Thus, recovering which variables had the greates effect in the model's prediction for a certain datapoint is of paramount importance. For different kinds of models, as seen throughout the course, this can be done in different ways, but especially in models that are not easily interpretable (e.g. Neural Networks) we have to resort to approximations which might be distorting. We also try to state how statistically significant our findings are, and how dependent they might be on outliers or other features of the training set which do not necessarily generalise. 
+- Our aim of the project is to investigate the relationship of different types of crime and underlying features. Thus, recovering which variables had the greatest effect in the model's prediction for a certain data point is of paramount importance. For different kinds of models, as seen throughout the course, this can be done in different ways, but especially in models that are not easily interpretable (e.g. Neural Networks) we have to resort to approximations which might be distorting. We also try to state how statistically significant our findings are, and how dependent they might be on outliers or other features of the training set which do not necessarily generalize. 
 
-## Souces of bias and ethical considerations
+## Sources of bias and ethical considerations
 
 - As the Project Guidelines state, "this is purely an academic project whereby we want students to explore data and make statistical predictions in an area that is vastly affected by many confounding, real-world complex factors" and we therefore try to avoid any statements which might imply that this is more than an exploratory experiment in which we try to grapple with complex issues. In some sense, we often find that the data we have is not very good at explaining variance in crime, which suggests we take any of our results with a grain of salt and do not try to generalize unduly. 
 
