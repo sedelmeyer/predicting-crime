@@ -16,31 +16,34 @@ Here is a list with links to the jupyter notebook and original datasets used to 
 
 To view the preliminary EDA findings and summaries of the feature engineering activities that were performed on the component datasets eventually merged into the model data examined on this page, please follow the links listed below. On each of those linked pages, you will also find links to the original source datasets used for each raw data EDA:
 
-1. [Crime incident data](data-crime.md)
-1. [Property assessment data](data-property.md)
-1. [Streetlight location data](data-lights.md)
-1. NOAA weather data
-1. [Neighborhood demographics data](data-demographics.md)
-1. [Liquor licensing data](data-liquor.md)
-1. [Educational institutions](data-education.md)
-1. [Property violations](data-violations.md)
+1. [Crime incident raw data EDA](data-crime.md)
+1. [Property assessment raw data EDA](data-property.md)
+1. [Streetlight location raw data EDA](data-lights.md)
+1. NOAA weather raw data EDA
+1. [Neighborhood demographics raw data EDA](data-demographics.md)
+1. [Liquor licensing raw data EDA](data-liquor.md)
+1. [Educational institutions raw data EDA](data-education.md)
+1. [Property violations raw data EDA](data-violations.md)
 
 # Introduction
 
-This page outlines the comprehensive exploratory data analysis (EDA) conducted on the feature set engineered for our analysis. As is outlined above, a number of different data sources were investigated, cleansed, and enhanced in order to achieve the eventual feature set investigated on this page.
+This page outlines the comprehensive exploratory data analysis (EDA) conducted on our training feature set engineered for our predictive model. As is outlined above, a number of different data sources were investigated, cleansed, and enhanced in order to achieve the finished feature set investigated on this page.
 
-# Contents
+<a id='top'></a>
+# EDA Contents
 
-The EDA outlined on this page follows this overall structure:
+The EDA outlined below on this page is divided into the following sections:
 
-1. Description of the variable of interest we hope to measure
-1. Description of the engineered features we have created
-1. Geographic mappings of crime records for the City of Boston
-1. Distributions of crime records by `crime-type` class among Boston neighborhoods and census tract areas
-1. Investigation of the pair-wise relationships between each predictor and `crime-type` class
-1. Investigation of distance-based predictors versus each `crime-type` class
-1. Dimensionality reduction with principal component analysis (PCA) to evaluate explained variance among our predictors and the potential for effectively separating `crime-type` class predictions
-1. Examination of pair-wise correlation among predictors and potential multi-collinearity
+1. [Variable of interest and number of overall records examined](#response)
+1. [Predictors used in this analysis](#predictors)
+1. [Geographical distributions of crime records](#location)
+1. [Geographical change in crime records over time](#change)
+1. [Pair-wise relationship strength between predictors and `crime-type` classes](#ttest)
+1. [Evaluating distance-based geographical predictors by class](#distance)
+1. [Dimensionality reduction with principal component analysis (PCA)](#pca)
+1. [Correlation of predictors and multi-collinearity risk](#correlation)
+
+<a id='response'></a>
 
 # Our variable of interest and number of overall records examined
 
@@ -67,9 +70,11 @@ Then, after performing our train set split with an 80/20 split, stratified by `c
 
 # Secondary subset of `crime-type` classes
 
+[Return to page contents](#top)
+
 Please note that we have also performed a secondary subsetting of `crime-type` classes in our subsequent [prediction models](models.md). This was done as a comparative analysis to attempt to overcome the imbalanced classes existing in our primary set of `crime-type` classes and to examine potential changes in predictive accuracy when we subset for a smaller grouping of particularly meaningful classes.
 
-We mention this secondary subsetting of classes here primarily becuase this additional subset is examined via PCA in a later section of this EDA. The seconday subsetting of classes can be summarized as such:
+The seconday subsetting of classes can be summarized as such:
 
 ```
 crime-type 	crime-type-name 	   crime-count
@@ -78,13 +83,21 @@ crime-type 	crime-type-name 	   crime-count
 2 	        violence-aggression         24,666
 ```
 
-Just note that in this particular grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
+Just note that in this particular secondary grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
+
+<a id='predictors'></a>
 
 # Predictors used in this analysis
 
-**ADD PREDICTORS HERE**
+[Return to page contents](#top)
 
-# Locational distributions of crime records
+For a full listing of the predictors engineered for our final dataset, [please see the "Models" page of this analysis.](models.md)
+
+<a id='location'></a>
+
+# Geographical distributions of crime records
+
+[Return to page contents](#top)
 
 The plot below illustrates the distribution of crime records by each record's associated geo-location coordinates in the City of Boston. By color-coding each plotted location point according to its associated `crime-type` class, we can see that crime types demostrate heavy spatial mixing, with each of the different `crime-type` classes having occured in close proximity or overlapping one another over time from the year 2016 through 2019.
 
@@ -124,7 +137,11 @@ Even in Neighborhoods with a more sparse spatial distribution of crime records, 
 
 These observations suggest to us that purely locational predictors such as Latitude and Longitude alone will be insufficient for generating accurate predictions for each `crime-type` class.
 
-# Locational change in crime records over time
+<a id='change'></a>
+
+# Geographical change in crime records over time
+
+[Return to page contents](#top)
 
 As was discovered during [the initial EDA on the raw crime incidents records analysis](data-crime.md), to meaningfully plot choropleth distributions of crime records, we must do so with a sufficiently granular set of geographic areas. As is shown below, at the neighborhood level, the disproportionately high volume of crime records in Dorchester overwhelm the plotted distribution. However, this same level of aggregation presents a very different look when we consider the 4-year annual neighborhood-by-neighborhood change in proportion of crime records from 2016 to 2019 as is shown in the second plot below. There we can see that Dorchester is actually decreasing in overall proportion, while the South End, Roxbury, Downtown, South Boston, and Mattapan are all increasing.
 
@@ -164,7 +181,11 @@ To view similar plots for all `crime-type` classes, [please review the original 
 
 These locational change by `crime-type` findings would suggest to us that, by including time-based predictors in our models [such as year-based property-related metrics such as those described in detail on our property assessment data EDA page](data-property.md), should increase the overall predictive accuracy of our models.
 
+<a id='ttest'></a>
+
 # Pair-wise relationship strength between predictors and `crime-type` classes
+
+[Return to page contents](#top)
 
 Looking beyond just location based and time-based predictors related to location, we will now examine the pair-wise relationships between our individual predictors versus each of our `crime-type` classes. To accomplish this, we will measure the strength of these relationships by calculating t-statistics for each of these pairings. Effectively, this will look in isolation at each predictor and class combination to determine the strength of that particular predictor's strength in predicting the that class outcome in a "one-vs-rest" fashion.
 
@@ -276,7 +297,11 @@ Now, for the sake of consistency with the previous section of this EDA, we will 
 
 In above summary tables and plots, we can see a fairly broad mixture of top 5 predictors across all of our `crime-type` classes. This leads us to believe that we may have a suitable variety of predictors for the classes we hope to predict. However, while some `crime-type` classes such as `theft` and `harassment-disturbance` have top predictors with t-statistics exceeding 60, some classes such as `violence-aggression`, `robbery`, and `burglary` have much smaller top t-statistic values less than 25. This suggests those classes may be prove to be harder to predict accurately using this set of predictors. However, what's not accounted for in these t-statistic measures is the potential interaction effect of trying to generate predictions for each specific `crime-type` class with multiple predictors at once.
 
+<a id='distance'></a>
+
 # Evaluating distance-based geographical predictors by class
+
+[Return to page contents](#top)
 
 In the previous section of this EDA, we saw a couple of our distance-based predictors in the top 5 predictors for several of the `crime-type` classes. This leads us to wonder how these predictors might vary overall among all of our class types. The specific predictors we would consider distance-based are `streetlights-night`, which measures the number of streetlights within 100 meters of each crime record for crimes occuring at night, `college-near`, which indicates whether or not a crime incident occured wihtin 500 meters of a college or university, and `highschool-near`, which indicates whether a crime incident occured within 500 meters of a public or non-public highschool.
 
@@ -292,5 +317,72 @@ For each of the below predictors, we do see some variations in distributions amo
 
 ![dist-highschool]({{ site.url }}/figures/features/distance-highschools-by-class.png)
 
+<a id='pca'></a>
+
 # Dimensionality reduction with principal component analysis (PCA)
 
+[Return to page contents](#top)
+
+To gain a better sense for how well we might be able to separate classes given the predictors we currently have on hand, we now use the unsupervised learning method PCA to reduce the number of dimensions in our predictor set. Doing so will help us to understand explained variance in our predictors regardless of our target response classes, and will help us to visualize our `crime-type` classes along the two PCA reduced dimensions with the greatest levels of explained variance. Thus, giving us a sense for how easily separable our `crime-type` classes might be given these predictors.
+
+First we can examine the growth curve in cumulative explained variance plotted against the number of principal components derived from our standardized predictor data. Here we can see a distinct elbow in explained cumulative explained variance growth when we reach 14 components and approximately 85% explained variance, indicating diminishing returns for all components beyond that point.
+
+![pca]({{ site.url }}/figures/features/pca-cum-variance-explained.png)
+
+Next, we isolate our top 2 principal components and plot them against one another. In this plot we have labeled the `crime-type` class of each observation. Immediately we can see that PCA does very little to separate our response classes using these top 2 components. The observations do however appear to have achieved some sort of separation across some other dimension not measured here. Regardless, this indicates to us that our prediction models will also likely have difficulty separating out the `crime-type` classes we have outlined here given our predictor variables.
+
+![pca-top-2]({{ site.url }}/figures/features/pca-top-2-components-by-class.png)
+
+<a id="correlation"></a>
+
+# Correlation of predictors and multi-collinearity risk
+
+[Return to page contents](#top)
+
+As a final step in our model data EDA, we will investigate correlation and multi-collinearity of the predictors we have engineered for our model.
+
+To acheive this, we first generate a pair-wise correlation matrix for each unique pair of predictors, sorted in descending order as is shown below for all resulting correlation values greater than 0.50. Here we can see 27 paired predictors with moderate to high correlation (with 14 unique predictors contained in the list). Of these, would expect `night` and `streetlights-night` to be strongly correlation becuase `streetlights-night` is an interaction term partly derived from the values in `night`. 
+in fact, `streetlights-night` will only contain non-zero values for crime records that occured at night. Additionally, the other several top correlated pairings also make sense. We should expect both `poverty-rate` and `median-income` measured at the neighborhood level to have a strong negative relationship. Likewise, we should expect the same negative relationship between `bachelor-degree-or-more-perc` and `less-than-high-school-perc`.
+
+```
+The most strongly correlated predictors (corr > 0.50) in our predictor
+set and their corresponding correlation values are:
+                                                                corr coef
+poverty-rate                       median-income                    0.832
+bachelor-degree-or-more-perc       less-than-high-school-perc       0.830
+night                              streetlights-night               0.814
+enrolled-college-perc              bachelor-degree-or-more-perc     0.776
+owner-occupied-ratio               enrolled-college-perc            0.736
+median-age                         owner-occupied-ratio             0.727
+residential-gini-coef              residential-median-value         0.719
+median-income                      less-than-high-school-perc       0.718
+bachelor-degree-or-more-perc       median-income                    0.714
+bachelor-degree-or-more-perc       residential-gini-coef            0.672
+college-near                       enrolled-college-perc            0.670
+poverty-rate                       median-age                       0.669
+enrolled-college-perc              residential-gini-coef            0.663
+bachelor-degree-or-more-perc       residential-median-value         0.629
+median-age                         enrolled-college-perc            0.624
+lat                                enrolled-college-perc            0.621
+college-near                       residential-gini-coef            0.612
+owner-occupied-ratio               lat                              0.610
+residential-median-value           commercial-mix-ratio             0.610
+residential-gini-coef              commercial-mix-ratio             0.605
+college-near                       bachelor-degree-or-more-perc     0.583
+lat                                bachelor-degree-or-more-perc     0.562
+residential-median-value           college-near                     0.556
+lat                                residential-gini-coef            0.555
+residential-median-value           enrolled-college-perc            0.554
+enrolled-college-perc              commercial-mix-ratio             0.550
+median-income                      residential-median-value         0.523
+```
+
+To further examine these relationships we can begin by plotting scatter-matrices of the 14 unique predictors contained in the correlation table above.
+
+![scatter]({{ site.url }}/figures/features/correlation-scatter-matrix-most-correlated-predictors.png)
+
+**PRELIMINARY FINDINGS:**
+
+Given the strength of correlations among a handful of our predictors, with additional time and future iterations of our analysis, this is high on our list of priorities to address. To address this, for the most strongly correlated predictor pairings we will consider methods such as centering to alleviate potential correlation issues and the removal of at least one of the predictors from the pairings to see what effect each change has on our models and the interpretability of our results.
+
+[Return to page contents](#top)
