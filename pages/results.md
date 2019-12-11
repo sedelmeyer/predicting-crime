@@ -16,7 +16,11 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 
 ## Modeling Approach
 
-Include 1) a baseline model for comparison and 2) a description of your implementations beyond the baseline model and the design choices that you made along the way
+Please refer to our [**Models**](models.md) page for a deeper dive into our approach. 
+
+We first ran a [Baseline Logistic Classifier](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data accuracy of **0.273** without balancing and **0.133** with balancing.  
+
+> The unbalanced model simply predicted every crime as either classes 4 (harassment-disturbance) and 6 (theft).
 
 ## Project Trajectory, Results, and Interpretation
 
