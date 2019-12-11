@@ -120,12 +120,12 @@ Weighted AUC 0.5569 --> 0.7367
 
 ``Testing Accuracy`` = **0.5856**
 
-``AUC Average`` = **0.756**
+``AUC Average`` = **0.7495**
 
-``Weighted AUC Average`` = **0.741**
+``Weighted AUC Average`` = **0.7367**
 
-![knn-subset_confusion-matix]({{ site.url }}/figures/model-knn/knn-subset_confusion-matix.png)
+![confusion_matrix_rf_subset]({{ site.url }}/figures/model-trees/confusion_matrix_rf_subset.PNG)
 
-![knn-subset_confusion-matrix_calcs]({{ site.url }}/figures/model-knn/knn-subset_confusion-matrix_calcs.png)
+![confusion_matrix_rf_subset_2]({{ site.url }}/figures/model-trees/confusion_matrix_rf_subset_2.PNG)
 
-![knn-subset_auc-curves_combined]({{ site.url }}/figures/model-knn/knn-subset_auc-curves_combined.png)
+![roc_auc_subset]({{ site.url }}/figures/model-trees/roc_auc_subset.PNG)
