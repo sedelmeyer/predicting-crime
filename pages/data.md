@@ -282,8 +282,15 @@ In the previous section of this EDA, we saw a couple of our distance-based predi
 
 All measurements used in these predictors were calculated using the Haversine formula to measure the distance between sets of latitude and longitude coordinates. [A detailed description of the Haversine implementation built for our analysis can be found on this site page](haversine.md).
 
+Note that, for the purpose of better understanding the underlying nuances of distance to the nearest college or university and highschool, we will plot the actual distances per crime record rather than the proximity indicator for each.
+
+For each of the below predictors, we do see some variations in distributions among the different `crime-type` classes. Most notable are the difference in distances to the nearest college or university for some of the classes. The difference between college distance distributions for `harrassment-disturbance` versus `theft` records provides a good example of how these relationships can vary, and likely contribute to `college-near` showing up several times in our top 5 t-statistics tables above.
+
 ![dist-streetlight]({{ site.url }}/figures/features/distance-streetlights-night-by-class.png)
 
 ![dist-college]({{ site.url }}/figures/features/distance-colleges-by-class.png)
 
 ![dist-highschool]({{ site.url }}/figures/features/distance-highschools-by-class.png)
+
+# Dimensionality reduction with principal component analysis (PCA)
+
