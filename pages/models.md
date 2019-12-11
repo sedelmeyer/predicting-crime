@@ -14,6 +14,8 @@ For a look into the types of models we developed prior to reaching those results
 4. [Decision Tree Classifiers and Ensemble Methods](model-trees.md)
 5. Feed Forward Artificial Neural Network (i.e. multi-level perceptron) **(TBD)**
 
+<a id='response'></a>
+
 # About the response variable we are predicting
 
 The response variable for our model is ​**type of crime** defined as a set of 9 `crime-type` categories consolidated from a subset of the 66 available `OFFENSE_CODE_GROUP` categories in the [raw crime incidents dataset described here](data-crime.md) over the years 2016-2019. 
@@ -53,6 +55,7 @@ class   class-name
 
         TOTAL                  128352    1.0000
 ```
+<a id='response-comp'></a>
 
 # Secondary comparative reduced number of response classes
 
@@ -68,6 +71,8 @@ class       class-name
 ```
 
 Just note that in this particular secondary grouping of classes, `violence-aggression` has been combined with `robbery` due to the physical nature of the crime and the increased risk/threat of violence that such a crime entails.
+
+<a id='predictors'></a>
 
 ## Model predictors
 
