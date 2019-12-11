@@ -18,9 +18,7 @@ We relied heavily on course materials from [Harvard University’s CS 109a](http
 
 ## Modeling Approach
 
-#### Please refer to our [**Models**](models.md) page for a deeper dive into our approach.
-
-&nbsp;
+*Please refer to our [**Models**](models.md) page for a deeper dive into our approach.*
 
 We first ran a [**Baseline Logistic Classifier**](model-baseline.md) with just the ``lat`` and ``lon`` as predictors to determine how exclusively important these spatial variables were.  This resulted in a test data ``accuracy score`` of **0.273** without balancing and **0.133** with balancing.  
 
@@ -58,9 +56,11 @@ During the course of this project we had to shift our implementation multiple ti
 
 We also shifted what our output of this project would be given time constraints.  We initially planned on having the user input a ``lat``, ``lon`` and other predictors into the model to calculate probabilities of each type of crime.  For this iteration our model spilts the crime dataset into train and test data and then predicts the type of crime in the test data. 
 
-The full analysis of each models output is discussed in detail in each individual model page.  Our best models have an ``accuracy score`` of around **0.35** on a multi-class categorization problem with nine different crime types.  This is much better than chance so our predictor do have predictive power but not as high as our goals.  We believe that the way the crimes are categorized and subset has a huge impact on accuracy.  On subsets of our data with the categories defined differently, we can achieve much higher accuracy scores.  Therefore, our models will perform much more in line with our goals on specific tasks.  The task of predicting all crime types across all of Boston for the last few years is too broad to get high accuracies.
+The full analysis of each models output is discussed in detail in each individual model page.  Our best models have an ``accuracy score`` of around **0.35** on a multi-class categorization problem with nine different crime types.  This is much better than chance so our predictor do have predictive power but not as high as our goals.  We believe that the way the crimes are categorized and subset has a huge impact on accuracy.  On subsets of our data with the categories defined differently, we can achieve much higher accuracy scores.  Therefore, our models will perform much more in line with our goals on specific tasks.  The task of predicting all crime types across all of Boston for the last few years is too broad to get high accuracies *(in a small city like Boston a large number of crimes results in a spatial distribution that is spread across the city)*.
 
+Especially interesting are the relationships of crime type to ``bachelor-degree-or-more-perc``, ``commercial-mix-ratio``, ``industrial-mix-ratio`` and ``tempavg``.  We did not predict that bachelor degree percentage would have such a high importance.  The interpretability graphs at the end of the [Neural Network](model-nn.md) page also show very interesting relationships between our predictors and different crime types.
 
+Our models show that it is possible to predict the probability of different crime types.  The accuracy is currently not as high as we desire but by adding additional features and making the problem more specific we believe sufficient accuracies can be achieved for the model to be useful.  Police departments and other city departments can use the model to appropriately distribute staff across Boston.  
 
 &nbsp;
 
