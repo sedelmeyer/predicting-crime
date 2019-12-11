@@ -48,7 +48,7 @@ The single decision tree provided allowed us to determine feature importances of
 
 &nbsp;
 
-[**Feed Forward Artificial Neural Network**](model-ann.md)
+[**Feed Forward Artificial Neural Network**](model-nn.md)
 
 &nbsp;
 
@@ -57,6 +57,10 @@ The single decision tree provided allowed us to determine feature importances of
 During the course of this project we had to shift our implementation multiple times given our EDA of the datasets.  Some datasets ended up being abandoned because they either had missing data or not enough data for our analysis *(for example liquor license data)*.  We also decided that ``lat`` and ``lon`` be part of any data we used to associate it with the ``lat`` and ``lon`` in the crime dataset.
 
 We also shifted what our output of this project would be given time constraints.  We initially planned on having the user input a ``lat``, ``lon`` and other predictors into the model to calculate probabilities of each type of crime.  For this iteration our model spilts the crime dataset into train and test data and then predicts the type of crime in the test data. 
+
+The full analysis of each models output is discussed in detail in each individual model page.  Our best models have an ``accuracy score`` of around **0.35** on a multi-class categorization problem with nine different crime types.  This is much better than chance so our predictor do have predictive power but not as high as our goals.  We believe that the way the crimes are categorized and subset has a huge impact on accuracy.  On subsets of our data with the categories defined differently, we can achieve much higher accuracy scores.  Therefore, our models will perform much more in line with our goals on specific tasks.  The task of predicting all crime types across all of Boston for the last few years is too broad to get high accuracies.
+
+
 
 &nbsp;
 
