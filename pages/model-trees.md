@@ -14,7 +14,7 @@ Accuracy of best CV tree model (Test):  0.3358
 
 The plot above shows that at a depth of 11 we have the highest mean CV score. The standard deviation at depth=11 is also not too wide. Depths 11-13 are very similar so any of those could potentially work and have been tested.
 
-Depth=11 gets an accuracy score of 0.681 on the training data and an accuracy score of 0.648 on the testing data.
+Depth=11 gets an accuracy score of 0.3622 on the training data and an accuracy score of 0.3358 on the testing data.
 
 
 **Top Predictors** 
