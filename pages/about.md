@@ -18,7 +18,7 @@ Some design aspects of the projects were intentionally left to each group's tast
 
 - For many of our datasets statistics were only provided at the Census Tract level. As there are more than 100 of those in the City of Boston alone, we deemed this to be sensitive enough without falling into the trap of overfitting. This principle is applied differently for each dataset, but as an example we prefer to aggregate property value statistics by Tract and feed that as an input into the model, rather than feeding for each instance of crime the value of the closest property to where the crime happened.
 
-### Focusing on type rather than frequency of crime
+### Focusing on type rather than frequency of crime
 
 - We saw too many ways we could box crime data into points to be predicted by a model. First, we could divide the city of Boston in small geographical region, and group all the crime instances happening in a region together, obtaining for each region one data point with crime measures associated to it. Or, we could treat each data point as an individual instance, and assign summary geographical statistics as a feature to it.
 
