@@ -29,11 +29,13 @@ An accompanying website presenting this analysis and associated findings can be 
 
 - An inventory of **raw data sources** used for this analysis can be found in this project's **"data-inventory"** file at [./data-inventory.csv](data-inventory.csv).
 - Raw data sources required for this analysis can be downloaded by running the notebook found at [./notebooks/000_download_datasources.ipynb](notebooks/000_download_datasources.ipynb).
-- if you would like to simply download a copy of the fully populated **raw data directory** from which this analysis is built, you can do so by:
+- If you would like to simply download a copy of the fully populated **raw data directory** from which this analysis is built, you can do so by:
     1. Downloading and extracting the `./raw/` data directory found at this link:
         - https://drive.google.com/file/d/1Pv5M-GmUY2Cvq92GDH3d_h7MvXFjgzID/view?usp=sharing
     2. Replacing your local "raw" data sub-directory found at [./data/raw/](data/raw) in this project repository.
-    3. Please DO NOT commit any data files to your git history. 
+    3. Please DO NOT commit any data files to your git history.
+- **The final engineered feature-sets and train-test splits used to train and test our resulting models** can also be downloaded as a .zip archive directly from this link:
+    - https://drive.google.com/file/d/1UHgtQniKHfJZBwWIY2Xj7Pk8aJSB5Flv/view?usp=sharing
 
 <br>
 
