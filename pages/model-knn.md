@@ -62,7 +62,7 @@ The AUC curves below confirm what we saw in the confusion matrix that the model 
 ![knn_auc-curves_individual]({{ site.url }}/figures/model-knn/knn_auc-curves_individual.png)
 
 ## Different Subsets of the Data
-[The KNN subset data notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/025_MODEL_knn_subset.ipynb)
+[The KNN subset data notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/026_MODEL_knn_subset.ipynb)
 
 We are using the full crime dataset along with customized categories that we created.  How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve.  Our framework is extensible enough to accommodate for different subsets and categories based on requirements.  
 
