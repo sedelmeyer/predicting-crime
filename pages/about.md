@@ -6,9 +6,9 @@ title: "About"
 
 Crime tends to be ubiquitous in all areas of the United States, including Boston and Cambridge. Pinpointing the exact causes of crime is impossible, as it is a highly nuanced and complex issue. However, factors such as gross income, economic disparity, and government infrastructure/support are often strong indicators. We wish to inspect factors that may be correlated and/or contributing to occurrences of Boston crimes and the types thereof (e.g., robbery, vandalism, etc.). 
 
-We choose to explore datasets freely available from the City of Boston institutional website, starting (as recommended) from the Street Lights and Property Values dataset, and incorporating a wide variety of other sources that can help explain variability in frequency and type of crimes committed.
+We choose to explore datasets freely available from [the City of Boston institutional website](https://data.boston.gov/), starting (as recommended) from the [street lights](data-lights.md) and [property assessments](data-property.md) dataset, and incorporating [a wide variety of other sources](data.md) that can help explain variability in [frequency and type of crimes committed](data-crime.md).
 
-After collecting and unifying the data, we plan to construct models that learn relationships between predictors and crime from a training set, assess their performance on unseen data, and extrapolate from their predictions to postulate possible causal factors linked to crime.
+After [collecting and unifying the data](data.md), we [constructed models](models.md) that learn relationships between predictors and crime from a training set, assess their performance on unseen data, and extrapolate from their predictions to postulate possible causal factors linked to crime.
 
 ## High-level design choices
 
@@ -28,7 +28,7 @@ Of course, many other design choices were made by individual members when analyz
 
 ## Data sources and limitations
 
-We choose to analyze only datasets publicly available from the institutional City of Boston website. Although these span a wide variety of situations and variables, they cannot be fully exhaustive and a number of smaller factors are not captured by our models. Some of the main limitations are the following:
+We choose to analyze many of the datasets publicly available from [the institutional City of Boston website](https://data.boston.gov/). Although these span a wide variety of situations and variables, they cannot be fully exhaustive and a number of smaller factors are not captured by our models. Some of the main limitations are the following:
 
 ### Bias in crime reporting
 
