@@ -19,7 +19,7 @@ To view the preliminary EDA findings and summaries of the feature engineering ac
 1. [Crime incident raw data EDA](data-crime.md)
 1. [Property assessment raw data EDA](data-property.md)
 1. [Streetlight location raw data EDA](data-lights.md)
-1. NOAA weather raw data EDA
+1. [NOAA weather raw data EDA](data-weather.md)
 1. [Neighborhood demographics raw data EDA](data-demographics.md)
 1. [Liquor licensing raw data EDA](data-liquor.md)
 1. [Educational institutions raw data EDA](data-education.md)
