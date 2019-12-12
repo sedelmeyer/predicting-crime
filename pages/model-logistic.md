@@ -10,7 +10,23 @@ Following the creation of our inital baseline model, [as described and interpret
 
 Following the initial models below, we have also chosen to test a comparable set of logistic regression models, wherein we seek to predict a smaller subset of `crime-type` classes in an attempt to overcome some of our class imbalance challenges and to better understand the effect of reduced class categories on our model. [A detailed listing of the full set of `crime-type` response classes can be found here](models.md#response), and the [a description of the comparative secondary set of reduced classes can be found here](models.md#response-comp). 
 
+<a id='top'></a>
+
+# Contents
+
+Contained on this page are results and interpretations for the following models:
+
+1. [Model 1: Logistic regression classifier without regularization](#model1)
+1. [Model 2: Logistic regression with cross-validated l1 regularization](#model2)
+1. [Model 3: Baseline logistic regression with subsetted classes](#model3)
+1. [Model 4: Logistic regression with subset classes and CV l1 regularization](#model4)
+
+<a id='model1'></a>
+
 # Model 1: Logistic regression classifier without regularization
+
+[Return to page contents](#top)
+
 
 # Model 1 parameters
 
@@ -155,8 +171,11 @@ Shown in the plots below, we can see that our Model 1.a. ROC curves have all beg
 
 ![roc-class]({{ site.url }}/figures/model-logistic/roc-by-class-all.png)
 
+<a id='model2'></a>
 
 # Model 2: Logistic regression classifier with cross-validated lasso (l1) regularization
+
+[Return to page contents](#top)
 
 # Model 2 parameters
 
@@ -268,18 +287,11 @@ Shown in the plots below, we can see that our Model 1.a. ROC curves have all beg
 
 ![lasso-coef]({{ site.url }}/figures/model-logistic/coef-by-class-l1-all-aucbal.png)
 
-# Model 3: Logistic regression classifier with cross-validated lasso (l1) regularization
+<a id='model3'></a>
 
-**MODEL 3.a: Subset classes, baseline, without weights**
+# Model 3: Baseline logistic regression with subsetted `crime-type` classes
 
-```py
-LogisticRegression(C=100000, class_weight=None, dual=False,
-                   fit_intercept=True, intercept_scaling=1,
-                   l1_ratio=None, max_iter=1000, multi_class='multinomial', n_jobs=None, penalty='l2', random_state=20,
-                   solver='lbfgs', tol=0.0001, verbose=0, warm_start=False)
-```
-
-**MODEL 3.a: Subset classes, baseline, without weights**
+**MODEL 3: Subset classes, baseline, without weights**
 
 ```py
 LogisticRegression(C=100000, class_weight=None, dual=False,
@@ -288,8 +300,7 @@ LogisticRegression(C=100000, class_weight=None, dual=False,
                    solver='lbfgs', tol=0.0001, verbose=0, warm_start=False)
 ```
 
-
-**MODEL 3.a: Subset classes, baseline, without weights**
+**MODEL 3: Subset classes, baseline, without weights**
 
 ```
 This model resulted in the following accuracy:
@@ -304,7 +315,7 @@ Training	0.5760		0.5706
 Test		0.5768		0.5709
 ```
 
-**MODEL 3.a: Subsetted classes, baseline, without weights**
+**MODEL 3: Subsetted classes, baseline, without weights**
 
 ```
 The number of classes predicted by class are:
@@ -322,7 +333,7 @@ class
 2       2860    0.158221
 ```
 
-**MODEL 3.a: Subsetted classes, baseline, without weights**
+**MODEL 3: Subsetted classes, baseline, without weights**
 ```
 The resulting confusion matrix:
 
@@ -345,4 +356,71 @@ class
 
 ```
 
+# Model 3 receiver operator characteristic (ROC) curves by model and class
+
 ![roc-subset-base]({{ site.url }}/figures/model-logistic/roc-subset-by-class-lat-lon-only.png)
+
+<a id='model4'></a>
+
+# Model 4: Logistic regression with subset classes and cross-validation lasso (l1) regularization
+
+[Return to page contents](#top)
+
+**MODEL 4: Subset classes, CV lasso regularization, balanced weights**
+
+```py
+LogisticRegressionCV(Cs=10, class_weight='balanced', cv=None,
+                     dual=False, fit_intercept=True, intercept_scaling=1.0, l1_ratios=None, max_iter=1000, multi_class='multinomial', n_jobs=None, penalty='l1', random_state=20, refit=True,
+                     scoring='roc_auc_ovr', solver='saga', tol=0.0001,
+                     verbose=0)
+```
+
+**MODEL 4: Subset classes, CV lasso regularization, balanced weights**
+
+```
+This model resulted in the following accuracy:
+
+Training	0.4599
+Test		0.4510
+
+The model AUC is:
+
+		weighted	unweighted
+Training	0.6498		0.6578
+Test		0.6435		0.6500
+```
+
+**MODEL 4: Subset classes, CV lasso regularization, balanced weights**
+
+```
+The resulting confusion matrix:
+
+TEST
+Actual        0     1     2  Total
+Predicted                         
+0          1844  2555  2026   6425
+1           578  3581  1413   5572
+2           849  2503  2727   6079
+Total      3271  8639  6166  18076
+
+The classification metrics derived from the confusion matrix are:
+
+TEST
+         TP    FP    FN     TN    TPR    FNR    FPR    TNR
+class                                                                 
+0      1844  4581  1427  10224  0.564  0.436  0.309  0.691
+1      3581  1991  5058   7446  0.415  0.585  0.211  0.789
+2      2727  3352  3439   8558  0.442  0.558  0.281  0.719
+```
+
+# Model 4 receiver operator characteristic (ROC) curves by model and class
+
+![roc-subset-l1-acc]({{ site.url }}/figures/model-logistic/roc-subset-by-class-l1-all-bal.png)
+
+![roc-subset-l1-auc]({{ site.url }}/figures/model-logistic/roc-subset-by-class-l1-all-auc-bal.png)
+
+# Model 2 lasso regularized coefficients
+
+![lasso-coef]({{ site.url }}/figures/model-logistic/coef-subset-by-class-l1-all-aucbal.png)
+
+[Return to page contents](#top)
