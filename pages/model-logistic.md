@@ -6,9 +6,9 @@ title: "Logistic regression classification models"
 
 # Summary
 
-Following the creation of our inital baseline model, [as described and interpreted on this page](model-baseline.md), where we used logistic regression with only `lat` and `lon` as our predictors, we then expanded our model to our entire feature-set for predictiing `crime-type` classes for each crime record. This page describes these additional logistic regression classifier modeling efforts and provide an interpretation of the results. For a full predictor-by-predictor listing of the predictors used in the models on this page, along with a brief description of each predictor, [please see this section of our "Models" page](models.md#predictors). used to conduct this 
+Following the creation of our inital baseline model, [as described and interpreted on this page](model-baseline.md), where we used logistic regression with only `lat` and `lon` as our predictors, we then expanded our model to our entire feature-set for predictiing `crime-type` classes for each crime record. This page describes these additional logistic regression classifier modeling efforts and provide an interpretation of the results. For a full predictor-by-predictor listing of the predictors used in the models on this page, along with a brief description of each predictor, [please see this section of our "Models" page](models.md#predictors). Please note that, **for all models on this page in which we have used our entire feature set, all non-binary predictor values have been scaled using standardization** with the training set used as our reference set for calculating the means and standard deviations with which to scale both the training and test values.
 
-Following the initial models below, we have also chosen to test a comparable set of logistic regression models, wherein we seek to predict a smaller subset of `crime-type` classes in an attempt to overcome some of our class imbalance challenges and to better understand the effect of reduced class categories on our model. [A detailed listing of the full set of `crime-type` response classes can be found here](models.md#response), and the [a description of the comparative secondary set of reduced classes can be found here](models.md#response-comp). 
+Below we have also chosen to test a comparable set of logistic regression models, wherein we seek to predict a smaller subset of `crime-type` classes in an attempt to overcome some of our class imbalance challenges and to better understand the effect of reduced class categories on our model. [A detailed listing of the full set of `crime-type` response classes can be found here](models.md#response), and [a description of the comparative secondary set of reduced classes can be found here](models.md#response-comp). 
 
 <a id='top'></a>
 
@@ -244,7 +244,18 @@ Finally, with lasso regularized shrinkage applied to our coefficients, we can no
 
 # Model 3: Baseline logistic regression with subsetted `crime-type` classes
 
+As a comparative analysis and an attempt to overcome the imbalanced classes existing in our primary set of `crime-type` classes, we have chosen to also generate predictive models using a smaller subset of our classes [as was described on our "Models" page](models.md#response-comp). In doing so, we are also able to examine potential changes in predictive accuracy when the number of overall classes are reduced. For reference, this reduced subset of classes includes:
+
+```
+class       class-name
+0           drugs-substances
+1           theft
+2           violence-aggression
+```
+
 # Model 3 parameters
+
+As a new baseline, we first generate a logistic regression model on our subsetted classes using just `lat` and `lon` as predictors [as we did before with our larger class set](model-baseline.md). No class weights are applied in this model. The parameters set for this model are shown below.
 
 **MODEL 3: Subset classes, baseline, without weights**
 
@@ -256,6 +267,8 @@ LogisticRegression(C=100000, class_weight=None, dual=False,
 ```
 
 # Model 3 accuracy and AUC
+
+Immediately, with a TEST accuracy score of 0.478 we can see a large gain in the overall accuracy of our model as compared to our previous models (all below 0.30 accuracy). This is surprising, considering the poor performance we say in our original baseline model, which also used just `lat` and `lon` as predictors. However, something else that is noticeable is the lack of improvement in AUC performance with this model.
 
 **MODEL 3: Subset classes, baseline, without weights**
 
@@ -273,6 +286,8 @@ Test		0.5768		0.5709
 ```
 
 # Model 3 predictions
+
+Below we can see, that without balanced class weights applied to our model, the remaining imbalances in our three `crime-type` classes, lead to a model that failed to predict a single occurance of class 0 (`drugs-substances`) crimes. But, by inspective the classification metrics table below, we can see a notable improvement in the true positive rate (TPR) for our class 2 (`violence-aggression`) predictions. In our prior models, the best that we achieved for this class was a TPR of 0.02. 
 
 **MODEL 3: Subsetted classes, baseline, without weights**
 ```
@@ -298,6 +313,8 @@ class
 ```
 
 # Model 3 receiver operator characteristic (ROC) curves by model and class
+
+Finally, and somewhat disappointingly, we can see less than favorable results in our ROC curves, indicating that we have little opportunity for improving true positive rates without significance cost in terms of increase false positive rates by adjusting the thresholds of particular response classes.
 
 ![roc-subset-base]({{ site.url }}/figures/model-logistic/roc-subset-by-class-lat-lon-only.png)
 
