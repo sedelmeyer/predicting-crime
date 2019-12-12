@@ -360,6 +360,9 @@ Test		0.6435		0.6500
 
 Looking at our resulting confusion matrix, we can see what we'd expect to occur when using balanced class weights in our model. We now have predictions distributed across all `crime-type` classes. We also have much higher true positive rates (TPRs) for class 0 and class 2 predictions (0.564 and 0.442 respectively), apparently at the cost of TPR accuracy for class 1 predictions, which would explain the overall drop in this model's accuracy score.
 
+```
+The resulting confusion matrix:
+
 TEST
 Actual        0     1     2  Total
 Predicted                         
@@ -382,9 +385,9 @@ class
 
 Now, as a point of comparison below, we provide both the ROC curve plots for our current Model 4 version (the first set of plots below), as well as a set of ROC curve plots for a prior iteration of Model 4 (the second set of plots) in which we used `accuracy` as our cross-validation scoring metric instead of `roc_auc_ovr`. Because we have chosen to priorities AUC over raw accuracy in our predictions, these two plots illustrate the very different outcomes we get in terms of AUC when accuracy is used for scoring and parameter selection during cross-validation. The first set of ROC curves illustrate far more favorable characteristics.
 
-![roc-subset-l1-acc]({{ site.url }}/figures/model-logistic/roc-subset-by-class-l1-all-bal.png)
-
 ![roc-subset-l1-auc]({{ site.url }}/figures/model-logistic/roc-subset-by-class-l1-all-auc-bal.png)
+
+![roc-subset-l1-acc]({{ site.url }}/figures/model-logistic/roc-subset-by-class-l1-all-bal.png)
 
 # Model 4 lasso regularized coefficients
 
