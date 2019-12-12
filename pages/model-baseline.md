@@ -196,6 +196,8 @@ class
 8        86    503  5224  26275  0.016  0.984  0.019  0.981
 ```
 
+<a id='roc'></a>
+
 # Receiver operator characteristic (ROC) curves by model and class
 
 As a final set of items we will investigate to better understand these quality of our results and the differences that we are seeing between Model 1 and Model 2, we will now plot the ROC for each model and class, and report on the individual AUC values by class and model.
