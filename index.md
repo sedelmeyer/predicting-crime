@@ -20,7 +20,7 @@ defined subset of crime types), which type of crime is most likely to occur at t
 
 - What effects do specific location-based features have on the type of crime most likely to occur at that location?
 
-## Contributors:
+## Contributors (Group Final Project 109):
 - [Christopher Campion](https://github.com/ccampion)
 - [Sheraz Choudhary](https://github.com/sherazch00)
 - [Fabio Pruneri](https://github.com/FabioPru)
