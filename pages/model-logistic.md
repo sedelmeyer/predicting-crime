@@ -136,6 +136,7 @@ Predicted
 8            17    20    27    24    72   15   109    60   105    449
 Total      1580  1416  3271  2397  5192  856  8639  3427  5310  32088
 ```
+<a id='roc1'></a>
 
 # Model 1 receiver operator characteristic (ROC) curves by model and class
 
@@ -233,6 +234,8 @@ class
  Then, when we inspect our ROC curves for each of the classes, we can again see curves similar to what was shown above in Model 1, as we'd expect given Model 2's similar overall average AUC score.
 
 ![roc]({{ site.url }}/figures/model-logistic/roc-l1-all-auc-bal.png)
+
+<a id='coef'></a>
 
 # Model 2 lasso regularized coefficients
 
@@ -389,10 +392,12 @@ Now, as a point of comparison below, we provide both the ROC curve plots for our
 
 ![roc-subset-l1-acc]({{ site.url }}/figures/model-logistic/roc-subset-by-class-l1-all-bal.png)
 
+<a id='coef-comp'></a>
+
 # Model 4 lasso regularized coefficients
 
 Finally, when looking at our lasso regularized coefficients for this version of the model, we can see that a far larger number of our coefficients estimates have been shrunk to zero. This would make sense, given that there are a much smaller number of `crime-type` classes for our model to differentiate between, leading to fewer predictors required for each class's prediction.
 
-![lasso-coef]({{ site.url }}/figures/model-logistic/coef-subset-by-class-l1-all-aucbal.png)
+![lasso-coef-comp]({{ site.url }}/figures/model-logistic/coef-subset-by-class-l1-all-aucbal.png)
 
 [Return to page contents](#top)
