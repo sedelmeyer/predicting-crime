@@ -2,7 +2,7 @@
 title: "Modeling using Decision Trees"
 ---
 
-[The Decision Tree notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/031_MODEL_decision_trees.ipynb)
+[The Decision Tree notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/027_MODEL_decision_trees.ipynb)
 
 After exploring the baseline model we examined several Decision Tree Classifier models. The Decision Tree model with tuning does a fair job with the data and reaches a max accuracy of approximately 0.35 with nine classes of crime.
 
@@ -106,7 +106,7 @@ Finally, to see how well our best model performs we examine the area under the c
 ![roc_auc]({{ site.url }}/figures/model-trees/roc_auc.PNG)
 
 ## Different Subsets of the Data
-[The Decision Tree subset data notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/031_MODEL_decision_trees_subset.ipynb)
+[The Decision Tree subset data notebook can be found here.](https://github.com/sedelmeyer/predicting-crime/blob/master/notebooks/028_MODEL_decision_trees_subset.ipynb)
 
 We are using the full crime dataset along with customized categories that we created.  How the data is subset and how the categories are chosen can greatly impact the accuracy our models achieve.  Our framework is extensible enough to accommodate for different subsets and categories based on requirements.  
 
