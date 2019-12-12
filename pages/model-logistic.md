@@ -228,7 +228,7 @@ class
 
 ```
 
-# Model 2 receiver operator characteristic (ROC) curves by model and class
+# Model 2 receiver operator characteristic (ROC) curves by class
 
  Then, when we inspect our ROC curves for each of the classes, we can again see curves similar to what was shown above in Model 1, as we'd expect given Model 2's similar overall average AUC score.
 
@@ -312,7 +312,7 @@ class
 
 ```
 
-# Model 3 receiver operator characteristic (ROC) curves by model and class
+# Model 3 receiver operator characteristic (ROC) curves by class
 
 Finally, and somewhat disappointingly, we can see less than favorable results in our ROC curves, indicating that we have little opportunity for improving true positive rates without significance cost in terms of increase false positive rates by adjusting the thresholds of particular response classes.
 
@@ -381,7 +381,7 @@ class
 2      2727  3352  3439   8558  0.442  0.558  0.281  0.719
 ```
 
-# Model 4 receiver operator characteristic (ROC) curves by model and class
+# Model 4 receiver operator characteristic (ROC) curves by class
 
 Now, as a point of comparison below, we provide both the ROC curve plots for our current Model 4 version (the first set of plots below), as well as a set of ROC curve plots for a prior iteration of Model 4 (the second set of plots) in which we used `accuracy` as our cross-validation scoring metric instead of `roc_auc_ovr`. Because we have chosen to priorities AUC over raw accuracy in our predictions, these two plots illustrate the very different outcomes we get in terms of AUC when accuracy is used for scoring and parameter selection during cross-validation. The first set of ROC curves illustrate far more favorable characteristics.
 
