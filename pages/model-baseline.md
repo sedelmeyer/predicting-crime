@@ -6,7 +6,7 @@ title: "Baseline model using logistic regression"
 
 # Summary
 
-As an initial baseline model, against which we could compare the results of our subsequent models, we attempted to predict crime types using only latitude and longitude (`lat` and `lon`) as our predictors. To accomplish this, we ran a multinomial logistic model with no regularization. And we ran it both with and then without "balanced" class weightings for comparison. Given the heavy spatial mixing of `crime-type` classes [as shown in our initial training data EDA](data.md#location) we had very low expectations for the quality of predictions that might be generated using only geo-locational data as our predictors.
+As an initial baseline model, against which we could compare the results of our subsequent models, we attempted to predict crime types using only latitude and longitude (`lat` and `lon`) as our predictors. To accomplish this, we ran a multinomial logistic model with no regularization. And we ran it both with and then without "balanced" class weightings for comparison. Given the heavy spatial mixing of `crime-type` classes [as shown in our initial training data EDA](data.md#location) we had very low expectations for the quality of predictions that might be generated using only geo-spatial coordinates as our predictors.
 
 # Model parameters
 
@@ -214,12 +214,4 @@ However, what we see in our plots below are wavering ROC curves with very low ra
 
 # Conclusion and next steps
 
-As expected from our initial  
-
-## BEWARE: CONTENT BELOW HAS NOT YET BEEN UPDATED
-
-
-While we still have some issues with missingness and collinearity in several of our features (collinearity information is included in Appendix 2) to resolve in future iterations of our predictive model, our best baseline model, which used lasso regularized logistic regression with multinomial classification, resulted in a training accuracy score of 0.2733 and TEST score of 0.2730. Given the geographical inter-mixing of our response classes and the high bias of these results, we suspect that the linear decision boundaries of a logistic function are not expressive enough for accurately defining ourfeature space and predicting results. For that reason, we expect to see better accuracy results in future iterations of the model wherein we plan to first use non-parametric methods such as k-Nearest Neighbors and Decision Tree ensembles, and then later Artificial Neural Networks trained on our soon to be expanded feature set.
-
-Even if a logistic function does not provide sufficient expressiveness for our classification problem, it does provide the benefit of interpretable results, from which we can begin to develop a better understanding of the relationships between specific predictors and response classes. For an overview of our estimated coefficients (as well as an indication of which predictors are found to be “not important” via lasso coefficient shrinkage to zero for certain response classes), please see the figures provided in Appendix 3.
-
+As expected [from our initial EDA and data visualization efforts](data.md#location), due to the heavy spatial mixing of `crime-type` classes, we have achieved very low accuracy scores and far less than favorable AUC values and ROC curves with the two versions of our baseline model above. To some degree, we expect that logistic regression will faily to adequately separate prediction classes due to the linear nature of the model, and that we will eventually find better results by using non-parametric methods such as k-Nearest Neighbors classifiers or Decision Tree-based classifiers, which can provide more flexible decision boundaries. However, after viewing these results, we were still very interested to see what additional predictive accuracy we could achieve and how different our AUC and ROC results might be once we add in a more complete predictor set. [To view the results of our subsequent Logistic Regression classifier models in which we generated predictions using the entire set of predictors, please see the Logistic Regression Classifiers summary page](model-logistic.md). As you can see on that page, we were able to achieve some very interesting results, even with just logistic regression as our classifier.
