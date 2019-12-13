@@ -1,8 +1,6 @@
 # Predicting Types of Crime in the City of Boston
 
-**NOTE: This analysis is currently under development and not yet complete, please check back later.**
-
-This repository contains the analysis and predictive results for a project exploring the prediction of crime types, based on a number of different features.
+This repository contains the analysis and predictive results for a project exploring the prediction of crime types in the City of Boston, based on a number of different features.
 
 An accompanying website presenting this analysis and associated findings can be found at: [https://sedelmeyer.github.io/predicting-crime/](https://sedelmeyer.github.io/predicting-crime/)
 
@@ -25,7 +23,7 @@ An accompanying website presenting this analysis and associated findings can be 
 - For additional information on creating, managing, and running `conda` environments, please see the official Anaconda documentation:
     - https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
 
-### Step 2: Download the required data sources:
+### Step 2: Download the required data sources
 
 - An inventory of **raw data sources** used for this analysis can be found in this project's **"data-inventory"** file at [./data-inventory.csv](data-inventory.csv).
 - Raw data sources required for this analysis can be downloaded by running the notebook found at [./notebooks/000_download_datasources.ipynb](notebooks/000_download_datasources.ipynb).
@@ -37,6 +35,14 @@ An accompanying website presenting this analysis and associated findings can be 
 - **The final engineered feature-sets and train-test splits used to train and test our resulting models** can also be downloaded as a .zip archive directly from this link:
     - https://drive.google.com/file/d/1UHgtQniKHfJZBwWIY2Xj7Pk8aJSB5Flv/view?usp=sharing
     - After downloading this .zip file, it should be unzipped and the final model data .csv files should be placed in the [./data/processed/](data/processed) project directory.
+    - However, please note that these engineered feature sets can also be generated via the jupyter notebooks contained in this repository by following the instruction outlined below in Step 3.
+
+### Step 3: Run the analysis notebooks located in the `./notebooks/` directory
+
+- This analysis should be fully replicable by running the jupyter notebooks contained in the [./notebooks/](notebooks) directory.
+- To repeat this analysis, run each notebook in sequential order based on the number prefix contained in its title.
+- Please note, that some notebooks may take a good deal of time to run.
+
 
 <br>
 
